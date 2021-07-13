@@ -88,3 +88,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+
+/** datos sobre FTP **/
+define('FTP_HOST', 'localhost');
+define('FTP_USER', 'daemon');
+define('FTP_PASS', 'xampp');
