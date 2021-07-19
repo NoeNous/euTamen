@@ -1,0 +1,35 @@
+/* FILE: editor-block/blocks/_columns.scss */
+
+.wp-block[data-align=full] .wp-block-columns > .block-editor-inner-blocks {
+	padding-left: var(--block_ui_margin);
+	padding-right: var(--block_ui_margin);
+}
+
+.block-editor-block-list__block.wp-block-column.wp-block-column {
+	margin-bottom: calc( var(--typography_font_size_base) * #{ $ratio } );
+}
+
+.wp-block-column > .wp-block {
+	max-width: none !important;
+}
+
+#{ $selector_editor_wrapper } .wp-block-columns.is-style-no-gaps > .wp-block-column.wp-block-column {
+	margin: 0;
+}
+
+// Matching front-end styles as these are mismatched in WordPress!
+// There is `2em` used on front-end and `32px` in editor, which is not correct
+// if the theme's base font size is not 16px default.
+
+	$two_em : calc( var(--typography_font_size_base) * 2 );
+
+	@media (min-width: 600px) {
+		#{ $selector_editor_wrapper } .block-editor-block-list__block.wp-block-column:nth-child(even) {
+			margin-#{$left}: $two_em;
+		}
+	}
+	@media (min-width: 782px) {
+		#{ $selector_editor_wrapper } .block-editor-block-list__block.wp-block-column:not(:first-child) {
+			margin-#{$left}: $two_em;
+		}
+	}

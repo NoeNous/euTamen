@@ -1,0 +1,57 @@
+/* FILE: editor-block/blocks/_media-text.scss */
+
+.wp-block-media-text .block-editor-inner-blocks .block-editor-inner-blocks {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#{ $selector_editor_wrapper } [data-align="full"] .wp-block-media-text {
+
+	@supports ( mask-image: url('') ) {
+		&.is-style-overlap-gradient {
+
+			@include media( map_get( $breakpoint, 'xl' ) ) {
+				--media_text_overlap_size: 12vw;
+			}
+
+			@include media( map_get( $breakpoint, 'xxl' ) ) {
+				--media_text_overlap_size: 18vw;
+			}
+
+		}
+	}
+
+	> .wp-block-media-text__content {
+		padding-left: 10%; // No RTL here.
+		padding-right: 10%; // No RTL here.
+
+		.has-narrow-max-width {
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+	}
+
+	&.is-style-media-on-top {
+
+		.wp-block-media-text__content .wp-block {
+			max-width: none !important;
+		}
+
+		&:not(.has-background) > .wp-block-media-text__content {
+			padding-left: 0; // No RTL here.
+			padding-right: 0; // No RTL here.
+		}
+
+	}
+
+	@media (max-width: 600px) {
+
+		> .wp-block-media-text__content {
+			padding-left: 6vw; // No RTL here.
+			padding-right: 6vw; // No RTL here.
+		}
+
+	}
+
+}

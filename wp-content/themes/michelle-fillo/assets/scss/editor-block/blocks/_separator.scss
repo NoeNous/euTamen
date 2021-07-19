@@ -1,0 +1,35 @@
+/* FILE: editor-block/blocks/_separator.scss */
+
+[data-type="core/separator"] {
+	clear: both;
+}
+
+#{ $selector_editor_wrapper } {
+	--hr_width: calc( #{ $ratio_min } * var(--layout_width_entry_content) );
+
+	.wp-block-separator {
+		opacity: 1;
+
+		&[class*="-wide"] {
+			--hr_width: #{ $max_width_entry_content };
+		}
+
+		&.is-style-dots.has-background::before {
+			color: inherit;
+		}
+
+	}
+
+	[data-align="wide"] > .wp-block-separator {
+		--hr_width: var(--layout_width_content);
+	}
+
+	[data-align="full"] > .wp-block-separator {
+		--hr_width: none;
+	}
+
+}
+
+hr {
+	margin-bottom: calc( var(--typography_font_size_base) * #{ $ratio } );
+}

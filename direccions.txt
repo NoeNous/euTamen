@@ -1,0 +1,18 @@
+Neste arquivo vou gardar cousas qe fun facendolle ao tema Michelle-fillo
+
+No arquivo comments.php comentei a parte de <ol>, na que se mostraban os comentarios na páxina na que se estñan escribindo. Son da liña 41 a 81.
+No noso caso, queremos os comentarios nun sitio e escribilos noutro.
+No arquivo assets/css/comments.css cambieille o margin-top a .comments-area
+Descarga do plugin Better recent comments
+
+Modificacion do plugin better-recent-comments:
+no tema fillo: assets/css/global css -> Para quitarlle o autor e así aos comentarios
+
+Better recent comments/src/util.php solo que ainda me costa php
+	liña 33 - sacarlle autor e onde se puxo o comentario
+	liña 40 - quitarlle as ""
+	liña 42 - quitarlle a data 
+Aparecenme un enlace encima dos comentarios - pq? -Se se comenta a liña 100, dese arquivo, xa non sae o enlace
+
+Nada, probei con varios plugins a ver se me poñia o like na outra páxina, pero non atopei ningun. (para os comentarios)
+
