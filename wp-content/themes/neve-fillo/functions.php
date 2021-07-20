@@ -113,3 +113,25 @@ require_once get_template_directory() . '/start.php';
 
 
 require_once get_template_directory() . '/header-footer-grid/loader.php';
+
+//Para que solo sexa obrigatorio o email, non o nome
+function wp_modificar_form_comentarios($fields) {
+
+	// Modificamos el campo nombre y lo marcamos como opcional 
+	$fields['author'] = '<p class="comment-form-author">' . '<label for="author">' . __( 'Nombre (Opcional)' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
+	'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
+
+	// Esta línea elimina el campo url del formulario. 	  
+	  $fields['url'] = '';
+
+    return $fields;
+	}
+	add_filter('comment_form_default_fields', 'wp_modificar_form_comentarios');
+
+//Para que non saia o campo do nome:
+	function wp_alter_comment_form_fields($fields) {
+    unset($fields['author']);
+    unset($fields['url']);
+    return $fields;
+	}
+	add_filter('comment_form_default_fields', 'wp_alter_comment_form_fields');
