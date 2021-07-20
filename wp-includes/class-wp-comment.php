@@ -35,36 +35,12 @@ final class WP_Comment {
 	public $comment_post_ID = 0;
 
 	/**
-	 * Comment author name.
-	 *
-	 * @since 4.4.0
-	 * @var string
-	 */
-	public $comment_author = '';
-
-	/**
 	 * Comment author email address.
 	 *
 	 * @since 4.4.0
 	 * @var string
 	 */
 	public $comment_author_email = '';
-
-	/**
-	 * Comment author URL.
-	 *
-	 * @since 4.4.0
-	 * @var string
-	 */
-	public $comment_author_url = '';
-
-	/**
-	 * Comment author IP address (IPv4 format).
-	 *
-	 * @since 4.4.0
-	 * @var string
-	 */
-	public $comment_author_IP = '';
 
 	/**
 	 * Comment date in YYYY-MM-DD HH:MM:SS format.
@@ -134,16 +110,6 @@ final class WP_Comment {
 	 * @var string
 	 */
 	public $comment_parent = 0;
-
-	/**
-	 * Comment author ID.
-	 *
-	 * A numeric string, for compatibility reasons.
-	 *
-	 * @since 4.4.0
-	 * @var string
-	 */
-	public $user_id = 0;
 
 	/**
 	 * Comment children.
