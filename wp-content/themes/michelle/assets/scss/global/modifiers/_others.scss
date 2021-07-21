@@ -1,0 +1,48 @@
+/* FILE: global/modifiers/_others.scss */
+
+// Responsive
+
+	$important_modifiers: important( 'modifier_responsive' );
+
+	.is-displayed-on-desktop,
+	.is-style-display-on-desktop {
+		@include media( ( map_get( $breakpoint, $mobile_menu_breakpoint ), 'max-width' ) ) {
+			display: none !important;
+		}
+	}
+
+	$important_modifiers: null; // Required reset.
+
+// Overflow
+
+	$important_modifiers: important( 'modifier_overflow' );
+
+	.has-hidden-overflow {
+		overflow: hidden $important_modifiers;
+	}
+
+	.has-hidden-overflow-x {
+		overflow-x: hidden $important_modifiers;
+	}
+
+	.has-hidden-overflow-y {
+		overflow-y: hidden $important_modifiers;
+	}
+
+	$important_modifiers: null; // Required reset.
+
+// White space
+
+	$important_modifiers: important( 'modifier_white_space' );
+
+	.has-nowrap-white-space {
+		white-space: nowrap $important_modifiers;
+	}
+
+	.has-responsive-nowrap-white-space {
+		@include media( map_get( $breakpoint, 'l' ) ) {
+			white-space: nowrap $important_modifiers;
+		}
+	}
+
+	$important_modifiers: null; // Required reset.

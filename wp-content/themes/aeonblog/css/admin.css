@@ -1,0 +1,25 @@
+.appearance_page_aeonblog-theme .wrap,
+.appearance_page_aeonblog-theme .welcome-panel {
+	font-size: 16px;
+}
+
+.appearance_page_aeonblog-theme .aeonlogo {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 0 2rem 0;
+}
+
+.appearance_page_aeonblog-theme .aeontitle {
+	display: inline-block;
+	margin: 0 1rem 2rem 1rem;
+}
+
+.appearance_page_aeonblog-theme .wrap h1 {
+	font-weight: 600;
+	font-size: 2.5rem;
+}
+
+.appearance_page_aeonblog-theme .aeon-panel {
+	background: #f1f5f5;
+	border-radius: 4px;
+}

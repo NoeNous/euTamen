@@ -1,0 +1,18 @@
+@media print {
+	.site-header,
+	#site-navigation,
+	#colophon,
+	#respond,
+	.secondary,
+	.breadcrumbs,
+	.entry-footer,
+	.navigation,
+	.related-pots-block,
+	.posted-in {
+		display: none;
+	}
+
+	#primary {
+		width: 100%;
+	}
+}
