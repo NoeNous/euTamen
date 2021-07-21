@@ -200,7 +200,7 @@ class Walker_Comment extends Walker {
 		}
 
 		if ( 'comment' === $comment->comment_type ) {
-			remove_filter( 'comment_text', array( $this, 'filter_comment_text' ), 40, 2 );
+			remove_filter( 'comment_text', array( $this, 'filter_comment_text' ), 40 );
 		}
 	}
 
@@ -314,6 +314,19 @@ class Walker_Comment extends Walker {
 				echo get_avatar( $comment, $args['avatar_size'] );
 			}
 			?>
+			<?php
+			$comment_author = get_comment_author_link( $comment );
+
+			if ( '0' == $comment->comment_approved && ! $show_pending_links ) {
+				$comment_author = get_comment_author( $comment );
+			}
+
+			printf(
+				/* translators: %s: Comment author link. */
+				__( '%s <span class="says">says:</span>' ),
+				sprintf( '<cite class="fn">%s</cite>', $comment_author )
+			);
+			?>
 		</div>
 		<?php if ( '0' == $comment->comment_approved ) : ?>
 		<em class="comment-awaiting-moderation"><?php echo $moderation_note; ?></em>
@@ -403,6 +416,19 @@ class Walker_Comment extends Walker {
 						if ( 0 != $args['avatar_size'] ) {
 							echo get_avatar( $comment, $args['avatar_size'] );
 						}
+						?>
+						<?php
+						$comment_author = get_comment_author_link( $comment );
+
+						if ( '0' == $comment->comment_approved && ! $show_pending_links ) {
+							$comment_author = get_comment_author( $comment );
+						}
+
+						printf(
+							/* translators: %s: Comment author link. */
+							__( '%s <span class="says">says:</span>' ),
+							sprintf( '<b class="fn">%s</b>', $comment_author )
+						);
 						?>
 					</div><!-- .comment-author -->
 
