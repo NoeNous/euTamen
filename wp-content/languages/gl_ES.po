@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.8.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-07-17 16:05:57+0000\n"
+"PO-Revision-Date: 2021-07-22 19:36:54+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -115,6 +115,191 @@ msgstr "number_format_decimal_point"
 #: wp-includes/js/dist/edit-post.js:13899 wp-admin/includes/upgrade.php:158
 msgid "Uncategorized"
 msgstr "Sen categorizar"
+
+#: wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Blue and orange"
+msgstr "Azul e laranxa"
+
+#: wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Purple and green"
+msgstr "Morado e verde"
+
+#: wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Magenta and yellow"
+msgstr " Magenta e amarelo"
+
+#: wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Midnight"
+msgstr "Medianoite"
+
+#: wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Blue and red"
+msgstr "Azul e vermello"
+
+#: wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Purple and yellow"
+msgstr "Morado e amarelo"
+
+#: wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Grayscale"
+msgstr "Escala de grises"
+
+#: wp-includes/theme.json
+msgctxt "Duotone name"
+msgid "Dark grayscale"
+msgstr "Escala de grises escura"
+
+#: wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Midnight"
+msgstr "Medianoite"
+
+#: wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Electric grass"
+msgstr "Herba eléctrica"
+
+#: wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Pale ocean"
+msgstr "Océano pálido"
+
+#: wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Luminous dusk"
+msgstr "Atardecer luminoso"
+
+#: wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Blush bordeaux"
+msgstr "Rubor burdeos"
+
+#: wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Blush light purple"
+msgstr "Rubor morado claro"
+
+#: wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Cool to warm spectrum"
+msgstr "Espectro frío a quente"
+
+#: wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Very light gray to cyan bluish gray"
+msgstr "Gris moi claro a gris azulado cian"
+
+#: wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Luminous vivid orange to vivid red"
+msgstr "Laranxa vivo luminoso a vermello vivo"
+
+#: wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Luminous vivid amber to luminous vivid orange"
+msgstr "Ámbar vivo luminoso a laranxa vivo luminoso"
+
+#: wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Light green cyan to vivid green cyan"
+msgstr "Verde cian claro a verde cian vivo"
+
+#: wp-includes/theme.json
+msgctxt "Gradient name"
+msgid "Vivid cyan blue to vivid purple"
+msgstr "Cian azul vivo a morado vivo"
+
+#: wp-includes/theme.json
+msgctxt "Color name"
+msgid "Vivid purple"
+msgstr "Morado vivo"
+
+#: wp-includes/theme.json
+msgctxt "Color name"
+msgid "Vivid cyan blue"
+msgstr "Azul cian vivo"
+
+#: wp-includes/theme.json
+msgctxt "Color name"
+msgid "Pale cyan blue"
+msgstr "Azul cian pálido"
+
+#: wp-includes/theme.json
+msgctxt "Color name"
+msgid "Vivid green cyan"
+msgstr "Cian verde vivo"
+
+#: wp-includes/theme.json
+msgctxt "Color name"
+msgid "Light green cyan"
+msgstr "Cian verde claro"
+
+#: wp-includes/theme.json
+msgctxt "Color name"
+msgid "Luminous vivid amber"
+msgstr "Ámbar vivo luminoso"
+
+#: wp-includes/theme.json
+msgctxt "Color name"
+msgid "Luminous vivid orange"
+msgstr "Laranxa vivo luminoso"
+
+#: wp-includes/theme.json
+msgctxt "Color name"
+msgid "Vivid red"
+msgstr "Vermello vivo"
+
+#: wp-includes/theme.json
+msgctxt "Color name"
+msgid "Pale pink"
+msgstr "Rosa pálido"
+
+#: wp-includes/theme.json
+msgctxt "Color name"
+msgid "White"
+msgstr "Branco"
+
+#: wp-includes/theme.json
+msgctxt "Color name"
+msgid "Cyan bluish gray"
+msgstr "Gris azulado cian"
+
+#: wp-includes/theme.json
+msgctxt "Color name"
+msgid "Black"
+msgstr "Negro"
+
+#: wp-includes/theme.json
+msgctxt "Font size name"
+msgid "Huge"
+msgstr "Enorme"
+
+#: wp-includes/theme.json
+msgctxt "Font size name"
+msgid "Large"
+msgstr "Grande"
+
+#: wp-includes/theme.json
+msgctxt "Font size name"
+msgid "Medium"
+msgstr "Mediana"
+
+#: wp-includes/theme.json
+msgctxt "Font size name"
+msgid "Normal"
+msgstr "Normal"
+
+#: wp-includes/theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr "Pequena"
 
 #: wp-includes/js/dist/block-library.js:29238
 #: wp-admin/includes/plugin-install.php:333
