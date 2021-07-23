@@ -1,0 +1,817 @@
+# Translation of Themes - AeonBlog in Spanish (Spain)
+# This file is distributed under the same license as the Themes - AeonBlog package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-03-23 08:38:25+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: es\n"
+"Project-Id-Version: Themes - AeonBlog\n"
+
+#. Description of the theme
+msgid "Simple and clean accessibility ready blog theme. It comes with easy to use customizer based theme options, copyright text, post templates, sidebar options, meta options, featured image option, excerpt length option, read more text, sticky sidebar, font preview and many more. AeonBlog has soft green and blue colors, and many color options. This is a complete WordPress theme for bloggers. It is Schema ready theme."
+msgstr "Sencillo y limpio tema para blogs preparado para accesibilidad. Viene con opciones del tema fáciles de usar basadas en personalizador, texto del copyright, plantillas de entradas, opciones de la barra lateral, opciones meta, opción de imagen destacada, opción de longitud del extracto, texto «Leer más», barra lateral fija, vista previa de las fuentes y muchas más. AeonBlog tiene colores verdes y azules suaves y muchas opciones de color. Este es un tema completo para WordPress dirigido a blogueros. Es un tema preparado para Schema."
+
+#. Theme Name of the theme
+#: inc/admin.php:40
+msgid "AeonBlog"
+msgstr "AeonBlog"
+
+#: inc/upgrade-pro.php:146
+msgid "Maybe later"
+msgstr "Quizás más tarde"
+
+#: inc/upgrade-pro.php:141
+msgid "Upgrade To Pro"
+msgstr "Actualizar a Pro"
+
+#. Translators: %1$s current user display name., %2$s Currently activated
+#. theme., %3$s Pro theme link., %4$s Coupon code.
+#: inc/upgrade-pro.php:125
+msgid "Howdy, %1$s! You've been using %2$s theme for a while now, and we hope you're happy with it. If you need more options and access to the premium features, you can %3$s. Also, you can use the coupon code %4$s to get 20 percent discount while making the purchase. Enjoy!"
+msgstr "¡Hola, %1$s! Has estado usando el tema %2$s durante un tiempo y esperamos que estés contento con él. Si necesitas más opciones y acceso a las características premium, puedes %3$s. También puedes usar el código de cupón %4$s para obtener un 20 por ciento de descuento al hacer la compra. ¡Disfruta!"
+
+#: inc/upgrade-pro.php:122
+msgid "upgrade to pro"
+msgstr "actualizar a pro"
+
+#: inc/admin.php:83
+msgid "AeonAccess is available in a premium and free version."
+msgstr "AeonAccess está disponible en versión premium y gratuita."
+
+#: inc/admin.php:82
+msgid "More themes"
+msgstr "Más temas"
+
+#: inc/admin.php:75
+msgid "If you like the theme, please leave a review"
+msgstr "Si te gusta el tema, por favor, deja una valoración"
+
+#: inc/admin.php:68
+msgid "If you would like your website to be featured on our blog, please email us at aeonwpofficial@gmail.com"
+msgstr "Si te gustaría que tu web sea destacada en nuestro blog, por favor, envíanos un correo electrónico a aeonwpofficial@gmail.com"
+
+#: inc/admin.php:67
+msgid "We would love to see what you have created!"
+msgstr "¡Nos encantaría ver lo que has creado!"
+
+#: inc/admin.php:65
+msgid "Have you built something awesome with AeonBlog?"
+msgstr "¿Has construido algo increíble con AeonBlog?"
+
+#: inc/admin.php:58
+msgid "You can download the demo content on our <a href=\"https://aeonwp.com/aeonblog/#demo\">website</a>."
+msgstr "Puedes descargar el contenido de demostración en nuestra <a href=\"https://aeonwp.com/aeonblog/#demo\">web</a>."
+
+#: inc/admin.php:57
+msgid "Where can I download demo content?"
+msgstr "¿Dónde puedo descargar el contenido de demostración?"
+
+#: inc/admin.php:56
+msgid "We also offer a <a href=\"https://aeonwp.com/services/\">customization service</a>. "
+msgstr "También ofrecemos un <a href=\"https://aeonwp.com/services/\">servicio de personalización</a>. "
+
+#: inc/admin.php:55
+msgid "You can learn more about the premium version of the theme here: <a href=\"https://aeonwp.com/aeonblog-plus/\">Aeonblog Plus</a>."
+msgstr "Puedes aprender más acerca de la versión premium del tema aquí: <a href=\"https://aeonwp.com/aeonblog-plus/\">Aeonblog Plus</a>."
+
+#: inc/admin.php:55
+msgid "The Plus version of the theme has additional features."
+msgstr "La versión Plus del tema tiene características adicionales."
+
+#: inc/admin.php:54
+msgid "Can you add more features?"
+msgstr "¿Puedes añadir más características?"
+
+#: inc/admin.php:53
+msgid "To show your biography, you need to add the content in your WordPress user profile."
+msgstr "Para mostrar tu biografía, debes añadir el contenido en tu perfil de usuario de WordPress."
+
+#: inc/admin.php:52
+msgid "You need to have an active sidebar, and enable the option in the customzer."
+msgstr "Debes tener una barra lateral activa y activar la opción en el personalizador."
+
+#: inc/admin.php:51
+msgid "How do I use the About section?"
+msgstr "¿Cómo uso la sección «Acerca de»?"
+
+#: inc/admin.php:50
+msgid "You are welcome to post your questions in the <a href=\"https://wordpress.org/support/theme/aeonblog/\">support forum</a>."
+msgstr "Te invitamos a publicar tus preguntas en el <a href=\"https://wordpress.org/support/theme/aeonblog/\">foro de soporte</a>."
+
+#: inc/admin.php:49
+msgid "Where can I get support for the theme?"
+msgstr "¿Dónde puedo obtener soporte para el tema?"
+
+#: inc/admin.php:48
+msgid "Frequently asked questions"
+msgstr "Preguntas frecuentes"
+
+#: inc/admin.php:42
+msgid "Thank you for chosing AeonBlog"
+msgstr "Gracias por elegir AeonBlog"
+
+#: inc/admin.php:16
+msgid "About AeonBlog"
+msgstr "Acerca de AeonBlog"
+
+#: inc/breadcrumb.php:308
+msgid "Browse:"
+msgstr "Explorar:"
+
+#: inc/class-customize.php:78 inc/admin.php:76
+msgid "Rate this theme"
+msgstr "Valora este tema"
+
+#: inc/class-customize.php:76
+msgid "Unlock more features with Plus"
+msgstr "Desbloquea más características con Plus"
+
+#: footer.php:25
+msgid "Social"
+msgstr "Social"
+
+#: inc/customizer-fonts.php:114
+msgid "Old Standard TT"
+msgstr "Old Standard TT"
+
+#: inc/customizer-fonts.php:72 inc/customizer-fonts.php:120
+msgid "Vollkorn"
+msgstr "Vollkorn"
+
+#: inc/customizer-fonts.php:71 inc/customizer-fonts.php:119
+msgid "Ubuntu"
+msgstr "Ubuntu"
+
+#: inc/customizer-fonts.php:70
+msgid "Tangerine"
+msgstr "Tangerine"
+
+#: inc/customizer-fonts.php:69
+msgid "Sorts Mill Goudy"
+msgstr "Sorts Mill Goudy"
+
+#: inc/customizer-fonts.php:68 inc/customizer-fonts.php:118
+msgid "Roboto Slab"
+msgstr "Roboto Slab"
+
+#: inc/customizer-fonts.php:67 inc/customizer-fonts.php:117
+msgid "Raleway"
+msgstr "Raleway"
+
+#: inc/customizer-fonts.php:66
+msgid "Quando"
+msgstr "Quando"
+
+#: inc/customizer-fonts.php:65
+msgid "Playfair Display"
+msgstr "Playfair Display"
+
+#: inc/customizer-fonts.php:64
+msgid "Pacifico"
+msgstr "Pacifico"
+
+#: inc/customizer-fonts.php:63 inc/customizer-fonts.php:116
+msgid "Oswald"
+msgstr "Oswald"
+
+#: inc/customizer-fonts.php:62 inc/customizer-fonts.php:115
+msgid "Open Sans"
+msgstr "Open Sans"
+
+#: inc/customizer-fonts.php:61 inc/customizer-fonts.php:113
+msgid "Noto Sans"
+msgstr "Noto Sans"
+
+#: inc/customizer-fonts.php:60 inc/customizer-fonts.php:112
+msgid "Noticia Text"
+msgstr "Noticia Text"
+
+#: inc/customizer-fonts.php:59 inc/customizer-fonts.php:111
+msgid "Muli"
+msgstr "Muli"
+
+#: inc/customizer-fonts.php:58 inc/customizer-fonts.php:110
+msgid "Montserrat"
+msgstr "Montserrat"
+
+#: inc/customizer-fonts.php:57 inc/customizer-fonts.php:109
+msgid "Merriweather"
+msgstr "Merriweather"
+
+#: inc/customizer-fonts.php:56 inc/customizer-fonts.php:108
+msgid "Lora"
+msgstr "Lora"
+
+#: inc/customizer-fonts.php:55
+msgid "Lobster Two"
+msgstr "Lobster Two"
+
+#: inc/customizer-fonts.php:54 inc/customizer-fonts.php:107
+msgid "Libre Baskerville"
+msgstr "Libre Baskerville"
+
+#: inc/customizer-fonts.php:53 inc/customizer-fonts.php:106
+msgid "Lato"
+msgstr "Lato"
+
+#: inc/customizer-fonts.php:52
+msgid "La Belle Aurore"
+msgstr "La Belle Aurore"
+
+#: inc/customizer-fonts.php:51 inc/customizer-fonts.php:105
+msgid "Karla"
+msgstr "Karla"
+
+#: inc/customizer-fonts.php:50 inc/customizer-fonts.php:104
+msgid "Josefin Sans"
+msgstr "Josefin Sans"
+
+#: inc/customizer-fonts.php:49 inc/customizer-fonts.php:103
+msgid "Hind"
+msgstr "Hind"
+
+#: inc/customizer-fonts.php:48
+msgid "Grand Hotel"
+msgstr "Grand Hotel"
+
+#: inc/customizer-fonts.php:47 inc/customizer-fonts.php:102
+msgid "Gentium Book Basic"
+msgstr "Gentium Book Basic"
+
+#: inc/customizer-fonts.php:46
+msgid "Fondamento"
+msgstr "Fondamento"
+
+#: inc/customizer-fonts.php:45 inc/customizer-fonts.php:101
+msgid "Exo 2"
+msgstr "Exo 2"
+
+#: inc/customizer-fonts.php:44
+msgid "Cinzel"
+msgstr "Cinzel"
+
+#: inc/customizer-fonts.php:43
+msgid "Cherry Swash"
+msgstr "Cherry Swash"
+
+#: inc/customizer-fonts.php:42
+msgid "Bree Serif"
+msgstr "Bree Serif"
+
+#: inc/customizer-fonts.php:41 inc/customizer-fonts.php:100
+msgid "Arimo"
+msgstr "Arimo"
+
+#: inc/customizer-fonts.php:40 inc/customizer-fonts.php:99
+msgid "Alegreya Sans SC"
+msgstr "Alegreya Sans SC"
+
+#: inc/customizer-fonts.php:39 inc/customizer-fonts.php:98
+msgid "Alegreya"
+msgstr "Alegreya"
+
+#: inc/custom-functions.php:112
+msgid "Go to top"
+msgstr "Ir arriba"
+
+#: header.php:58
+msgid "Header"
+msgstr "Cabecera"
+
+#: comments.php:78
+msgid "Be the first to reply"
+msgstr "Sé el primero en responder"
+
+#: comments.php:74
+msgid "Comments are closed."
+msgstr "Los comentarios están cerrados."
+
+#. translators: 1: comment count number, 2: title.
+#: comments.php:47
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s comentario en «%2$s»"
+msgstr[1] "%1$s comentarios en «%2$s»"
+
+#. translators: 1: title.
+#: comments.php:41
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr "Un comentario en «%1$s»"
+
+#. translators: 1: Theme name, 2: Theme author.
+#: footer.php:59
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s por %2$s."
+
+#. translators: %s: CMS name, i.e. WordPress.
+#: footer.php:52
+msgid "Proudly powered by %s"
+msgstr "Funciona gracias a %s"
+
+#: footer.php:49
+msgid "https://wordpress.org/"
+msgstr "https://es.wordpress.org/"
+
+#: inc/icon-functions.php:46
+msgid "Please define an SVG icon filename."
+msgstr "Por favor, define un nombre de archivo de icono SVG."
+
+#: inc/icon-functions.php:41
+msgid "Please define default parameters in the form of an array."
+msgstr "Por favor, define los parámetros por defecto en forma de array."
+
+#: inc/customizer.php:463
+msgid "Enable related posts below the post content."
+msgstr "Activar las entradas relacionadas debajo del contenido de la entrada."
+
+#: inc/customizer.php:442
+msgid "Select the pagination type."
+msgstr "Selecciona el tipo de paginación."
+
+#: inc/customizer.php:441
+msgid "Pagination Option"
+msgstr "Opciones de paginación"
+
+#: inc/customizer.php:439
+msgid "Numeric"
+msgstr "Numérico"
+
+#: inc/customizer.php:438
+msgid "Next and Previous"
+msgstr "Siguiente y anterior"
+
+#: inc/customizer.php:418
+msgid "Show/Hide breadcrumbs."
+msgstr "Ocultar o mostrar las migas de pan."
+
+#: inc/customizer.php:417
+msgid "Breadcrumb Option"
+msgstr "Opciones de las migas de pan"
+
+#: inc/customizer.php:398
+msgid "Extra Options"
+msgstr "Opciones adicionales"
+
+#: inc/customizer.php:386
+msgid "Enable/Disable go to top in the footer."
+msgstr "Activar o desactivar «Ir arriba» en el pie de página."
+
+#: inc/customizer.php:385
+msgid "Go To Top"
+msgstr "Ir arriba"
+
+#: inc/customizer.php:365
+msgid "Enter your own copyright text."
+msgstr "Introduce tu propio texto de copyright."
+
+#: inc/customizer.php:364
+msgid "Copyright Text"
+msgstr "Texto del copyright"
+
+#: inc/customizer.php:356 footer.php:44
+msgid "All Rights Reserved"
+msgstr "Todos los derechos reservados"
+
+#: inc/customizer.php:345
+msgid "Footer Options"
+msgstr "Opciones del pie de página"
+
+#: inc/customizer.php:330
+msgid "Increase/Decrease Letter Spacing."
+msgstr "Incrementa o disminuye el espacio entre letras."
+
+#: inc/customizer.php:327
+msgid "Letter Spacing"
+msgstr "Espacio entre letras"
+
+#: inc/customizer.php:306
+msgid "Increase/Decrease Line Height."
+msgstr "Incrementar/disminuir el alto de la línea."
+
+#: inc/customizer.php:303
+msgid "Line Height"
+msgstr "Alto de línea"
+
+#: inc/customizer.php:282
+msgid "Increase/Decrease the base font size."
+msgstr "Incrementa o disminuye el tamaño de fuente base."
+
+#: inc/customizer.php:279
+msgid "Font Size"
+msgstr "Tamaño de fuente"
+
+#: inc/customizer.php:261
+msgid "Typography Options"
+msgstr "Opciones tipográficas"
+
+#: inc/customizer.php:247
+msgid "Enter the length of the excerpt."
+msgstr "Introduce la longitud del extracto."
+
+#: inc/customizer.php:246
+msgid "Excerpt Length"
+msgstr "Longitud del extracto"
+
+#: inc/customizer.php:226
+msgid "Check to make the featured image larger."
+msgstr "Marcar para agrandar la imagen destacada."
+
+#: inc/customizer.php:225
+msgid "Large Image"
+msgstr "Imagen grande"
+
+#: inc/customizer.php:205
+msgid "Check to show the featured Image."
+msgstr "Marcar para mostrar la imagen destacada."
+
+#: inc/customizer.php:204
+msgid "Featured Image"
+msgstr "Imagen destacada"
+
+#: inc/customizer.php:184
+msgid "Check to show the date, category, tags etc on blog page."
+msgstr "Marcar para mostrar la fecha, la categoría, las etiquetas, etc., en la página del blog."
+
+#: inc/customizer.php:183
+msgid "Meta Options"
+msgstr "Opciones meta"
+
+#: inc/customizer.php:163
+msgid "Enter your custom continue reading text. The title will be included after this text."
+msgstr "Introduce tu texto personalizado de «Seguir leyendo». El título se incluirá después de este texto."
+
+#: inc/customizer.php:162
+msgid "Continue Reading Text"
+msgstr "Texto de «Seguir leyendo»"
+
+#: inc/customizer.php:142
+msgid "Enable Sticky Sidebar"
+msgstr "Activar la barra lateral fija"
+
+#: inc/customizer.php:141
+msgid "Sticky Sidebar"
+msgstr "Barra lateral fija"
+
+#: inc/customizer.php:115
+msgid "You can manage the individual sidebar for single post by using the post templates."
+msgstr "Puedes gestionar la barra lateral individual para las entradas individuales usando las plantillas de entradas."
+
+#: inc/customizer.php:114
+msgid "Sidebar Options"
+msgstr "Opciones de la barra lateral"
+
+#: inc/customizer.php:122
+msgid "No sidebar, content in the middle column"
+msgstr "Sin barra lateral, contenido en la columna central"
+
+#: inc/customizer.php:121
+msgid "No sidebar"
+msgstr "Sin barra lateral"
+
+#: inc/customizer.php:120
+msgid "Left sidebar"
+msgstr "Barra lateral izquierda"
+
+#: inc/customizer.php:119
+msgid "Right sidebar"
+msgstr "Barra lateral derecha"
+
+#: inc/customizer.php:96
+msgid "Blog Section Options"
+msgstr "Opciones de la sección del blog"
+
+#: inc/customizer.php:84
+msgid "Applied to buttons."
+msgstr "Aplicado a los botones."
+
+#: inc/customizer.php:83
+msgid "Button Color"
+msgstr "Color del botón"
+
+#: inc/customizer.php:64
+msgid "Applied to footer, pagination, continue reading, and categories."
+msgstr "Aplicado al pie de página, la paginación, «Seguir leyendo» y las categorías."
+
+#: inc/customizer.php:63
+msgid "Accent Color"
+msgstr "Color de énfasis"
+
+#: inc/customizer.php:45
+msgid "AeonBlog Theme Options"
+msgstr "Opciones del tema AeonBlog"
+
+#: inc/customizer-about.php:86
+msgid "Hide Gravatar"
+msgstr "Ocultar el gravatar"
+
+#: inc/customizer-about.php:85
+msgid "Square"
+msgstr "Cuadrado"
+
+#: inc/customizer-about.php:84
+msgid "Circle (Default)"
+msgstr "Circular (por defecto)"
+
+#: inc/customizer-about.php:81
+msgid "Select Gravatar style"
+msgstr "Selecciona el estilo de Gravatar"
+
+#: inc/customizer-about.php:63
+msgid "Select which user to feature in the About section"
+msgstr "Selecciona el usuario a destacar en la sección «Acerca de»"
+
+#: inc/customizer-about.php:40
+msgid "This section is displayed at the top of the sidebar on the homepage. It shows the users gravatar and Biographical Info. The content is generated from the users settings."
+msgstr "Esta sección se muestra en la parte superior de la barra lateral de la página de inicio. Muestra el gravatar y la información biográfica de los usuarios. El contenido se genera a partir de los ajustes de los usuarios."
+
+#: inc/customizer-about.php:39
+msgid "Check this box to enable the About section."
+msgstr "Marca esta opción para activar la sección «Acerca de»."
+
+#: inc/customizer-about.php:15
+msgid "About Section"
+msgstr "Sección «Acerca de»"
+
+#: inc/breadcrumb.php:862
+msgctxt "weekly archives date format"
+msgid "W"
+msgstr "W"
+
+#: inc/breadcrumb.php:834 inc/breadcrumb.php:1263
+msgctxt "daily archives date format"
+msgid "j"
+msgstr "j"
+
+#: inc/breadcrumb.php:833 inc/breadcrumb.php:889 inc/breadcrumb.php:1259
+msgctxt "monthly archives date format"
+msgid "F"
+msgstr "F"
+
+#: inc/breadcrumb.php:832 inc/breadcrumb.php:861 inc/breadcrumb.php:888
+#: inc/breadcrumb.php:915 inc/breadcrumb.php:1255
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: inc/breadcrumb.php:816
+msgctxt "hour archives time format"
+msgid "g a"
+msgstr "H"
+
+#: inc/breadcrumb.php:799
+msgctxt "minute archives time format"
+msgid "i"
+msgstr "i"
+
+#: inc/breadcrumb.php:782
+msgctxt "minute and hour archives time format"
+msgid "g:i a"
+msgstr "H:i"
+
+#. Translators: Weekly archive title. %s is the week date format.
+#: inc/breadcrumb.php:322
+msgid "Week %s"
+msgstr "Semana %s"
+
+#. Translators: Minute archive title. %s is the minute time format.
+#: inc/breadcrumb.php:320
+msgid "Minute %s"
+msgstr "Minuto %s"
+
+#. Translators: %s is the page number.
+#: inc/breadcrumb.php:318
+msgid "Comment Page %s"
+msgstr "Página %s de comentarios"
+
+#. Translators: %s is the page number.
+#: inc/breadcrumb.php:316
+msgid "Page %s"
+msgstr "Página %s"
+
+#. Translators: %s is the search query.
+#: inc/breadcrumb.php:314
+msgid "Search results for: %s"
+msgstr "Resultados de búsqueda de: %s"
+
+#: inc/breadcrumb.php:312
+msgid "Archives"
+msgstr "Archivos"
+
+#: inc/breadcrumb.php:311
+msgid "404 Not Found"
+msgstr "404 No encontrado"
+
+#: inc/breadcrumb.php:310
+msgid "Home"
+msgstr "Inicio"
+
+#: inc/breadcrumb.php:309
+msgctxt "breadcrumbs aria label"
+msgid "Breadcrumbs"
+msgstr "Migas de pan"
+
+#. translators: %s: post title
+#: inc/template-tags.php:89
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr "Deja un comentario<span class=\"screen-reader-text\"> en %s</span>"
+
+#. translators: 1: list of tags.
+#: inc/template-tags.php:79
+msgid "Tagged %1$s"
+msgstr "Etiquetada como %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:76
+msgctxt "list item separator"
+msgid ", "
+msgstr ", "
+
+#. translators: 1: list of categories.
+#: inc/template-tags.php:72
+msgid "Posted in %1$s"
+msgstr "Publicada en %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:69
+msgid ", "
+msgstr ", "
+
+#. translators: %s: post author.
+#: inc/template-tags.php:52
+msgctxt "post author"
+msgid "by %s"
+msgstr "por %s"
+
+#. translators: There is a space before the date. %s: post date.
+#: inc/template-tags.php:36
+msgctxt "post date"
+msgid " %s"
+msgstr " %s"
+
+#: inc/customizer-fonts.php:92
+msgid "Choose a font for the body text"
+msgstr "Elige una fuente para el texto del cuerpo"
+
+#: inc/customizer-fonts.php:38 inc/customizer-fonts.php:97
+msgid "Noto Serif"
+msgstr "Noto Serif"
+
+#: inc/customizer-fonts.php:33
+msgid "Choose a font for the Site title"
+msgstr "Elige una fuente para el título del sitio"
+
+#: inc/custom-functions.php:191 inc/customizer.php:462
+msgid "Related Posts"
+msgstr "Entradas relacionadas"
+
+#: inc/custom-functions.php:147 inc/custom-functions.php:156
+msgid "Next &raquo;"
+msgstr "Siguiente &raquo;"
+
+#: inc/custom-functions.php:146 inc/custom-functions.php:155
+msgid "&laquo; Prev"
+msgstr "&laquo; Anterior"
+
+#: inc/custom-functions.php:27
+msgid "About "
+msgstr "Acerca de "
+
+#. translators: %s: search query.
+#: search.php:29
+msgid "Search Results for: %s"
+msgstr "Resultados de búsqueda de: %s"
+
+#: template-parts/content-none.php:50
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Parece que no hemos podido encontrar lo que estás buscando. Quizá pueda ayudarte una búsqueda."
+
+#: template-parts/content-none.php:43
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Lo siento, pero no hay nada que coincida con tus términos de búsqueda. Por favor, inténtalo de nuevo con algunas palabras clave diferentes."
+
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content-none.php:30
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "¿Listo para publicar tu primera entrada? <a href=\"%1$s\">Empieza aquí</a>."
+
+#: template-parts/content-none.php:20
+msgid "Nothing Found"
+msgstr "No se ha encontrado nada"
+
+#: template-parts/content.php:16 inc/customizer.php:154
+msgid "Continue Reading"
+msgstr "Sigue leyendo"
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content-page.php:44 inc/template-tags.php:106
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr "Editar <span class=\"screen-reader-text\">%s</span>"
+
+#: template-parts/content-page.php:28 template-parts/content-single.php:71
+msgid "Pages:"
+msgstr "Páginas:"
+
+#: header.php:59
+msgid "Menu"
+msgstr "Menú"
+
+#: functions.php:200
+msgid "Skip to content"
+msgstr "Saltar al contenido"
+
+#: single.php:31
+msgid "&raquo;"
+msgstr "&raquo;"
+
+#: single.php:30
+msgid "&laquo;"
+msgstr "&laquo;"
+
+#: 404.php:28
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "Parece que no se ha encontrado nada en esta ubicación. ¿Quieres probar una búsqueda?"
+
+#: 404.php:25
+msgid "404: Not Found"
+msgstr "404: No Encontrado"
+
+#: functions.php:174
+msgid "Add widgets here."
+msgstr "Añade widgets aquí."
+
+#: functions.php:172
+msgid "Sidebar"
+msgstr "Barra lateral"
+
+#: functions.php:139
+msgid "XL"
+msgstr "XL"
+
+#: functions.php:138
+msgid "Larger"
+msgstr "Más grande"
+
+#: functions.php:133
+msgid "L"
+msgstr "L"
+
+#: functions.php:132
+msgid "Large"
+msgstr "Grande"
+
+#: functions.php:127
+msgid "M"
+msgstr "M"
+
+#: functions.php:126
+msgid "Medium"
+msgstr "Mediano"
+
+#: functions.php:121
+msgid "S"
+msgstr "P"
+
+#: functions.php:120
+msgid "Small"
+msgstr "Pequeño"
+
+#: functions.php:55
+msgid "Social Menu"
+msgstr "Menú social"
+
+#: functions.php:54
+msgid "Primary Menu"
+msgstr "Menú principal"
+
+#. Template Name of the theme
+msgid "Right Sidebar"
+msgstr "Barra lateral derecha"
+
+#. Template Name of the theme
+msgid "Full Width"
+msgstr "Ancho completo"
+
+#. Template Name of the theme
+msgid "Middle Column"
+msgstr "Columna central"
+
+#. Template Name of the theme
+msgid "Left Sidebar"
+msgstr "Barra lateral izquierda"
+
+#. Theme URI of the theme
+msgid "https://aeonwp.com/aeonblog/"
+msgstr "https://aeonwp.com/aeonblog/"
+
+#. Author URI of the theme
+msgid "https://aeonwp.com/"
+msgstr "https://aeonwp.com/"
+
+#. Author of the theme
+msgid "aeontheme"
+msgstr "aeontheme"
