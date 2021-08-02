@@ -43,7 +43,7 @@ if ( is_front_page() && is_home() ) :
 				<span class="screen-reader-text"><?php esc_html_e( 'Close drawer', 'material-design-google' ); ?></span>
 			</button>
 		</div>
-		<div class="site-tagline mdc-typography--subtitle1"><?php bloginfo( 'description' ); ?></div>
+		<!--<div class="site-tagline mdc-typography--subtitle1"><?php bloginfo( 'description' ); ?></div>-->
 	</div>
 	<?php
 else :
@@ -60,7 +60,8 @@ else :
 				<span class="screen-reader-text"><?php esc_html_e( 'Close drawer', 'material-design-google' ); ?></span>
 			</button>
 		</div>
-		<div class="site-tagline mdc-typography--subtitle1"><?php bloginfo( 'description' ); ?></div>
+		<!--<div class="site-tagline mdc-typography--subtitle1"><?php bloginfo( 'description' ); ?></div>-->
 	</div>
+<div class="site-tagline mdc-typography--subtitle1"><?php bloginfo( 'description' ); ?></div>
 	<?php
 endif;
