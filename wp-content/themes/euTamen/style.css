@@ -11,3 +11,32 @@ Text Domain:  euTamen
 */
 
 /* Write here your own personal stylesheet */
+.logged-in-as{display:none;}
+.logged-in-as, .wp-block-latest-comments__comment-author, .comment-author-avatar, .comment-content h3, .comment-meta.mdc-typography--body2, .reply, .comments-title-count{
+	display:none;
+}
+.wp-block-latest-comments__comment-meta{
+	background-color:#f27930;
+	width:175px;
+	color:white;
+	text-align:center;
+}
+.wp-block-latest-comments__comment-excerpt{
+	margin: 7px;
+	padding-left:11px;
+	padding-right:11px;
+	border: 2px solid #468dae;
+}
+.entry-content {margin-top:1em;}
+.entry-content .alignfull {margin-top:1em;}
+
+/*Para que o subtítulo este debaixo do titulo*/
+.top-app-bar .top-app-bar__title {margin-top:1em;}
+.top-app-bar .top-app-bar__title .site-tagline {margin-left:1em; color:rgb(218 240 250);}
+.tab-bar__wrap {margin-top:1em;}
+/*.site-tagline {margin-top:6em; margin-bottom:2em;}*/
+
+/*Para que o de reportar estea máis situado á dereita*/
+.cld-dislike-wrap {margin-left:30em;}
+.cld-like-wrap {background-color:#f27930;padding-left:1.5em;padding-right:1.5em;padding-top:.75em;padding-bottom:.75em;}
+/*.cld-like-dislike-wrap {margin-right:0em;}*/
