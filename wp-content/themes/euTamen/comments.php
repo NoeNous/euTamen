@@ -150,7 +150,7 @@ if ( has_action( 'set_comment_cookies', 'wp_set_comment_cookies' ) && get_option
 			</div>
 		</div>',
 		$consent,
-		esc_html__( 'Save my name, email, and website in this browser for the next time I comment.', 'material-design-google' )
+		esc_html__( 'Recordar o correo para próximas experiencias.', 'material-design-google' )
 	);
 }
 
@@ -191,7 +191,7 @@ if ( has_action( 'set_comment_cookies', 'wp_set_comment_cookies' ) && get_option
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'material-design-google' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Non máis experiencias.', 'material-design-google' ); ?></p>
 			<?php
 		endif;
 
