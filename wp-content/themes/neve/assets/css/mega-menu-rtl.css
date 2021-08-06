@@ -1,6 +1,8 @@
 /* Style mega-menu and its children on mobile */
-.nav-ul > .neve-mega-menu > .sub-menu {
+.header--row .neve-mega-menu > .sub-menu {
   cursor: default;
+  width: var(--container);
+  max-width: 100%;
 }
 
 .nav-ul > .neve-mega-menu .sub-menu .sub-menu {
@@ -14,7 +16,7 @@
 }
 
 .nav-ul > .neve-mega-menu .neve-mm-col .sub-menu {
-  border: none;
+  border: 0;
   padding-right: 0;
 }
 
@@ -132,11 +134,9 @@
 }
 
 @media (min-width: 960px) {
-  .header--row .nv-nav-wrap .primary-menu-ul > .neve-mega-menu {
-    position: static;
-  }
   .header--row .nv-nav-wrap .primary-menu-ul .neve-mega-menu > .sub-menu {
-    width: 950px;
+    right: 50%;
+    transform: translateX(50%);
     position: absolute;
     display: flex;
     padding: 20px;
@@ -151,6 +151,9 @@
     opacity: 1;
     visibility: visible;
     pointer-events: all;
+  }
+  .header--row .nv-nav-wrap .primary-menu-ul .neve-mega-menu {
+    position: unset;
   }
   .header--row .nv-nav-wrap .primary-menu-ul .neve-mega-menu li > > a, .header--row .nv-nav-wrap .primary-menu-ul .neve-mega-menu li > > span {
     padding: 7px 0;
@@ -175,13 +178,13 @@
   .header--row .nv-nav-wrap .primary-menu-ul .neve-mega-menu .neve-mm-col {
     padding: 0 10px;
     align-items: flex-start;
-    border: none;
+    border: 0;
   }
   .header--row .nv-nav-wrap .primary-menu-ul .neve-mega-menu .neve-mm-col:not(:last-child) {
     border-left: 1px solid currentColor !important;
   }
   .header--row .nv-nav-wrap .primary-menu-ul .neve-mega-menu .neve-mm-col > .sub-menu li:not(.neve-mm-divider) {
-    border: none;
+    border: 0;
   }
   .neve-mm-description {
     justify-content: center;
@@ -198,11 +201,5 @@
   .header-menu-sidebar-inner .desktop-right .neve-mm-heading > a, .header-menu-sidebar-inner .desktop-right .neve-mm-heading > span, .header-menu-sidebar-inner .desktop-right .neve-mm-description {
     text-align: left;
     justify-content: flex-end;
-  }
-}
-
-@media (min-width: 1200px) {
-  .header--row .nv-nav-wrap .primary-menu-ul .neve-mega-menu > .sub-menu {
-    width: 1170px;
   }
 }

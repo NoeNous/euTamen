@@ -28,4 +28,22 @@ if ( ! function_exists( 'suffice_child_enqueue_child_styles' ) ) {
 add_action( 'wp_enqueue_scripts', 'euTamen_enqueue_child_styles' );
 
 /*Write here your own functions */
+//facer email obligatorio; cando se deixa en branco que saia un erro
+   function require_comment_email($fields) {
+     
+    if ($fields['comment_author_email'] == '')
+    wp_die('Por favor, introduce un correo electrónico do IES San Clemente.');
+     
+    return $fields;
+    }
+    add_filter('preprocess_comment', 'require_comment_email');
+
+//poñerlle o patrón ao correo san clemente
+	/*function sanclemente_email($fields) {
+		
+		if ($fields['comment_author_email'] == '')
+		
+	}
+	add_filter('preprocess_comment', 'sanclemente_email');*/
+
 
