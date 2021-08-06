@@ -1,0 +1,91 @@
+# Translation of Plugins - Better Recent Comments - Stable (latest release) in Spanish (Spain)
+# This file is distributed under the same license as the Plugins - Better Recent Comments - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-06-18 09:24:52+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: es\n"
+"Project-Id-Version: Plugins - Better Recent Comments - Stable (latest release)\n"
+
+#: lib/Plugin/Admin/Admin_Links.php:52
+msgid "Settings"
+msgstr "Ajustes"
+
+#: lib/Plugin/Admin/Admin_Links.php:70
+msgid "View %s documentation"
+msgstr "Ver la documentación de %s"
+
+#: lib/Plugin/Admin/Admin_Links.php:71
+msgid "Docs"
+msgstr "Documentación"
+
+#. Author of the plugin
+msgid "Barn2 Plugins"
+msgstr "Barn2 Plugins"
+
+#: lib/Util.php:38
+msgid "Read more"
+msgstr "Leer más"
+
+#. Plugin URI of the plugin
+msgid "https://wordpress.org/plugins/better-recent-comments/"
+msgstr "https://wordpress.org/plugins/better-recent-comments/"
+
+#: src/Util.php:165
+msgid "No recent comments available."
+msgstr "No hay comentarios recientes disponibles."
+
+#. translators: comments widget: 1: comment author, 2: post link
+#: src/Util.php:35
+msgctxt "recent comment"
+msgid "%1$s on %2$s"
+msgstr "%1$s en %2$s"
+
+#: src/Widget.php:25
+msgid "An improved widget to show your site&#8217;s most recent comments."
+msgstr "Un widget de mejora para mostrar los comentarios más recientes de su sitio."
+
+#: src/Widget.php:131
+msgid "Number of comments to show:"
+msgstr "Número de comentarios para mostrar:"
+
+#: src/Widget.php:136
+msgid "Show avatar"
+msgstr "Mostrar avatar"
+
+#: src/Widget.php:139
+msgid "Show date"
+msgstr "Mostrar fecha"
+
+#: src/Widget.php:142
+msgid "Show comment"
+msgstr "Mostrar comentario"
+
+#: src/Widget.php:64
+msgid "Recent Comments"
+msgstr "Últimos comentarios"
+
+#: src/Widget.php:126
+msgid "Title:"
+msgstr "Titulo:"
+
+#. Description of the plugin
+msgid "This plugin provides an improved widget and shortcode to show your most recent comments. If using WPML, comments are limited to posts in the current language."
+msgstr "Este plugin proporciona un widget y un shortcode mejorados para mostrar los comentarios más recientes. Si se usa WPML, los comentarios están limitados a las entradas en el idioma actual."
+
+#: src/Widget.php:145
+msgid "Show post link"
+msgstr "Mostrar el enlace a la entrada"
+
+#. Plugin Name of the plugin
+#: src/Widget.php:23
+msgid "Better Recent Comments"
+msgstr "Better Recent Comments"
+
+#. Author URI of the plugin
+msgid "https://barn2.com"
+msgstr "https://barn2.com"

@@ -78,12 +78,12 @@ $args = [
 		'email'  => sprintf(
 			'<div class="mdc-layout-grid__cell--span-12">
 				<div class="mdc-text-field %s comment-field">
-					<input id="email" name="email" type="email" class="mdc-text-field__input" aria-labelledby="email-label" value="%s" %s />
+					<input id="email" name="email" type="email" class="mdc-text-field__input" aria-labelledby="email-label" value="%s" %s required pattern=".*@iessanclemente.net"/>
 					%s
 				</div>
 			</div>',
 			$classes,
-			esc_attr( $commenter['comment_author_email'] ),
+			esc_attr( $commenter['comment_name_email'] ),
 			$html_req,
 			sprintf(
 				'outlined' === $style ? $outlined_label : $filled_label,
@@ -109,7 +109,7 @@ $args = [
 	],
 	'comment_field'      => sprintf(
 		'<div class="mdc-text-field mdc-text-field--textarea %s comment-field">
-			<textarea id="comment" name="comment" class="mdc-text-field__input" aria-labelledby="comment-label" required></textarea>
+			<textarea id="comment" name="comment" class="mdc-text-field__input" aria-labelledby="comment-label" required rows="5"></textarea>
 			%s
 		</div>',
 		$classes,
