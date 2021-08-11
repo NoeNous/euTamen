@@ -46,10 +46,11 @@
          */
         do_action('cld_dislike_template', $cld_settings);
         ?>
-    </a>
+    
 	<!-- Comento a seguinte liña para qe non aparezca o numero de xente que lle dou a like
 	Ata onde entendo eu, a variable $dislike_count sefue sumandose. Polo que se pode poñer o contador de que no 10 reporte ao administrador--»
    <!-- <span class="cld-dislike-count-wrap cld-count-wrap"><?php echo $dislike_count; ?></span>-->
 		<!--Neste caso tense que ver tanto a palabra ánimo como o contador-->
 		<?php echo "Reportar"; ?>
+		</a>
 </div>

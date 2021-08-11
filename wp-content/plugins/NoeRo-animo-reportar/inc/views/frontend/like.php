@@ -48,11 +48,12 @@
          */
         do_action('cld_like_template', $cld_settings);
         ?>
-    </a>
+    
 	
     <span class="cld-like-count-wrap cld-count-wrap"><?php echo $like_count; ?>
     </span>
 	
 		<!--Neste caso tense que ver tanto a palabra ánimo como o contador-->
 		<?php echo "Ánimo!"; ?>
+		</a>
 </div>
