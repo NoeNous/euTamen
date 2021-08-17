@@ -916,3 +916,4 @@ object {
 .cld-like-wrap {background-color:#f27930;padding-left:1.5em;padding-right:1.5em;padding-top:.75em;padding-bottom:.75em;}
 /*.cld-like-dislike-wrap {margin-right:0em;}*/
 /*.cld-like-wrap:hover{background-color:#59c288;}*/
+ol.has-excerpts.wp-block-latest-comments{margin:auto;}
