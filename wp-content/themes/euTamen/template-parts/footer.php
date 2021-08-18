@@ -20,8 +20,14 @@ $footer_text = get_theme_mod( 'footer_text', '' );
 			<div class="site-footer__copyright mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
 				<small class="site-footer__text mdc-typography--subtitle2"><?php echo esc_html( $footer_text ); ?></small>
 			</div>
-			<div>
+			<div class="politicas">
 				<!--Para os enlaces-->
+				<p>
+					<a href="http://eutamen.gal/politica-de-cookies/">Política de Cookies</a>
+				</p>
+				<p>
+					<a href="http://eutamen.gal/aviso-legal-e-politica-de-privacidade/">Aviso legal</a>
+				</p>
 			</div>
 
 			
