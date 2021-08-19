@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Better Recent Comments\n"
+"POT-Creation-Date: 2021-06-17 18:43+0100\n"
+"PO-Revision-Date: 2021-06-17 18:43+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.4.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: better-recent-comments.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: lib/Plugin/Admin/Admin_Links.php:52
+msgid "Settings"
+msgstr ""
+
+#: lib/Plugin/Admin/Admin_Links.php:70
+#, php-format
+msgid "View %s documentation"
+msgstr ""
+
+#: lib/Plugin/Admin/Admin_Links.php:71
+msgid "Docs"
+msgstr ""
+
+#: lib/Util.php:38
+msgid "Read more"
+msgstr ""
+
+#: src/Util.php:35
+#, php-format
+msgctxt "recent comment"
+msgid "%1$s on %2$s"
+msgstr "%1$s en %2$s"
+
+#: src/Util.php:165
+msgid "No recent comments available."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#: src/Widget.php:23
+msgid "Better Recent Comments"
+msgstr ""
+
+#: src/Widget.php:25
+msgid "An improved widget to show your site&#8217;s most recent comments."
+msgstr ""
+"Un widget de mejora para mostrar los comentarios más recientes de su sitio."
+
+#: src/Widget.php:64
+msgid "Recent Comments"
+msgstr "Comentarios Recientes"
+
+#: src/Widget.php:126
+msgid "Title:"
+msgstr "Título:"
+
+#: src/Widget.php:131
+msgid "Number of comments to show:"
+msgstr "Número de comentarios para mostrar:"
+
+#: src/Widget.php:136
+msgid "Show avatar"
+msgstr "Mostrar avatar"
+
+#: src/Widget.php:139
+msgid "Show date"
+msgstr "Mostrar fecha"
+
+#: src/Widget.php:142
+msgid "Show comment"
+msgstr "Mostrar comentario"
+
+#: src/Widget.php:145
+msgid "Show post link"
+msgstr "Mostrar enlace al entrada"
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/better-recent-comments/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"This plugin provides an improved widget and shortcode to show your most "
+"recent comments. If using WPML, comments are limited to posts in the current "
+"language."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Barn2 Plugins"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://barn2.com"
+msgstr ""
+
+#~ msgid ""
+#~ "An improved widget to show your site&#8217;s most recent comments, "
+#~ "limited to the current language."
+#~ msgstr ""
+#~ "Una mejor widget para mostrar los comentarios más recientes de su sitio, "
+#~ "limitados al lenguaje actual."
