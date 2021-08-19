@@ -32,7 +32,8 @@
             case 'custom':
                 if ($cld_settings['design_settings']['dislike_icon'] != '') {
                     ?>
-                    <img src="<?php echo esc_url($cld_settings['design_settings']['dislike_icon']); ?>" alt="<?php echo esc_attr($dislike_title); ?>"/>
+                    <img id="ruido" src="<?php echo esc_url($cld_settings['design_settings']['dislike_icon']); ?>" alt="<?php echo esc_attr($dislike_title); ?>"/>
+					<img id="ruido1" src="http://eutamen.gal/wp-content/uploads/2021/08/ruido1.png" alt="Reportar"/>
                     <?php
                 }
                 break;

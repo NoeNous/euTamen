@@ -913,6 +913,13 @@ object {
 
 /*Para que o de reportar estea máis situado á dereita*/
 .cld-dislike-wrap {margin-left:30em;}
+#ruido1 {display:none;}
+.cld-dislike-wrap:hover #ruido{display:none;}
+.cld-dislike-wrap:hover #ruido1{display: inline}
+.cld-dislike-wrap:hover{color:red;}
+.cld-dislike-wrap:active #ruido{display:none;}
+.cld-dislike-wrap:active #ruido1{display: inline}
+.cld-dislike-wrap:active{color:red;}
 .cld-like-wrap {background-color:#f27930;padding-left:1.5em;padding-right:1.5em;padding-top:.75em;padding-bottom:.75em;}
 /*.cld-like-dislike-wrap {margin-right:0em;}*/
 /*.cld-like-wrap:hover{background-color:#59c288;}*/
