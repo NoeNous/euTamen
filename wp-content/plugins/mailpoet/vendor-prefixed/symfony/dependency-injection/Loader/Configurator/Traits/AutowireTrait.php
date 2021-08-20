@@ -1,2 +1,0 @@
-<?php
- namespace MailPoetVendor\Symfony\Component\DependencyInjection\Loader\Configurator\Traits; if (!defined('ABSPATH')) exit; trait AutowireTrait { public final function autowire(bool $autowired = \true) : self { $this->definition->setAutowired($autowired); return $this; } } 

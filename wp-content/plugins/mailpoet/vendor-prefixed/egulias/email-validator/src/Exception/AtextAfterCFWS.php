@@ -1,2 +1,0 @@
-<?php
- namespace MailPoetVendor\Egulias\EmailValidator\Exception; if (!defined('ABSPATH')) exit; class AtextAfterCFWS extends InvalidEmail { const CODE = 133; const REASON = "ATEXT found after CFWS"; } 

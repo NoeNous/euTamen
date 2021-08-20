@@ -1,2 +1,0 @@
-<?php
- namespace MailPoetVendor\Symfony\Component\DependencyInjection\Loader\Configurator\Traits; if (!defined('ABSPATH')) exit; trait AbstractTrait { public final function abstract(bool $abstract = \true) : self { $this->definition->setAbstract($abstract); return $this; } } 
