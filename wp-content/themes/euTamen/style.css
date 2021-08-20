@@ -912,7 +912,7 @@ object {
 /*.site-tagline {margin-top:6em; margin-bottom:2em;}*/
 
 /*Para que o de reportar estea máis situado á dereita*/
-.cld-dislike-wrap {margin-left:30em;}
+.cld-dislike-wrap {margin-left:30em; background-color:black;}
 #ruido1 {display:none;}
 .cld-dislike-wrap:hover #ruido{display:none;}
 .cld-dislike-wrap:hover #ruido1{display: inline}
