@@ -1,2 +1,0 @@
-<?php
- namespace MailPoetVendor\Symfony\Component\DependencyInjection\Loader\Configurator\Traits; if (!defined('ABSPATH')) exit; trait ConfiguratorTrait { public final function configurator($configurator) : self { $this->definition->setConfigurator(static::processValue($configurator, \true)); return $this; } } 

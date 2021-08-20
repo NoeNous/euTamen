@@ -1,2 +1,0 @@
-<?php
- namespace MailPoetVendor\Symfony\Component\DependencyInjection\Extension; if (!defined('ABSPATH')) exit; use MailPoetVendor\Symfony\Component\DependencyInjection\ContainerBuilder; interface PrependExtensionInterface { public function prepend(ContainerBuilder $container); } 
