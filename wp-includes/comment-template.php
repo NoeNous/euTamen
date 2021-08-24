@@ -2468,7 +2468,7 @@ function comment_form( $args = array(), $post_id = null ) {
 			'<p class="comment-notes">%s%s</p>',
 			sprintf(
 				'<span id="email-notes">%s</span>',
-				__( 'Your email address will not be published.' )
+				__( 'A dirección de correo electrónico pertencente ao IES San Clemente non será publicada.' )
 			),
 			( $req ? $required_text : '' )
 		),
