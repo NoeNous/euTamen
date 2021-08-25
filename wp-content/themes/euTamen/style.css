@@ -921,3 +921,6 @@ object {
 /*.cld-like-dislike-wrap {margin-right:0em;}*/
 /*.cld-like-wrap:hover{background-color:#59c288;}*/
 ol.has-excerpts.wp-block-latest-comments{margin:auto;}
+/*Media query para que non se visualice o menu cando se encolle a pantalla*/
+@media (max-width: 800px) {.tab-bar__wrap{display:none;}.top-app-bar__header{height:6em;}}
+@media (max-width:500px) {.site-tagline {display:none;}}
