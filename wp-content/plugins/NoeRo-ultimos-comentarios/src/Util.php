@@ -20,7 +20,7 @@ class Util {
 			'avatar_size' => 50,
 			'post_status' => 'publish',
 			'post_type'   => 'any',
-			'excerpts'    => true
+			'excerpts'    => false
 		];
 	}
 
