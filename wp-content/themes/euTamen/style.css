@@ -922,5 +922,9 @@ object {
 /*.cld-like-wrap:hover{background-color:#59c288;}*/
 ol.has-excerpts.wp-block-latest-comments{margin:auto;}
 /*Media query para que non se visualice o menu cando se encolle a pantalla*/
-@media (max-width: 800px) {.tab-bar__wrap{display:none;}.top-app-bar__header{height:6em;}}
-@media (max-width:500px) {.site-tagline {display:none;}}
+@media (max-width:768px) {.tab-bar__wrap{display:none;}.top-app-bar__header{height:6em;}}
+@media (max-width:480px) {.site-tagline {display:none;}}
+/*Media query para que se visualice mellor o copyright de pe de paxina*/
+@media (max-width:840px) {.site-footer__copyright {width:600px;}}
+/*Media query para que con pantallas pequenas o icono de accesibilidade non se poña sobre o menu*/
+@media (max-width:768px) {.pojo-a11y-toolbar-toggle {top:4em;}}
