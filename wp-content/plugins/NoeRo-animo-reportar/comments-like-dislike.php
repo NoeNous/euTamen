@@ -56,6 +56,7 @@ if (!class_exists('CLD_Comments_like_dislike')) {
         }
 
     }
+	
 
     $cld_object = new CLD_Comments_like_dislike();
 }
