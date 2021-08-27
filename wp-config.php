@@ -79,6 +79,9 @@ $table_prefix = 'wp_';
  */
 define( 'WP_DEBUG', false );
 
+/**Para o Jetpack, que funcione en local*/
+define( 'JETPACK_DEV_DEBUG', true );
+
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
@@ -93,3 +96,4 @@ require_once ABSPATH . 'wp-settings.php';
 define('FTP_HOST', 'localhost');
 define('FTP_USER', 'daemon');
 define('FTP_PASS', 'xampp');
+

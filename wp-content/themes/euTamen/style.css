@@ -890,18 +890,6 @@ object {
 .logged-in-as, .wp-block-latest-comments__comment-author, .comment-author-avatar, .comment-content h3, .comment-meta.mdc-typography--body2, .reply, .comments-title-count{
 	display:none;
 }
-.wp-block-latest-comments__comment-meta{
-	background-color:#f27930;
-	width:175px;
-	color:white;
-	text-align:center;
-}
-.wp-block-latest-comments__comment-excerpt{
-	margin: 7px;
-	padding-left:11px;
-	padding-right:11px;
-	border: 2px solid #468dae;
-}
 .entry-content {margin-top:1em;}
 .entry-content .alignfull {margin-top:1em;}
 
@@ -922,10 +910,18 @@ object {
 .cld-dislike-wrap:hover #ruido{display:none;}
 .cld-dislike-wrap:hover #ruido1{display: inline;}
 .cld-dislike-wrap:hover{color:red;}
-
+.cld-like-wrap {
+	background-color:#c25513; 
+	color:white ; 
+	padding-left:1.25em;
+	padding-right:1.25em;
+	padding-top:.75em;
+	padding-bottom:.75em;
+	border-radius: 1.5em;}
 /*.cld-like-dislike-wrap {margin-right:0em;}*/
-/*.cld-like-wrap:hover{background-color:#59c288;}*/
+.cld-like-wrap:hover{background-color:#db6e2c;}
 ol.has-excerpts.wp-block-latest-comments{margin:auto;}
+
 /*Media query para que non se visualice o menu cando se encolle a pantalla*/
 @media (max-width:768px) {.tab-bar__wrap{display:none;}.top-app-bar__header{height:6em;}}
 @media (max-width:480px) {.site-tagline {display:none;}}
@@ -933,6 +929,7 @@ ol.has-excerpts.wp-block-latest-comments{margin:auto;}
 @media (max-width:840px) {.site-footer__copyright {width:600px;}}
 /*Media query para que con pantallas pequenas o icono de accesibilidade non se poña sobre o menu*/
 @media (max-width:768px) {.pojo-a11y-toolbar-toggle {top:4em;}}
+
 /*Formato de últimos comentarios*/
 .comment-post{
 	background-color:#c25513;
@@ -951,7 +948,11 @@ ol.has-excerpts.wp-block-latest-comments{margin:auto;}
 	padding-right:0.9em;
 	border: 2px solid #468dae;
 	background-color: rgba(70, 141, 174, 0.2);
+<<<<<<< HEAD
 }
 
 /*Para que todos os comentarios, sexan da lonxitude que sexan, ocupen o 100% da páxina*/
 .comment-content {width:100%;}
+=======
+}
+>>>>>>> 4717cc09a84488f6caa90b45acc115b45c6e5341
