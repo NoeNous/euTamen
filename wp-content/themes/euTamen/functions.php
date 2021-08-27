@@ -38,12 +38,14 @@ add_action( 'wp_enqueue_scripts', 'euTamen_enqueue_child_styles' );
     }
     add_filter('preprocess_comment', 'require_comment_email');
 
-//poñerlle o patrón ao correo san clemente
-	/*function sanclemente_email($fields) {
-		
-		if ($fields['comment_author_email'] == '')
-		
-	}
-	add_filter('preprocess_comment', 'sanclemente_email');*/
-
+//que envíe un email cando un comentario ten dous reportes
+/**function reportar_email($fields) {
+			if ($fields['dislike_count'] == 2){
+				$cuerpo ="El comentario "+$comment_id+" ha sido reportado un mínimo de "+$dislike_count+" veces:\r\n ";
+			
+				mail("noelia.acuna@macrotest.es, rosa.castineiras@macrotest.es","Comentario reportardo en Eu tamén!",$cuerpo); 
+			}
+	do_action('reportar_email');
+}
+add_action('cld_after_ajax_process','reportar_email');*/
 

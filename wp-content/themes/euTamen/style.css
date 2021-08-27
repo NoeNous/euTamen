@@ -890,18 +890,6 @@ object {
 .logged-in-as, .wp-block-latest-comments__comment-author, .comment-author-avatar, .comment-content h3, .comment-meta.mdc-typography--body2, .reply, .comments-title-count{
 	display:none;
 }
-.wp-block-latest-comments__comment-meta{
-	background-color:#f27930;
-	width:175px;
-	color:white;
-	text-align:center;
-}
-.wp-block-latest-comments__comment-excerpt{
-	margin: 7px;
-	padding-left:11px;
-	padding-right:11px;
-	border: 2px solid #468dae;
-}
 .entry-content {margin-top:1em;}
 .entry-content .alignfull {margin-top:1em;}
 
@@ -909,13 +897,18 @@ object {
 .top-app-bar .top-app-bar__title {margin-top:1em;}
 .top-app-bar .top-app-bar__title .site-tagline {margin-left:1em; color:rgb(218 240 250);}
 .tab-bar__wrap {margin-top:1em;}
-/*.site-tagline {margin-top:6em; margin-bottom:2em;}*/
 
 /*Para que o de reportar estea máis situado á dereita*/
-.cld-dislike-wrap {margin-left:30em;}
+.cld-like-dislike-wrap {display:block;}
+.cld-like-wrap {display:inline-block;margin-left:1em;background-color:#c25513;padding-left:1.5em;padding-right:1.5em;padding-top:.75em;padding-bottom:.75em;color:whitesmoke}
+.cld-dislike-wrap {display:inline-block;margin-right:1em;margin-left:60%;}
+/*media query para o botón de reportar, que sea responsive*/
+@media (max-width:768px) {.cld-dislike-wrap {margin-left:40%;}}
+@media (max-width:480px) {.cld-dislike-wrap {margin-left:1em;}}
+
 #ruido1 {display:none;}
 .cld-dislike-wrap:hover #ruido{display:none;}
-.cld-dislike-wrap:hover #ruido1{display: inline}
+.cld-dislike-wrap:hover #ruido1{display: inline;}
 .cld-dislike-wrap:hover{color:red;}
 .cld-like-wrap {
 	background-color:#c25513; 
@@ -936,3 +929,23 @@ ol.has-excerpts.wp-block-latest-comments{margin:auto;}
 @media (max-width:840px) {.site-footer__copyright {width:600px;}}
 /*Media query para que con pantallas pequenas o icono de accesibilidade non se poña sobre o menu*/
 @media (max-width:768px) {.pojo-a11y-toolbar-toggle {top:4em;}}
+
+/*Formato de últimos comentarios*/
+.comment-post{
+	background-color:#c25513;
+	text-align:center;
+	width:13em;
+	color:white;
+	padding-right:1em;
+}
+.comment-excerpt{
+	display:block;
+	margin: 0.5em;
+	margin-bottom: 2em;
+	padding-top: 1em;
+	padding-bottom:1em;
+	padding-left:1.2em;
+	padding-right:0.9em;
+	border: 2px solid #468dae;
+	background-color: rgba(70, 141, 174, 0.2);
+}
