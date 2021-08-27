@@ -949,3 +949,13 @@ ol.has-excerpts.wp-block-latest-comments{margin:auto;}
 	border: 2px solid #468dae;
 	background-color: rgba(70, 141, 174, 0.2);
 }
+
+
+@media (min-width:480px){
+	#colophon{height:8em;}
+	.politicas, .site-footer__copyright{position:relative; top:1.2em;}
+}
+@media (max-width:630px){
+	h1 img{position:relative; bottom:1em; left:-0.3em;}
+	h1 {position:relative; left:0.5em;}
+}

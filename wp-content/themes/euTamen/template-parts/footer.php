@@ -17,7 +17,7 @@ $footer_text = get_theme_mod( 'footer_text', '' );
 		class="mdc-layout-grid site-footer__inner"
 	>
 		<div class="mdc-layout-grid__inner">
-			<div class="site-footer__copyright mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
+			<div class="site-footer__copyright mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
 				<p class="site-footer__text mdc-typography--subtitle2 firmaCopyright"><?php echo esc_html( $footer_text ); ?></p>
 			</div>
 			<div class="politicas">
