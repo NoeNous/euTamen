@@ -913,7 +913,7 @@ object {
 /*Para que o de reportar estea máis situado á dereita*/
 .cld-like-dislike-wrap {display:block;}
 .cld-like-wrap {display:inline-block;margin-left:1em;background-color:#c25513;padding-left:1.5em;padding-right:1.5em;padding-top:.75em;padding-bottom:.75em;color:whitesmoke}
-.cld-dislike-wrap {display:inline-block;margin-right:1em;margin-left:60%;}
+.cld-dislike-wrap {display:inline-block;margin-right:1em;margin-left:50%;}
 /*media query para o botón de reportar, que sea responsive*/
 @media (max-width:768px) {.cld-dislike-wrap {margin-left:40%;}}
 @media (max-width:480px) {.cld-dislike-wrap {margin-left:1em;}}
@@ -953,3 +953,5 @@ ol.has-excerpts.wp-block-latest-comments{margin:auto;}
 	background-color: rgba(70, 141, 174, 0.2);
 }
 
+/*Para que todos os comentarios, sexan da lonxitude que sexan, ocupen o 100% da páxina*/
+.comment-content {width:100%;}
