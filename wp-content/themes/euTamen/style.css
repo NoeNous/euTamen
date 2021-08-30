@@ -959,3 +959,8 @@ ol.has-excerpts.wp-block-latest-comments{margin:auto;}
 	h1 img{position:relative; bottom:1em; left:-0.3em;}
 	h1 {position:relative; left:0.5em;}
 }
+
+/*Para quitar a imaxe do menú lateral*/
+aside .logo, aside .search-form, aside .site-tagline.mdc-typography--subtitle1{display:none;}
+/*Para que a pestana de accesibilidade estea nunha mellor posicion*/
+/*@media (min-width:768px) {.pojo-a11y-toolbar-toggle {top:1em;}}*/

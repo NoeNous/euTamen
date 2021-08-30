@@ -19,6 +19,7 @@ $footer_text = get_theme_mod( 'footer_text', '' );
 		<div class="mdc-layout-grid__inner">
 			<div class="site-footer__copyright mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
 				<p class="site-footer__text mdc-typography--subtitle2 firmaCopyright"><?php echo esc_html( $footer_text ); ?></p>
+				<p class="site-footer__text mdc-typography--subtitle2 firmaCopyright">1º Premio no Concurso I de Proxectos Innovadores - Modalidade Igualdade. IES San Clemente, 2021.</p>
 			</div>
 			<div class="politicas">
 				<!--Para os enlaces-->
