@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Wordfence Security &#8211; Firewall &amp; Malware Scan - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-08-17 11:34:59+0000\n"
+"PO-Revision-Date: 2021-09-13 10:19:57+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -9531,7 +9531,7 @@ msgstr "Actualizaciones necesarias (plugin, tema o núcleo)"
 
 #: lib/menu_options.php:81 views/dashboard/options-group-general.php:132
 msgid "Delete Wordfence tables and data on deactivation"
-msgstr "Eliminar tablas y datos de Wordfence sobre la desactivación"
+msgstr "Eliminar tablas y datos de Wordfence al desactivar"
 
 #: lib/menu_options.php:80 views/dashboard/options-group-general.php:120
 msgid "Bypass the LiteSpeed \"noabort\" check"
@@ -10007,7 +10007,7 @@ msgstr "Un usuario no administrador con nombre de usuario \"%s\" accedió en tu 
 
 #: lib/wfAlerts.php:213
 msgid "User login"
-msgstr "Nombre de usuario"
+msgstr "Acceso de usuario"
 
 #. translators: WP username.
 #: lib/wfAlerts.php:179

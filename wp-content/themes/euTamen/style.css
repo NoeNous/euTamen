@@ -906,18 +906,32 @@ object {
 @media (max-width:768px) {.cld-dislike-wrap {margin-left:40%;}}
 @media (max-width:480px) {.cld-dislike-wrap {margin-left:1em;}}
 
+/*Tuneado dos botóns de ánimo e de reportar*/
 #ruido1 {display:none;}
 .cld-dislike-wrap:hover #ruido{display:none;}
 .cld-dislike-wrap:hover #ruido1{display: inline;}
 .cld-dislike-wrap:hover{color:red;}
 .cld-like-wrap {
+	font-family: inherit;
 	background-color:#c25513; 
 	color:white ; 
 	padding-left:1.25em;
 	padding-right:1.25em;
 	padding-top:.75em;
 	padding-bottom:.75em;
-	border-radius: 1.5em;}
+	border-radius: 1.5em;
+	border:none;}
+.cld-dislike-wrap {
+	font-family: inherit;
+	background-color:transparent; 
+	color:inherit; 
+	padding-left:1.25em;
+	padding-right:1.25em;
+	padding-top:.75em;
+	padding-bottom:.75em;
+	border-radius: 1.5em;
+	border:none;
+}
 /*.cld-like-dislike-wrap {margin-right:0em;}*/
 .cld-like-wrap:hover{background-color:#db6e2c;}
 ol.has-excerpts.wp-block-latest-comments{margin:auto;}
@@ -941,13 +955,18 @@ ol.has-excerpts.wp-block-latest-comments{margin:auto;}
 .comment-excerpt{
 	display:block;
 	margin: 0.5em;
-	margin-bottom: 2em;
+	margin-bottom: 1em;
 	padding-top: 1em;
 	padding-bottom:1em;
 	padding-left:1.2em;
 	padding-right:0.9em;
 	border: 2px solid #468dae;
 	background-color: rgba(70, 141, 174, 0.2);
+	width:auto-flow;
+}
+
+.comment-wrap {
+	margin-top:2em;
 }
 
 
@@ -955,6 +974,7 @@ ol.has-excerpts.wp-block-latest-comments{margin:auto;}
 	#colophon{height:8em;}
 	.politicas, .site-footer__copyright{position:relative; top:1.2em;}
 }
+
 @media (max-width:630px){
 	h1 img{position:relative; bottom:1em; left:-0.3em;}
 	h1 {position:relative; left:0.5em;}
@@ -964,3 +984,5 @@ ol.has-excerpts.wp-block-latest-comments{margin:auto;}
 aside .logo, aside .search-form, aside .site-tagline.mdc-typography--subtitle1{display:none;}
 /*Para que a pestana de accesibilidade estea nunha mellor posicion*/
 /*@media (min-width:768px) {.pojo-a11y-toolbar-toggle {top:1em;}}*/
+/*Quitar unha lúa da actualización do tema*/
+.mdc-top-app-bar__section--align-end {display:none;}

@@ -1,1 +1,2702 @@
-!function(r){var t={};function e(n){if(t[n])return t[n].exports;var a=t[n]={i:n,l:!1,exports:{}};return r[n].call(a.exports,a,a.exports,e),a.l=!0,a.exports}e.m=r,e.c=t,e.d=function(r,t,n){e.o(r,t)||Object.defineProperty(r,t,{enumerable:!0,get:n})},e.r=function(r){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(r,"__esModule",{value:!0})},e.t=function(r,t){if(1&t&&(r=e(r)),8&t)return r;if(4&t&&"object"==typeof r&&r&&r.__esModule)return r;var n=Object.create(null);if(e.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:r}),2&t&&"string"!=typeof r)for(var a in r)e.d(n,a,function(t){return r[t]}.bind(null,a));return n},e.n=function(r){var t=r&&r.__esModule?function(){return r.default}:function(){return r};return e.d(t,"a",t),t},e.o=function(r,t){return Object.prototype.hasOwnProperty.call(r,t)},e.p="",e(e.s=40)}([,function(r,t){r.exports=window.wp.i18n},,,,,function(r,t,e){r.exports=function(){"use strict";for(var r=function(r,t,e){return void 0===t&&(t=0),void 0===e&&(e=1),r<t?t:r>e?e:r},t={},e=0,n=["Boolean","Number","String","Function","Array","Date","RegExp","Undefined","Null"];e<n.length;e+=1){var a=n[e];t["[object "+a+"]"]=a.toLowerCase()}var o=function(r){return t[Object.prototype.toString.call(r)]||"object"},i=Math.PI,f={clip_rgb:function(t){t._clipped=!1,t._unclipped=t.slice(0);for(var e=0;e<=3;e++)e<3?((t[e]<0||t[e]>255)&&(t._clipped=!0),t[e]=r(t[e],0,255)):3===e&&(t[e]=r(t[e],0,1));return t},limit:r,type:o,unpack:function(r,t){return void 0===t&&(t=null),r.length>=3?Array.prototype.slice.call(r):"object"==o(r[0])&&t?t.split("").filter((function(t){return void 0!==r[0][t]})).map((function(t){return r[0][t]})):r[0]},last:function(r){if(r.length<2)return null;var t=r.length-1;return"string"==o(r[t])?r[t].toLowerCase():null},PI:i,TWOPI:2*i,PITHIRD:i/3,DEG2RAD:i/180,RAD2DEG:180/i},c={format:{},autodetect:[]},u=f.last,l=f.clip_rgb,s=f.type,h=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];var e=this;if("object"===s(r[0])&&r[0].constructor&&r[0].constructor===this.constructor)return r[0];var n=u(r),a=!1;if(!n){a=!0,c.sorted||(c.autodetect=c.autodetect.sort((function(r,t){return t.p-r.p})),c.sorted=!0);for(var o=0,i=c.autodetect;o<i.length;o+=1){var f=i[o];if(n=f.test.apply(f,r))break}}if(!c.format[n])throw new Error("unknown format: "+r);var h=c.format[n].apply(null,a?r:r.slice(0,-1));e._rgb=l(h),3===e._rgb.length&&e._rgb.push(1)};h.prototype.toString=function(){return"function"==s(this.hex)?this.hex():"["+this._rgb.join(",")+"]"};var d=h,b=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];return new(Function.prototype.bind.apply(b.Color,[null].concat(r)))};b.Color=d,b.version="2.1.0";var g=b,p=f.unpack,v=Math.max,m=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];var e=p(r,"rgb"),n=e[0],a=e[1],o=e[2],i=1-v(n/=255,v(a/=255,o/=255)),f=i<1?1/(1-i):0,c=(1-n-i)*f,u=(1-a-i)*f,l=(1-o-i)*f;return[c,u,l,i]},y=f.unpack,w=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];var e=(r=y(r,"cmyk"))[0],n=r[1],a=r[2],o=r[3],i=r.length>4?r[4]:1;return 1===o?[0,0,0,i]:[e>=1?0:255*(1-e)*(1-o),n>=1?0:255*(1-n)*(1-o),a>=1?0:255*(1-a)*(1-o),i]},x=f.unpack,k=f.type;d.prototype.cmyk=function(){return m(this._rgb)},g.cmyk=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];return new(Function.prototype.bind.apply(d,[null].concat(r,["cmyk"])))},c.format.cmyk=w,c.autodetect.push({p:2,test:function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];if(r=x(r,"cmyk"),"array"===k(r)&&4===r.length)return"cmyk"}});var _=f.unpack,M=f.last,O=function(r){return Math.round(100*r)/100},j=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];var e=_(r,"hsla"),n=M(r)||"lsa";return e[0]=O(e[0]||0),e[1]=O(100*e[1])+"%",e[2]=O(100*e[2])+"%","hsla"===n||e.length>3&&e[3]<1?(e[3]=e.length>3?e[3]:1,n="hsla"):e.length=3,n+"("+e.join(",")+")"},A=f.unpack,N=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];var e=(r=A(r,"rgba"))[0],n=r[1],a=r[2];e/=255,n/=255,a/=255;var o,i,f=Math.min(e,n,a),c=Math.max(e,n,a),u=(c+f)/2;return c===f?(o=0,i=Number.NaN):o=u<.5?(c-f)/(c+f):(c-f)/(2-c-f),e==c?i=(n-a)/(c-f):n==c?i=2+(a-e)/(c-f):a==c&&(i=4+(e-n)/(c-f)),(i*=60)<0&&(i+=360),r.length>3&&void 0!==r[3]?[i,o,u,r[3]]:[i,o,u]},C=f.unpack,F=f.last,R=Math.round,E=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];var e=C(r,"rgba"),n=F(r)||"rgb";return"hsl"==n.substr(0,3)?j(N(e),n):(e[0]=R(e[0]),e[1]=R(e[1]),e[2]=R(e[2]),("rgba"===n||e.length>3&&e[3]<1)&&(e[3]=e.length>3?e[3]:1,n="rgba"),n+"("+e.slice(0,"rgb"===n?3:4).join(",")+")")},P=f.unpack,I=Math.round,T=function(){for(var r,t=[],e=arguments.length;e--;)t[e]=arguments[e];var n,a,o,i=(t=P(t,"hsl"))[0],f=t[1],c=t[2];if(0===f)n=a=o=255*c;else{var u=[0,0,0],l=[0,0,0],s=c<.5?c*(1+f):c+f-c*f,h=2*c-s,d=i/360;u[0]=d+1/3,u[1]=d,u[2]=d-1/3;for(var b=0;b<3;b++)u[b]<0&&(u[b]+=1),u[b]>1&&(u[b]-=1),6*u[b]<1?l[b]=h+6*(s-h)*u[b]:2*u[b]<1?l[b]=s:3*u[b]<2?l[b]=h+(s-h)*(2/3-u[b])*6:l[b]=h;n=(r=[I(255*l[0]),I(255*l[1]),I(255*l[2])])[0],a=r[1],o=r[2]}return t.length>3?[n,a,o,t[3]]:[n,a,o,1]},S=/^rgb\(\s*(-?\d+),\s*(-?\d+)\s*,\s*(-?\d+)\s*\)$/,L=/^rgba\(\s*(-?\d+),\s*(-?\d+)\s*,\s*(-?\d+)\s*,\s*([01]|[01]?\.\d+)\)$/,H=/^rgb\(\s*(-?\d+(?:\.\d+)?)%,\s*(-?\d+(?:\.\d+)?)%\s*,\s*(-?\d+(?:\.\d+)?)%\s*\)$/,B=/^rgba\(\s*(-?\d+(?:\.\d+)?)%,\s*(-?\d+(?:\.\d+)?)%\s*,\s*(-?\d+(?:\.\d+)?)%\s*,\s*([01]|[01]?\.\d+)\)$/,V=/^hsl\(\s*(-?\d+(?:\.\d+)?),\s*(-?\d+(?:\.\d+)?)%\s*,\s*(-?\d+(?:\.\d+)?)%\s*\)$/,D=/^hsla\(\s*(-?\d+(?:\.\d+)?),\s*(-?\d+(?:\.\d+)?)%\s*,\s*(-?\d+(?:\.\d+)?)%\s*,\s*([01]|[01]?\.\d+)\)$/,$=Math.round,q=function(r){var t;if(r=r.toLowerCase().trim(),c.format.named)try{return c.format.named(r)}catch(r){}if(t=r.match(S)){for(var e=t.slice(1,4),n=0;n<3;n++)e[n]=+e[n];return e[3]=1,e}if(t=r.match(L)){for(var a=t.slice(1,5),o=0;o<4;o++)a[o]=+a[o];return a}if(t=r.match(H)){for(var i=t.slice(1,4),f=0;f<3;f++)i[f]=$(2.55*i[f]);return i[3]=1,i}if(t=r.match(B)){for(var u=t.slice(1,5),l=0;l<3;l++)u[l]=$(2.55*u[l]);return u[3]=+u[3],u}if(t=r.match(V)){var s=t.slice(1,4);s[1]*=.01,s[2]*=.01;var h=T(s);return h[3]=1,h}if(t=r.match(D)){var d=t.slice(1,4);d[1]*=.01,d[2]*=.01;var b=T(d);return b[3]=+t[4],b}};q.test=function(r){return S.test(r)||L.test(r)||H.test(r)||B.test(r)||V.test(r)||D.test(r)};var G=q,z=f.type;d.prototype.css=function(r){return E(this._rgb,r)},g.css=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];return new(Function.prototype.bind.apply(d,[null].concat(r,["css"])))},c.format.css=G,c.autodetect.push({p:5,test:function(r){for(var t=[],e=arguments.length-1;e-- >0;)t[e]=arguments[e+1];if(!t.length&&"string"===z(r)&&G.test(r))return"css"}});var W=f.unpack;c.format.gl=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];var e=W(r,"rgba");return e[0]*=255,e[1]*=255,e[2]*=255,e},g.gl=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];return new(Function.prototype.bind.apply(d,[null].concat(r,["gl"])))},d.prototype.gl=function(){var r=this._rgb;return[r[0]/255,r[1]/255,r[2]/255,r[3]]};var U=f.unpack,Y=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];var e,n=U(r,"rgb"),a=n[0],o=n[1],i=n[2],f=Math.min(a,o,i),c=Math.max(a,o,i),u=c-f,l=100*u/255,s=f/(255-u)*100;return 0===u?e=Number.NaN:(a===c&&(e=(o-i)/u),o===c&&(e=2+(i-a)/u),i===c&&(e=4+(a-o)/u),(e*=60)<0&&(e+=360)),[e,l,s]},X=f.unpack,J=Math.floor,Q=function(){for(var r,t,e,n,a,o,i=[],f=arguments.length;f--;)i[f]=arguments[f];var c,u,l,s=(i=X(i,"hcg"))[0],h=i[1],d=i[2];d*=255;var b=255*h;if(0===h)c=u=l=d;else{360===s&&(s=0),s>360&&(s-=360),s<0&&(s+=360);var g=J(s/=60),p=s-g,v=d*(1-h),m=v+b*(1-p),y=v+b*p,w=v+b;switch(g){case 0:c=(r=[w,y,v])[0],u=r[1],l=r[2];break;case 1:c=(t=[m,w,v])[0],u=t[1],l=t[2];break;case 2:c=(e=[v,w,y])[0],u=e[1],l=e[2];break;case 3:c=(n=[v,m,w])[0],u=n[1],l=n[2];break;case 4:c=(a=[y,v,w])[0],u=a[1],l=a[2];break;case 5:c=(o=[w,v,m])[0],u=o[1],l=o[2]}}return[c,u,l,i.length>3?i[3]:1]},K=f.unpack,Z=f.type;d.prototype.hcg=function(){return Y(this._rgb)},g.hcg=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];return new(Function.prototype.bind.apply(d,[null].concat(r,["hcg"])))},c.format.hcg=Q,c.autodetect.push({p:1,test:function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];if(r=K(r,"hcg"),"array"===Z(r)&&3===r.length)return"hcg"}});var rr=f.unpack,tr=f.last,er=Math.round,nr=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];var e=rr(r,"rgba"),n=e[0],a=e[1],o=e[2],i=e[3],f=tr(r)||"auto";void 0===i&&(i=1),"auto"===f&&(f=i<1?"rgba":"rgb");var c=(n=er(n))<<16|(a=er(a))<<8|(o=er(o)),u="000000"+c.toString(16);u=u.substr(u.length-6);var l="0"+er(255*i).toString(16);switch(l=l.substr(l.length-2),f.toLowerCase()){case"rgba":return"#"+u+l;case"argb":return"#"+l+u;default:return"#"+u}},ar=/^#?([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/,or=/^#?([A-Fa-f0-9]{8}|[A-Fa-f0-9]{4})$/,ir=function(r){if(r.match(ar)){4!==r.length&&7!==r.length||(r=r.substr(1)),3===r.length&&(r=(r=r.split(""))[0]+r[0]+r[1]+r[1]+r[2]+r[2]);var t=parseInt(r,16);return[t>>16,t>>8&255,255&t,1]}if(r.match(or)){5!==r.length&&9!==r.length||(r=r.substr(1)),4===r.length&&(r=(r=r.split(""))[0]+r[0]+r[1]+r[1]+r[2]+r[2]+r[3]+r[3]);var e=parseInt(r,16);return[e>>24&255,e>>16&255,e>>8&255,Math.round((255&e)/255*100)/100]}throw new Error("unknown hex color: "+r)},fr=f.type;d.prototype.hex=function(r){return nr(this._rgb,r)},g.hex=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];return new(Function.prototype.bind.apply(d,[null].concat(r,["hex"])))},c.format.hex=ir,c.autodetect.push({p:4,test:function(r){for(var t=[],e=arguments.length-1;e-- >0;)t[e]=arguments[e+1];if(!t.length&&"string"===fr(r)&&[3,4,5,6,7,8,9].indexOf(r.length)>=0)return"hex"}});var cr=f.unpack,ur=f.TWOPI,lr=Math.min,sr=Math.sqrt,hr=Math.acos,dr=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];var e,n=cr(r,"rgb"),a=n[0],o=n[1],i=n[2],f=lr(a/=255,o/=255,i/=255),c=(a+o+i)/3,u=c>0?1-f/c:0;return 0===u?e=NaN:(e=(a-o+(a-i))/2,e/=sr((a-o)*(a-o)+(a-i)*(o-i)),e=hr(e),i>o&&(e=ur-e),e/=ur),[360*e,u,c]},br=f.unpack,gr=f.limit,pr=f.TWOPI,vr=f.PITHIRD,mr=Math.cos,yr=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];var e,n,a,o=(r=br(r,"hsi"))[0],i=r[1],f=r[2];return isNaN(o)&&(o=0),isNaN(i)&&(i=0),o>360&&(o-=360),o<0&&(o+=360),(o/=360)<1/3?n=1-((a=(1-i)/3)+(e=(1+i*mr(pr*o)/mr(vr-pr*o))/3)):o<2/3?a=1-((e=(1-i)/3)+(n=(1+i*mr(pr*(o-=1/3))/mr(vr-pr*o))/3)):e=1-((n=(1-i)/3)+(a=(1+i*mr(pr*(o-=2/3))/mr(vr-pr*o))/3)),[255*(e=gr(f*e*3)),255*(n=gr(f*n*3)),255*(a=gr(f*a*3)),r.length>3?r[3]:1]},wr=f.unpack,xr=f.type;d.prototype.hsi=function(){return dr(this._rgb)},g.hsi=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];return new(Function.prototype.bind.apply(d,[null].concat(r,["hsi"])))},c.format.hsi=yr,c.autodetect.push({p:2,test:function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];if(r=wr(r,"hsi"),"array"===xr(r)&&3===r.length)return"hsi"}});var kr=f.unpack,_r=f.type;d.prototype.hsl=function(){return N(this._rgb)},g.hsl=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];return new(Function.prototype.bind.apply(d,[null].concat(r,["hsl"])))},c.format.hsl=T,c.autodetect.push({p:2,test:function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];if(r=kr(r,"hsl"),"array"===_r(r)&&3===r.length)return"hsl"}});var Mr=f.unpack,Or=Math.min,jr=Math.max,Ar=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];var e,n,a,o=(r=Mr(r,"rgb"))[0],i=r[1],f=r[2],c=Or(o,i,f),u=jr(o,i,f),l=u-c;return a=u/255,0===u?(e=Number.NaN,n=0):(n=l/u,o===u&&(e=(i-f)/l),i===u&&(e=2+(f-o)/l),f===u&&(e=4+(o-i)/l),(e*=60)<0&&(e+=360)),[e,n,a]},Nr=f.unpack,Cr=Math.floor,Fr=function(){for(var r,t,e,n,a,o,i=[],f=arguments.length;f--;)i[f]=arguments[f];var c,u,l,s=(i=Nr(i,"hsv"))[0],h=i[1],d=i[2];if(d*=255,0===h)c=u=l=d;else{360===s&&(s=0),s>360&&(s-=360),s<0&&(s+=360);var b=Cr(s/=60),g=s-b,p=d*(1-h),v=d*(1-h*g),m=d*(1-h*(1-g));switch(b){case 0:c=(r=[d,m,p])[0],u=r[1],l=r[2];break;case 1:c=(t=[v,d,p])[0],u=t[1],l=t[2];break;case 2:c=(e=[p,d,m])[0],u=e[1],l=e[2];break;case 3:c=(n=[p,v,d])[0],u=n[1],l=n[2];break;case 4:c=(a=[m,p,d])[0],u=a[1],l=a[2];break;case 5:c=(o=[d,p,v])[0],u=o[1],l=o[2]}}return[c,u,l,i.length>3?i[3]:1]},Rr=f.unpack,Er=f.type;d.prototype.hsv=function(){return Ar(this._rgb)},g.hsv=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];return new(Function.prototype.bind.apply(d,[null].concat(r,["hsv"])))},c.format.hsv=Fr,c.autodetect.push({p:2,test:function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];if(r=Rr(r,"hsv"),"array"===Er(r)&&3===r.length)return"hsv"}});var Pr=18,Ir=.95047,Tr=1,Sr=1.08883,Lr=.137931034,Hr=.206896552,Br=.12841855,Vr=.008856452,Dr=f.unpack,$r=Math.pow,qr=function(r){return(r/=255)<=.04045?r/12.92:$r((r+.055)/1.055,2.4)},Gr=function(r){return r>Vr?$r(r,1/3):r/Br+Lr},zr=function(r,t,e){return r=qr(r),t=qr(t),e=qr(e),[Gr((.4124564*r+.3575761*t+.1804375*e)/Ir),Gr((.2126729*r+.7151522*t+.072175*e)/Tr),Gr((.0193339*r+.119192*t+.9503041*e)/Sr)]},Wr=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];var e=Dr(r,"rgb"),n=e[0],a=e[1],o=e[2],i=zr(n,a,o),f=i[0],c=i[1],u=i[2],l=116*c-16;return[l<0?0:l,500*(f-c),200*(c-u)]},Ur=f.unpack,Yr=Math.pow,Xr=function(r){return 255*(r<=.00304?12.92*r:1.055*Yr(r,1/2.4)-.055)},Jr=function(r){return r>Hr?r*r*r:Br*(r-Lr)},Qr=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];var e,n,a,o=(r=Ur(r,"lab"))[0],i=r[1],f=r[2];return n=(o+16)/116,e=isNaN(i)?n:n+i/500,a=isNaN(f)?n:n-f/200,n=Tr*Jr(n),e=Ir*Jr(e),a=Sr*Jr(a),[Xr(3.2404542*e-1.5371385*n-.4985314*a),Xr(-.969266*e+1.8760108*n+.041556*a),Xr(.0556434*e-.2040259*n+1.0572252*a),r.length>3?r[3]:1]},Kr=f.unpack,Zr=f.type;d.prototype.lab=function(){return Wr(this._rgb)},g.lab=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];return new(Function.prototype.bind.apply(d,[null].concat(r,["lab"])))},c.format.lab=Qr,c.autodetect.push({p:2,test:function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];if(r=Kr(r,"lab"),"array"===Zr(r)&&3===r.length)return"lab"}});var rt=f.unpack,tt=f.RAD2DEG,et=Math.sqrt,nt=Math.atan2,at=Math.round,ot=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];var e=rt(r,"lab"),n=e[0],a=e[1],o=e[2],i=et(a*a+o*o),f=(nt(o,a)*tt+360)%360;return 0===at(1e4*i)&&(f=Number.NaN),[n,i,f]},it=f.unpack,ft=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];var e=it(r,"rgb"),n=e[0],a=e[1],o=e[2],i=Wr(n,a,o),f=i[0],c=i[1],u=i[2];return ot(f,c,u)},ct=f.unpack,ut=f.DEG2RAD,lt=Math.sin,st=Math.cos,ht=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];var e=ct(r,"lch"),n=e[0],a=e[1],o=e[2];return isNaN(o)&&(o=0),[n,st(o*=ut)*a,lt(o)*a]},dt=f.unpack,bt=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];var e=(r=dt(r,"lch"))[0],n=r[1],a=r[2],o=ht(e,n,a),i=o[0],f=o[1],c=o[2],u=Qr(i,f,c),l=u[0],s=u[1],h=u[2];return[l,s,h,r.length>3?r[3]:1]},gt=f.unpack,pt=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];var e=gt(r,"hcl").reverse();return bt.apply(void 0,e)},vt=f.unpack,mt=f.type;d.prototype.lch=function(){return ft(this._rgb)},d.prototype.hcl=function(){return ft(this._rgb).reverse()},g.lch=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];return new(Function.prototype.bind.apply(d,[null].concat(r,["lch"])))},g.hcl=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];return new(Function.prototype.bind.apply(d,[null].concat(r,["hcl"])))},c.format.lch=bt,c.format.hcl=pt,["lch","hcl"].forEach((function(r){return c.autodetect.push({p:2,test:function(){for(var t=[],e=arguments.length;e--;)t[e]=arguments[e];if(t=vt(t,r),"array"===mt(t)&&3===t.length)return r}})}));var yt={aliceblue:"#f0f8ff",antiquewhite:"#faebd7",aqua:"#00ffff",aquamarine:"#7fffd4",azure:"#f0ffff",beige:"#f5f5dc",bisque:"#ffe4c4",black:"#000000",blanchedalmond:"#ffebcd",blue:"#0000ff",blueviolet:"#8a2be2",brown:"#a52a2a",burlywood:"#deb887",cadetblue:"#5f9ea0",chartreuse:"#7fff00",chocolate:"#d2691e",coral:"#ff7f50",cornflower:"#6495ed",cornflowerblue:"#6495ed",cornsilk:"#fff8dc",crimson:"#dc143c",cyan:"#00ffff",darkblue:"#00008b",darkcyan:"#008b8b",darkgoldenrod:"#b8860b",darkgray:"#a9a9a9",darkgreen:"#006400",darkgrey:"#a9a9a9",darkkhaki:"#bdb76b",darkmagenta:"#8b008b",darkolivegreen:"#556b2f",darkorange:"#ff8c00",darkorchid:"#9932cc",darkred:"#8b0000",darksalmon:"#e9967a",darkseagreen:"#8fbc8f",darkslateblue:"#483d8b",darkslategray:"#2f4f4f",darkslategrey:"#2f4f4f",darkturquoise:"#00ced1",darkviolet:"#9400d3",deeppink:"#ff1493",deepskyblue:"#00bfff",dimgray:"#696969",dimgrey:"#696969",dodgerblue:"#1e90ff",firebrick:"#b22222",floralwhite:"#fffaf0",forestgreen:"#228b22",fuchsia:"#ff00ff",gainsboro:"#dcdcdc",ghostwhite:"#f8f8ff",gold:"#ffd700",goldenrod:"#daa520",gray:"#808080",green:"#008000",greenyellow:"#adff2f",grey:"#808080",honeydew:"#f0fff0",hotpink:"#ff69b4",indianred:"#cd5c5c",indigo:"#4b0082",ivory:"#fffff0",khaki:"#f0e68c",laserlemon:"#ffff54",lavender:"#e6e6fa",lavenderblush:"#fff0f5",lawngreen:"#7cfc00",lemonchiffon:"#fffacd",lightblue:"#add8e6",lightcoral:"#f08080",lightcyan:"#e0ffff",lightgoldenrod:"#fafad2",lightgoldenrodyellow:"#fafad2",lightgray:"#d3d3d3",lightgreen:"#90ee90",lightgrey:"#d3d3d3",lightpink:"#ffb6c1",lightsalmon:"#ffa07a",lightseagreen:"#20b2aa",lightskyblue:"#87cefa",lightslategray:"#778899",lightslategrey:"#778899",lightsteelblue:"#b0c4de",lightyellow:"#ffffe0",lime:"#00ff00",limegreen:"#32cd32",linen:"#faf0e6",magenta:"#ff00ff",maroon:"#800000",maroon2:"#7f0000",maroon3:"#b03060",mediumaquamarine:"#66cdaa",mediumblue:"#0000cd",mediumorchid:"#ba55d3",mediumpurple:"#9370db",mediumseagreen:"#3cb371",mediumslateblue:"#7b68ee",mediumspringgreen:"#00fa9a",mediumturquoise:"#48d1cc",mediumvioletred:"#c71585",midnightblue:"#191970",mintcream:"#f5fffa",mistyrose:"#ffe4e1",moccasin:"#ffe4b5",navajowhite:"#ffdead",navy:"#000080",oldlace:"#fdf5e6",olive:"#808000",olivedrab:"#6b8e23",orange:"#ffa500",orangered:"#ff4500",orchid:"#da70d6",palegoldenrod:"#eee8aa",palegreen:"#98fb98",paleturquoise:"#afeeee",palevioletred:"#db7093",papayawhip:"#ffefd5",peachpuff:"#ffdab9",peru:"#cd853f",pink:"#ffc0cb",plum:"#dda0dd",powderblue:"#b0e0e6",purple:"#800080",purple2:"#7f007f",purple3:"#a020f0",rebeccapurple:"#663399",red:"#ff0000",rosybrown:"#bc8f8f",royalblue:"#4169e1",saddlebrown:"#8b4513",salmon:"#fa8072",sandybrown:"#f4a460",seagreen:"#2e8b57",seashell:"#fff5ee",sienna:"#a0522d",silver:"#c0c0c0",skyblue:"#87ceeb",slateblue:"#6a5acd",slategray:"#708090",slategrey:"#708090",snow:"#fffafa",springgreen:"#00ff7f",steelblue:"#4682b4",tan:"#d2b48c",teal:"#008080",thistle:"#d8bfd8",tomato:"#ff6347",turquoise:"#40e0d0",violet:"#ee82ee",wheat:"#f5deb3",white:"#ffffff",whitesmoke:"#f5f5f5",yellow:"#ffff00",yellowgreen:"#9acd32"},wt=f.type;d.prototype.name=function(){for(var r=nr(this._rgb,"rgb"),t=0,e=Object.keys(yt);t<e.length;t+=1){var n=e[t];if(yt[n]===r)return n.toLowerCase()}return r},c.format.named=function(r){if(r=r.toLowerCase(),yt[r])return ir(yt[r]);throw new Error("unknown color name: "+r)},c.autodetect.push({p:5,test:function(r){for(var t=[],e=arguments.length-1;e-- >0;)t[e]=arguments[e+1];if(!t.length&&"string"===wt(r)&&yt[r.toLowerCase()])return"named"}});var xt=f.unpack,kt=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];var e=xt(r,"rgb"),n=e[0],a=e[1],o=e[2];return(n<<16)+(a<<8)+o},_t=f.type,Mt=function(r){if("number"==_t(r)&&r>=0&&r<=16777215)return[r>>16,r>>8&255,255&r,1];throw new Error("unknown num color: "+r)},Ot=f.type;d.prototype.num=function(){return kt(this._rgb)},g.num=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];return new(Function.prototype.bind.apply(d,[null].concat(r,["num"])))},c.format.num=Mt,c.autodetect.push({p:5,test:function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];if(1===r.length&&"number"===Ot(r[0])&&r[0]>=0&&r[0]<=16777215)return"num"}});var jt=f.unpack,At=f.type,Nt=Math.round;d.prototype.rgb=function(r){return void 0===r&&(r=!0),!1===r?this._rgb.slice(0,3):this._rgb.slice(0,3).map(Nt)},d.prototype.rgba=function(r){return void 0===r&&(r=!0),this._rgb.slice(0,4).map((function(t,e){return e<3?!1===r?t:Nt(t):t}))},g.rgb=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];return new(Function.prototype.bind.apply(d,[null].concat(r,["rgb"])))},c.format.rgb=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];var e=jt(r,"rgba");return void 0===e[3]&&(e[3]=1),e},c.autodetect.push({p:3,test:function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];if(r=jt(r,"rgba"),"array"===At(r)&&(3===r.length||4===r.length&&"number"==At(r[3])&&r[3]>=0&&r[3]<=1))return"rgb"}});var Ct=Math.log,Ft=function(r){var t,e,n,a=r/100;return a<66?(t=255,e=-155.25485562709179-.44596950469579133*(e=a-2)+104.49216199393888*Ct(e),n=a<20?0:.8274096064007395*(n=a-10)-254.76935184120902+115.67994401066147*Ct(n)):(t=351.97690566805693+.114206453784165*(t=a-55)-40.25366309332127*Ct(t),e=325.4494125711974+.07943456536662342*(e=a-50)-28.0852963507957*Ct(e),n=255),[t,e,n,1]},Rt=f.unpack,Et=Math.round,Pt=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];for(var e,n=Rt(r,"rgb"),a=n[0],o=n[2],i=1e3,f=4e4,c=.4;f-i>c;){var u=Ft(e=.5*(f+i));u[2]/u[0]>=o/a?f=e:i=e}return Et(e)};d.prototype.temp=d.prototype.kelvin=d.prototype.temperature=function(){return Pt(this._rgb)},g.temp=g.kelvin=g.temperature=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];return new(Function.prototype.bind.apply(d,[null].concat(r,["temp"])))},c.format.temp=c.format.kelvin=c.format.temperature=Ft;var It=f.type;d.prototype.alpha=function(r,t){return void 0===t&&(t=!1),void 0!==r&&"number"===It(r)?t?(this._rgb[3]=r,this):new d([this._rgb[0],this._rgb[1],this._rgb[2],r],"rgb"):this._rgb[3]},d.prototype.clipped=function(){return this._rgb._clipped||!1},d.prototype.darken=function(r){void 0===r&&(r=1);var t=this.lab();return t[0]-=Pr*r,new d(t,"lab").alpha(this.alpha(),!0)},d.prototype.brighten=function(r){return void 0===r&&(r=1),this.darken(-r)},d.prototype.darker=d.prototype.darken,d.prototype.brighter=d.prototype.brighten,d.prototype.get=function(r){var t=r.split("."),e=t[0],n=t[1],a=this[e]();if(n){var o=e.indexOf(n);if(o>-1)return a[o];throw new Error("unknown channel "+n+" in mode "+e)}return a};var Tt=f.type,St=Math.pow;d.prototype.luminance=function(r){if(void 0!==r&&"number"===Tt(r)){if(0===r)return new d([0,0,0,this._rgb[3]],"rgb");if(1===r)return new d([255,255,255,this._rgb[3]],"rgb");var t=this.luminance(),e=20,n=function(t,a){var o=t.interpolate(a,.5,"rgb"),i=o.luminance();return Math.abs(r-i)<1e-7||!e--?o:i>r?n(t,o):n(o,a)},a=(t>r?n(new d([0,0,0]),this):n(this,new d([255,255,255]))).rgb();return new d(a.concat([this._rgb[3]]))}return Lt.apply(void 0,this._rgb.slice(0,3))};var Lt=function(r,t,e){return.2126*(r=Ht(r))+.7152*(t=Ht(t))+.0722*(e=Ht(e))},Ht=function(r){return(r/=255)<=.03928?r/12.92:St((r+.055)/1.055,2.4)},Bt={},Vt=f.type,Dt=function(r,t,e){void 0===e&&(e=.5);for(var n=[],a=arguments.length-3;a-- >0;)n[a]=arguments[a+3];var o=n[0]||"lrgb";if(Bt[o]||n.length||(o=Object.keys(Bt)[0]),!Bt[o])throw new Error("interpolation mode "+o+" is not defined");return"object"!==Vt(r)&&(r=new d(r)),"object"!==Vt(t)&&(t=new d(t)),Bt[o](r,t,e).alpha(r.alpha()+e*(t.alpha()-r.alpha()))};d.prototype.mix=d.prototype.interpolate=function(r,t){void 0===t&&(t=.5);for(var e=[],n=arguments.length-2;n-- >0;)e[n]=arguments[n+2];return Dt.apply(void 0,[this,r,t].concat(e))},d.prototype.premultiply=function(r){void 0===r&&(r=!1);var t=this._rgb,e=t[3];return r?(this._rgb=[t[0]*e,t[1]*e,t[2]*e,e],this):new d([t[0]*e,t[1]*e,t[2]*e,e],"rgb")},d.prototype.saturate=function(r){void 0===r&&(r=1);var t=this.lch();return t[1]+=Pr*r,t[1]<0&&(t[1]=0),new d(t,"lch").alpha(this.alpha(),!0)},d.prototype.desaturate=function(r){return void 0===r&&(r=1),this.saturate(-r)};var $t=f.type;d.prototype.set=function(r,t,e){void 0===e&&(e=!1);var n=r.split("."),a=n[0],o=n[1],i=this[a]();if(o){var f=a.indexOf(o);if(f>-1){if("string"==$t(t))switch(t.charAt(0)){case"+":case"-":i[f]+=+t;break;case"*":i[f]*=+t.substr(1);break;case"/":i[f]/=+t.substr(1);break;default:i[f]=+t}else{if("number"!==$t(t))throw new Error("unsupported value for Color.set");i[f]=t}var c=new d(i,a);return e?(this._rgb=c._rgb,this):c}throw new Error("unknown channel "+o+" in mode "+a)}return i},Bt.rgb=function(r,t,e){var n=r._rgb,a=t._rgb;return new d(n[0]+e*(a[0]-n[0]),n[1]+e*(a[1]-n[1]),n[2]+e*(a[2]-n[2]),"rgb")};var qt=Math.sqrt,Gt=Math.pow;Bt.lrgb=function(r,t,e){var n=r._rgb,a=n[0],o=n[1],i=n[2],f=t._rgb,c=f[0],u=f[1],l=f[2];return new d(qt(Gt(a,2)*(1-e)+Gt(c,2)*e),qt(Gt(o,2)*(1-e)+Gt(u,2)*e),qt(Gt(i,2)*(1-e)+Gt(l,2)*e),"rgb")},Bt.lab=function(r,t,e){var n=r.lab(),a=t.lab();return new d(n[0]+e*(a[0]-n[0]),n[1]+e*(a[1]-n[1]),n[2]+e*(a[2]-n[2]),"lab")};var zt=function(r,t,e,n){var a,o,i,f,c,u,l,s,h,b,g,p;return"hsl"===n?(i=r.hsl(),f=t.hsl()):"hsv"===n?(i=r.hsv(),f=t.hsv()):"hcg"===n?(i=r.hcg(),f=t.hcg()):"hsi"===n?(i=r.hsi(),f=t.hsi()):"lch"!==n&&"hcl"!==n||(n="hcl",i=r.hcl(),f=t.hcl()),"h"===n.substr(0,1)&&(c=(a=i)[0],l=a[1],h=a[2],u=(o=f)[0],s=o[1],b=o[2]),isNaN(c)||isNaN(u)?isNaN(c)?isNaN(u)?p=Number.NaN:(p=u,1!=h&&0!=h||"hsv"==n||(g=s)):(p=c,1!=b&&0!=b||"hsv"==n||(g=l)):p=c+e*(u>c&&u-c>180?u-(c+360):u<c&&c-u>180?u+360-c:u-c),void 0===g&&(g=l+e*(s-l)),new d([p,g,h+e*(b-h)],n)},Wt=function(r,t,e){return zt(r,t,e,"lch")};Bt.lch=Wt,Bt.hcl=Wt,Bt.num=function(r,t,e){var n=r.num(),a=t.num();return new d(n+e*(a-n),"num")},Bt.hcg=function(r,t,e){return zt(r,t,e,"hcg")},Bt.hsi=function(r,t,e){return zt(r,t,e,"hsi")},Bt.hsl=function(r,t,e){return zt(r,t,e,"hsl")},Bt.hsv=function(r,t,e){return zt(r,t,e,"hsv")};var Ut=f.clip_rgb,Yt=Math.pow,Xt=Math.sqrt,Jt=Math.PI,Qt=Math.cos,Kt=Math.sin,Zt=Math.atan2,re=function(r,t){for(var e=r.length,n=[0,0,0,0],a=0;a<r.length;a++){var o=r[a],i=t[a]/e,f=o._rgb;n[0]+=Yt(f[0],2)*i,n[1]+=Yt(f[1],2)*i,n[2]+=Yt(f[2],2)*i,n[3]+=f[3]*i}return n[0]=Xt(n[0]),n[1]=Xt(n[1]),n[2]=Xt(n[2]),n[3]>.9999999&&(n[3]=1),new d(Ut(n))},te=f.type,ee=Math.pow,ne=function(r){var t="rgb",e=g("#ccc"),n=0,a=[0,1],o=[],i=[0,0],f=!1,c=[],u=!1,l=0,s=1,h=!1,d={},b=!0,p=1,v=function(r){if((r=r||["#fff","#000"])&&"string"===te(r)&&g.brewer&&g.brewer[r.toLowerCase()]&&(r=g.brewer[r.toLowerCase()]),"array"===te(r)){1===r.length&&(r=[r[0],r[0]]),r=r.slice(0);for(var t=0;t<r.length;t++)r[t]=g(r[t]);o.length=0;for(var e=0;e<r.length;e++)o.push(e/(r.length-1))}return x(),c=r},m=function(r){return r},y=function(r){return r},w=function(r,n){var a,u;if(null==n&&(n=!1),isNaN(r)||null===r)return e;u=n?r:f&&f.length>2?function(r){if(null!=f){for(var t=f.length-1,e=0;e<t&&r>=f[e];)e++;return e-1}return 0}(r)/(f.length-2):s!==l?(r-l)/(s-l):1,u=y(u),n||(u=m(u)),1!==p&&(u=ee(u,p)),u=i[0]+u*(1-i[0]-i[1]),u=Math.min(1,Math.max(0,u));var h=Math.floor(1e4*u);if(b&&d[h])a=d[h];else{if("array"===te(c))for(var v=0;v<o.length;v++){var w=o[v];if(u<=w){a=c[v];break}if(u>=w&&v===o.length-1){a=c[v];break}if(u>w&&u<o[v+1]){u=(u-w)/(o[v+1]-w),a=g.interpolate(c[v],c[v+1],u,t);break}}else"function"===te(c)&&(a=c(u));b&&(d[h]=a)}return a},x=function(){return d={}};v(r);var k=function(r){var t=g(w(r));return u&&t[u]?t[u]():t};return k.classes=function(r){if(null!=r){if("array"===te(r))f=r,a=[r[0],r[r.length-1]];else{var t=g.analyze(a);f=0===r?[t.min,t.max]:g.limits(t,"e",r)}return k}return f},k.domain=function(r){if(!arguments.length)return a;l=r[0],s=r[r.length-1],o=[];var t=c.length;if(r.length===t&&l!==s)for(var e=0,n=Array.from(r);e<n.length;e+=1){var i=n[e];o.push((i-l)/(s-l))}else{for(var f=0;f<t;f++)o.push(f/(t-1));if(r.length>2){var u=r.map((function(t,e){return e/(r.length-1)})),h=r.map((function(r){return(r-l)/(s-l)}));h.every((function(r,t){return u[t]===r}))||(y=function(r){if(r<=0||r>=1)return r;for(var t=0;r>=h[t+1];)t++;var e=(r-h[t])/(h[t+1]-h[t]);return u[t]+e*(u[t+1]-u[t])})}}return a=[l,s],k},k.mode=function(r){return arguments.length?(t=r,x(),k):t},k.range=function(r,t){return v(r),k},k.out=function(r){return u=r,k},k.spread=function(r){return arguments.length?(n=r,k):n},k.correctLightness=function(r){return null==r&&(r=!0),h=r,x(),m=h?function(r){for(var t=w(0,!0).lab()[0],e=w(1,!0).lab()[0],n=t>e,a=w(r,!0).lab()[0],o=t+(e-t)*r,i=a-o,f=0,c=1,u=20;Math.abs(i)>.01&&u-- >0;)n&&(i*=-1),i<0?(f=r,r+=.5*(c-r)):(c=r,r+=.5*(f-r)),a=w(r,!0).lab()[0],i=a-o;return r}:function(r){return r},k},k.padding=function(r){return null!=r?("number"===te(r)&&(r=[r,r]),i=r,k):i},k.colors=function(t,e){arguments.length<2&&(e="hex");var n=[];if(0===arguments.length)n=c.slice(0);else if(1===t)n=[k(.5)];else if(t>1){var o=a[0],i=a[1]-o;n=ae(0,t,!1).map((function(r){return k(o+r/(t-1)*i)}))}else{r=[];var u=[];if(f&&f.length>2)for(var l=1,s=f.length,h=1<=s;h?l<s:l>s;h?l++:l--)u.push(.5*(f[l-1]+f[l]));else u=a;n=u.map((function(r){return k(r)}))}return g[e]&&(n=n.map((function(r){return r[e]()}))),n},k.cache=function(r){return null!=r?(b=r,k):b},k.gamma=function(r){return null!=r?(p=r,k):p},k.nodata=function(r){return null!=r?(e=g(r),k):e},k};function ae(r,t,e){for(var n=[],a=r<t,o=e?a?t+1:t-1:t,i=r;a?i<o:i>o;a?i++:i--)n.push(i);return n}var oe=function(r){var t,e,n,a,o,i,f;if(2===(r=r.map((function(r){return new d(r)}))).length)t=r.map((function(r){return r.lab()})),o=t[0],i=t[1],a=function(r){var t=[0,1,2].map((function(t){return o[t]+r*(i[t]-o[t])}));return new d(t,"lab")};else if(3===r.length)e=r.map((function(r){return r.lab()})),o=e[0],i=e[1],f=e[2],a=function(r){var t=[0,1,2].map((function(t){return(1-r)*(1-r)*o[t]+2*(1-r)*r*i[t]+r*r*f[t]}));return new d(t,"lab")};else if(4===r.length){var c;n=r.map((function(r){return r.lab()})),o=n[0],i=n[1],f=n[2],c=n[3],a=function(r){var t=[0,1,2].map((function(t){return(1-r)*(1-r)*(1-r)*o[t]+3*(1-r)*(1-r)*r*i[t]+3*(1-r)*r*r*f[t]+r*r*r*c[t]}));return new d(t,"lab")}}else if(5===r.length){var u=oe(r.slice(0,3)),l=oe(r.slice(2,5));a=function(r){return r<.5?u(2*r):l(2*(r-.5))}}return a},ie=function(r,t,e){if(!ie[e])throw new Error("unknown blend mode "+e);return ie[e](r,t)},fe=function(r){return function(t,e){var n=g(e).rgb(),a=g(t).rgb();return g.rgb(r(n,a))}},ce=function(r){return function(t,e){var n=[];return n[0]=r(t[0],e[0]),n[1]=r(t[1],e[1]),n[2]=r(t[2],e[2]),n}};ie.normal=fe(ce((function(r){return r}))),ie.multiply=fe(ce((function(r,t){return r*t/255}))),ie.screen=fe(ce((function(r,t){return 255*(1-(1-r/255)*(1-t/255))}))),ie.overlay=fe(ce((function(r,t){return t<128?2*r*t/255:255*(1-2*(1-r/255)*(1-t/255))}))),ie.darken=fe(ce((function(r,t){return r>t?t:r}))),ie.lighten=fe(ce((function(r,t){return r>t?r:t}))),ie.dodge=fe(ce((function(r,t){return 255===r||(r=t/255*255/(1-r/255))>255?255:r}))),ie.burn=fe(ce((function(r,t){return 255*(1-(1-t/255)/(r/255))})));for(var ue=ie,le=f.type,se=f.clip_rgb,he=f.TWOPI,de=Math.pow,be=Math.sin,ge=Math.cos,pe=Math.floor,ve=Math.random,me=Math.log,ye=Math.pow,we=Math.floor,xe=Math.abs,ke=function(r,t){void 0===t&&(t=null);var e={min:Number.MAX_VALUE,max:-1*Number.MAX_VALUE,sum:0,values:[],count:0};return"object"===o(r)&&(r=Object.values(r)),r.forEach((function(r){t&&"object"===o(r)&&(r=r[t]),null==r||isNaN(r)||(e.values.push(r),e.sum+=r,r<e.min&&(e.min=r),r>e.max&&(e.max=r),e.count+=1)})),e.domain=[e.min,e.max],e.limits=function(r,t){return _e(e,r,t)},e},_e=function(r,t,e){void 0===t&&(t="equal"),void 0===e&&(e=7),"array"==o(r)&&(r=ke(r));var n=r.min,a=r.max,i=r.values.sort((function(r,t){return r-t}));if(1===e)return[n,a];var f=[];if("c"===t.substr(0,1)&&(f.push(n),f.push(a)),"e"===t.substr(0,1)){f.push(n);for(var c=1;c<e;c++)f.push(n+c/e*(a-n));f.push(a)}else if("l"===t.substr(0,1)){if(n<=0)throw new Error("Logarithmic scales are only possible for values > 0");var u=Math.LOG10E*me(n),l=Math.LOG10E*me(a);f.push(n);for(var s=1;s<e;s++)f.push(ye(10,u+s/e*(l-u)));f.push(a)}else if("q"===t.substr(0,1)){f.push(n);for(var h=1;h<e;h++){var d=(i.length-1)*h/e,b=we(d);if(b===d)f.push(i[b]);else{var g=d-b;f.push(i[b]*(1-g)+i[b+1]*g)}}f.push(a)}else if("k"===t.substr(0,1)){var p,v=i.length,m=new Array(v),y=new Array(e),w=!0,x=0,k=null;(k=[]).push(n);for(var _=1;_<e;_++)k.push(n+_/e*(a-n));for(k.push(a);w;){for(var M=0;M<e;M++)y[M]=0;for(var O=0;O<v;O++)for(var j=i[O],A=Number.MAX_VALUE,N=void 0,C=0;C<e;C++){var F=xe(k[C]-j);F<A&&(A=F,N=C),y[N]++,m[O]=N}for(var R=new Array(e),E=0;E<e;E++)R[E]=null;for(var P=0;P<v;P++)null===R[p=m[P]]?R[p]=i[P]:R[p]+=i[P];for(var I=0;I<e;I++)R[I]*=1/y[I];w=!1;for(var T=0;T<e;T++)if(R[T]!==k[T]){w=!0;break}k=R,++x>200&&(w=!1)}for(var S={},L=0;L<e;L++)S[L]=[];for(var H=0;H<v;H++)S[p=m[H]].push(i[H]);for(var B=[],V=0;V<e;V++)B.push(S[V][0]),B.push(S[V][S[V].length-1]);B=B.sort((function(r,t){return r-t})),f.push(B[0]);for(var D=1;D<B.length;D+=2){var $=B[D];isNaN($)||-1!==f.indexOf($)||f.push($)}}return f},Me={analyze:ke,limits:_e},Oe=Math.sqrt,je=Math.atan2,Ae=Math.abs,Ne=Math.cos,Ce=Math.PI,Fe={cool:function(){return ne([g.hsl(180,1,.9),g.hsl(250,.7,.4)])},hot:function(){return ne(["#000","#f00","#ff0","#fff"]).mode("rgb")}},Re={OrRd:["#fff7ec","#fee8c8","#fdd49e","#fdbb84","#fc8d59","#ef6548","#d7301f","#b30000","#7f0000"],PuBu:["#fff7fb","#ece7f2","#d0d1e6","#a6bddb","#74a9cf","#3690c0","#0570b0","#045a8d","#023858"],BuPu:["#f7fcfd","#e0ecf4","#bfd3e6","#9ebcda","#8c96c6","#8c6bb1","#88419d","#810f7c","#4d004b"],Oranges:["#fff5eb","#fee6ce","#fdd0a2","#fdae6b","#fd8d3c","#f16913","#d94801","#a63603","#7f2704"],BuGn:["#f7fcfd","#e5f5f9","#ccece6","#99d8c9","#66c2a4","#41ae76","#238b45","#006d2c","#00441b"],YlOrBr:["#ffffe5","#fff7bc","#fee391","#fec44f","#fe9929","#ec7014","#cc4c02","#993404","#662506"],YlGn:["#ffffe5","#f7fcb9","#d9f0a3","#addd8e","#78c679","#41ab5d","#238443","#006837","#004529"],Reds:["#fff5f0","#fee0d2","#fcbba1","#fc9272","#fb6a4a","#ef3b2c","#cb181d","#a50f15","#67000d"],RdPu:["#fff7f3","#fde0dd","#fcc5c0","#fa9fb5","#f768a1","#dd3497","#ae017e","#7a0177","#49006a"],Greens:["#f7fcf5","#e5f5e0","#c7e9c0","#a1d99b","#74c476","#41ab5d","#238b45","#006d2c","#00441b"],YlGnBu:["#ffffd9","#edf8b1","#c7e9b4","#7fcdbb","#41b6c4","#1d91c0","#225ea8","#253494","#081d58"],Purples:["#fcfbfd","#efedf5","#dadaeb","#bcbddc","#9e9ac8","#807dba","#6a51a3","#54278f","#3f007d"],GnBu:["#f7fcf0","#e0f3db","#ccebc5","#a8ddb5","#7bccc4","#4eb3d3","#2b8cbe","#0868ac","#084081"],Greys:["#ffffff","#f0f0f0","#d9d9d9","#bdbdbd","#969696","#737373","#525252","#252525","#000000"],YlOrRd:["#ffffcc","#ffeda0","#fed976","#feb24c","#fd8d3c","#fc4e2a","#e31a1c","#bd0026","#800026"],PuRd:["#f7f4f9","#e7e1ef","#d4b9da","#c994c7","#df65b0","#e7298a","#ce1256","#980043","#67001f"],Blues:["#f7fbff","#deebf7","#c6dbef","#9ecae1","#6baed6","#4292c6","#2171b5","#08519c","#08306b"],PuBuGn:["#fff7fb","#ece2f0","#d0d1e6","#a6bddb","#67a9cf","#3690c0","#02818a","#016c59","#014636"],Viridis:["#440154","#482777","#3f4a8a","#31678e","#26838f","#1f9d8a","#6cce5a","#b6de2b","#fee825"],Spectral:["#9e0142","#d53e4f","#f46d43","#fdae61","#fee08b","#ffffbf","#e6f598","#abdda4","#66c2a5","#3288bd","#5e4fa2"],RdYlGn:["#a50026","#d73027","#f46d43","#fdae61","#fee08b","#ffffbf","#d9ef8b","#a6d96a","#66bd63","#1a9850","#006837"],RdBu:["#67001f","#b2182b","#d6604d","#f4a582","#fddbc7","#f7f7f7","#d1e5f0","#92c5de","#4393c3","#2166ac","#053061"],PiYG:["#8e0152","#c51b7d","#de77ae","#f1b6da","#fde0ef","#f7f7f7","#e6f5d0","#b8e186","#7fbc41","#4d9221","#276419"],PRGn:["#40004b","#762a83","#9970ab","#c2a5cf","#e7d4e8","#f7f7f7","#d9f0d3","#a6dba0","#5aae61","#1b7837","#00441b"],RdYlBu:["#a50026","#d73027","#f46d43","#fdae61","#fee090","#ffffbf","#e0f3f8","#abd9e9","#74add1","#4575b4","#313695"],BrBG:["#543005","#8c510a","#bf812d","#dfc27d","#f6e8c3","#f5f5f5","#c7eae5","#80cdc1","#35978f","#01665e","#003c30"],RdGy:["#67001f","#b2182b","#d6604d","#f4a582","#fddbc7","#ffffff","#e0e0e0","#bababa","#878787","#4d4d4d","#1a1a1a"],PuOr:["#7f3b08","#b35806","#e08214","#fdb863","#fee0b6","#f7f7f7","#d8daeb","#b2abd2","#8073ac","#542788","#2d004b"],Set2:["#66c2a5","#fc8d62","#8da0cb","#e78ac3","#a6d854","#ffd92f","#e5c494","#b3b3b3"],Accent:["#7fc97f","#beaed4","#fdc086","#ffff99","#386cb0","#f0027f","#bf5b17","#666666"],Set1:["#e41a1c","#377eb8","#4daf4a","#984ea3","#ff7f00","#ffff33","#a65628","#f781bf","#999999"],Set3:["#8dd3c7","#ffffb3","#bebada","#fb8072","#80b1d3","#fdb462","#b3de69","#fccde5","#d9d9d9","#bc80bd","#ccebc5","#ffed6f"],Dark2:["#1b9e77","#d95f02","#7570b3","#e7298a","#66a61e","#e6ab02","#a6761d","#666666"],Paired:["#a6cee3","#1f78b4","#b2df8a","#33a02c","#fb9a99","#e31a1c","#fdbf6f","#ff7f00","#cab2d6","#6a3d9a","#ffff99","#b15928"],Pastel2:["#b3e2cd","#fdcdac","#cbd5e8","#f4cae4","#e6f5c9","#fff2ae","#f1e2cc","#cccccc"],Pastel1:["#fbb4ae","#b3cde3","#ccebc5","#decbe4","#fed9a6","#ffffcc","#e5d8bd","#fddaec","#f2f2f2"]},Ee=0,Pe=Object.keys(Re);Ee<Pe.length;Ee+=1){var Ie=Pe[Ee];Re[Ie.toLowerCase()]=Re[Ie]}var Te=Re;return g.average=function(r,t,e){void 0===t&&(t="lrgb"),void 0===e&&(e=null);var n=r.length;e||(e=Array.from(new Array(n)).map((function(){return 1})));var a=n/e.reduce((function(r,t){return r+t}));if(e.forEach((function(r,t){e[t]*=a})),r=r.map((function(r){return new d(r)})),"lrgb"===t)return re(r,e);for(var o=r.shift(),i=o.get(t),f=[],c=0,u=0,l=0;l<i.length;l++)if(i[l]=(i[l]||0)*e[0],f.push(isNaN(i[l])?0:e[0]),"h"===t.charAt(l)&&!isNaN(i[l])){var s=i[l]/180*Jt;c+=Qt(s)*e[0],u+=Kt(s)*e[0]}var h=o.alpha()*e[0];r.forEach((function(r,n){var a=r.get(t);h+=r.alpha()*e[n+1];for(var o=0;o<i.length;o++)if(!isNaN(a[o]))if(f[o]+=e[n+1],"h"===t.charAt(o)){var l=a[o]/180*Jt;c+=Qt(l)*e[n+1],u+=Kt(l)*e[n+1]}else i[o]+=a[o]*e[n+1]}));for(var b=0;b<i.length;b++)if("h"===t.charAt(b)){for(var g=Zt(u/f[b],c/f[b])/Jt*180;g<0;)g+=360;for(;g>=360;)g-=360;i[b]=g}else i[b]=i[b]/f[b];return h/=n,new d(i,t).alpha(h>.99999?1:h,!0)},g.bezier=function(r){var t=oe(r);return t.scale=function(){return ne(t)},t},g.blend=ue,g.cubehelix=function(r,t,e,n,a){void 0===r&&(r=300),void 0===t&&(t=-1.5),void 0===e&&(e=1),void 0===n&&(n=1),void 0===a&&(a=[0,1]);var o,i=0;"array"===le(a)?o=a[1]-a[0]:(o=0,a=[a,a]);var f=function(f){var c=he*((r+120)/360+t*f),u=de(a[0]+o*f,n),l=(0!==i?e[0]+f*i:e)*u*(1-u)/2,s=ge(c),h=be(c);return g(se([255*(u+l*(-.14861*s+1.78277*h)),255*(u+l*(-.29227*s-.90649*h)),255*(u+l*(1.97294*s)),1]))};return f.start=function(t){return null==t?r:(r=t,f)},f.rotations=function(r){return null==r?t:(t=r,f)},f.gamma=function(r){return null==r?n:(n=r,f)},f.hue=function(r){return null==r?e:("array"===le(e=r)?0==(i=e[1]-e[0])&&(e=e[1]):i=0,f)},f.lightness=function(r){return null==r?a:("array"===le(r)?(a=r,o=r[1]-r[0]):(a=[r,r],o=0),f)},f.scale=function(){return g.scale(f)},f.hue(e),f},g.mix=g.interpolate=Dt,g.random=function(){for(var r="#",t=0;t<6;t++)r+="0123456789abcdef".charAt(pe(16*ve()));return new d(r,"hex")},g.scale=ne,g.analyze=Me.analyze,g.contrast=function(r,t){r=new d(r),t=new d(t);var e=r.luminance(),n=t.luminance();return e>n?(e+.05)/(n+.05):(n+.05)/(e+.05)},g.deltaE=function(r,t,e,n){void 0===e&&(e=1),void 0===n&&(n=1),r=new d(r),t=new d(t);for(var a=Array.from(r.lab()),o=a[0],i=a[1],f=a[2],c=Array.from(t.lab()),u=c[0],l=c[1],s=c[2],h=Oe(i*i+f*f),b=Oe(l*l+s*s),g=o<16?.511:.040975*o/(1+.01765*o),p=.0638*h/(1+.0131*h)+.638,v=h<1e-6?0:180*je(f,i)/Ce;v<0;)v+=360;for(;v>=360;)v-=360;var m=v>=164&&v<=345?.56+Ae(.2*Ne(Ce*(v+168)/180)):.36+Ae(.4*Ne(Ce*(v+35)/180)),y=h*h*h*h,w=Oe(y/(y+1900)),x=p*(w*m+1-w),k=h-b,_=i-l,M=f-s,O=(o-u)/(e*g),j=k/(n*p);return Oe(O*O+j*j+(_*_+M*M-k*k)/(x*x))},g.distance=function(r,t,e){void 0===e&&(e="lab"),r=new d(r),t=new d(t);var n=r.get(e),a=t.get(e),o=0;for(var i in n){var f=(n[i]||0)-(a[i]||0);o+=f*f}return Math.sqrt(o)},g.limits=Me.limits,g.valid=function(){for(var r=[],t=arguments.length;t--;)r[t]=arguments[t];try{return new(Function.prototype.bind.apply(d,[null].concat(r))),!0}catch(r){return!1}},g.scales=Fe,g.colors=yt,g.brewer=Te,g}()},,function(r,t){r.exports=window.lodash},function(r,t,e){"use strict";var n=e(6),a=e.n(n),o=(e(8),e(1)),i={round:function(r,t){t=+t||0;var e=Math.pow(10,t);return Math.round(r*e)/e},getAccessibilityValuesFromHex:function(r){var t=this,e="#ffffff",n="#000000",a={},o=[{large:!1,textColor:e,ratio:4.5,titlePriority:2},{large:!0,textColor:e,ratio:3,titlePriority:4},{large:!1,textColor:n,ratio:4.5,titlePriority:1},{large:!0,textColor:n,ratio:3,titlePriority:3}],i=null,f=null,c=null,u=null,l=null,s=null;return _.each(o,(function(e){var n=t.minAcceptableAlpha(r,e.textColor,e.ratio),o=n?Math.max(n,.87):null;n&&(!e.large&&e.titlePriority&&t.isTextLegibleOverBackground(e.textColor,r)&&(!f||e.titlePriority>s)&&(f=e.textColor,s=e.titlePriority),e.titlePriority&&t.isTextLegibleOverBackground(e.textColor,r)&&(!i||e.titlePriority>l)&&(i=e.textColor,l=e.titlePriority,c=o,u=t.getRgbaFromHexAndAlpha(e.textColor,o)),a.defaults||(a.defaults=[]),a.defaults.push({recAlpha:o,minAlpha:n,criteria:e}))})),a.criterias={},_.each(a.defaults,(function(r){r.preferredTitleColor=i,r.preferredNormalColor=f,r.preferredTitleRecAlpha=c,r.preferredTitleRgba=u;var t=r.criteria.textColor==e?"white":"black",n=r.criteria.large?"large":"normal";a.criterias[t]||(a.criterias[t]={}),a.criterias[t][n]=r})),a.preferredTitleColor=i,a.preferredNormalColor=f,a.preferredTitleRecAlpha=c,a.preferredTitleRgba=u,a},getMinAndRecAlphasFromBgAndTextColors:function(r,t){var e=arguments.length<=2||void 0===arguments[2]?"large":arguments[2],n="large"===e?3:4.5,a=this.minAcceptableAlpha(r,t,n);return{minAlpha:a,recAlpha:a?Math.max(a,.87):null}},minAcceptableAlpha:function(r,t,e){var n=this.hex2Rgb(r),a=this.hex2Rgb(t),o=0,i=1;if(this.blendForegroundContrast(n,a,o)>=e)return null;if(e>this.blendForegroundContrast(n,a,i))return null;for(var f=0;10>=f&&i-o>.01;){var c=(o+i)/2;e>this.blendForegroundContrast(n,a,c)?o=c:i=c,++f}return f>10?null:i},hex2Rgb:function(r){if(!r)return null;r=r.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i,(function(r,t,e,n){return t+t+e+e+n+n}));var t=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(r);return t?{r:parseInt(t[1],16),g:parseInt(t[2],16),b:parseInt(t[3],16)}:null},blendForegroundContrast:function(r,t,e){if(1>e){var n=this.overlayOn(r,t,e);return this.opaqueContrast(n,r)}return this.opaqueContrast(r,t)},overlayOn:function(r,t,e){var n={};return e>=1?r:(n.r=t.r*e+r.r*(1-e),n.g=t.g*e+r.g*(1-e),n.b=t.b*e+r.b*(1-e),n.a=e+1*(1-e),n)},opaqueContrast:function(r,t,e){var n=this.getLFromRgbColor(t)+.05,a=this.getLFromRgbColor(r)+.05,o=n/a;return a>n&&(o=1/o),o},isTextLegibleOverBackground:function(r,t){var e=arguments.length<=2||void 0===arguments[2]?14:arguments[2],n=arguments.length<=3||void 0===arguments[3]?300:arguments[3],a=this.getLFromHex(r),o=this.getLFromHex(t),i=!1;if(!1!==a&&!1!==o){var f=14==e&&n>=700||e>=18,c=(Math.max(a,o)+.05)/(Math.min(a,o)+.05);i=!!(c>=3&&f)||!(c>=3&&4.5>c&&!f)&&(c>=4.5&&!f)}return i},getLFromHex:function(r){var t=this.hex2Rgb(r);return this.getLFromRgbColor(t)},getLFromRgbValue:function(r){var t=r/255;return.03928>t?t/12.92:Math.pow((t+.055)/1.055,2.4)},getLFromRgbColor:function(r){var t={};return t.r=this.getLFromRgbValue(r.r),t.g=this.getLFromRgbValue(r.g),t.b=this.getLFromRgbValue(r.b),.2126*t.r+.7152*t.g+.0722*t.b},getRgbaFromHexAndAlpha:function(r,t){var e=this.hex2Rgb(r);return t=t?t.toFixed(2):1,"rgba("+e.r+", "+e.g+", "+e.b+", "+t+")"},formatHex:function(r){return r?"#"!==r[0]?"#"+r:r:null},rgb2Hex:function(r){return"#"+("000000"+(Math.round(r.b)+256*Math.round(r.g)+65536*Math.round(r.r)).toString(16)).substr(-6)},rgb2Hsv:function(r,t,e){if(r=parseInt((""+r).replace(/\s/g,""),10),t=parseInt((""+t).replace(/\s/g,""),10),e=parseInt((""+e).replace(/\s/g,""),10),!(null==r||null==t||null==e||isNaN(r)||isNaN(t)||isNaN(e)||0>r||0>t||0>e||r>255||t>255||e>255)){r/=255,t/=255,e/=255;var n=Math.min(r,Math.min(t,e)),a=Math.max(r,Math.max(t,e));return n==a?{h:0,s:0,v:n}:{h:60*((r==n?3:e==n?1:5)-(r==n?t-e:e==n?r-t:e-r)/(a-n)),s:(a-n)/a,v:a}}},distanceBetweenTwoPoints:function(r,t){var e=r.x,n=r.y,a=t.x,o=t.y;return Math.sqrt(Math.pow(e-a,2)+Math.pow(n-o,2))},hsv2Rgb:function(r,t,e){var n=e*t,a=r/60,o=n*(1-Math.abs(a%2-1)),i=e-n,f=[];return void 0===r?f=[0,0,0]:1>a?f=[n,o,0]:2>a?f=[o,n,0]:3>a?f=[0,n,o]:4>a?f=[0,o,n]:5>a?f=[o,0,n]:6>=a&&(f=[n,0,o]),{r:255*(f[0]+i),g:255*(f[1]+i),b:255*(f[2]+i)}},hex2Hsv:function(r){var t=this.hex2Rgb(r);return this.rgb2Hsv(t.r,t.g,t.b)},hsv2Hex:function(r,t,e){var n=this.hsv2Rgb(r,t,e);return this.rgb2Hex({r:n.r,g:n.g,b:n.b})},rgba2rgb:function(r){var t={r:r.r,g:r.g,b:r.b};return r.a?(t.r=Math.round(255*(1-r.a)+r.a*r.r),t.g=Math.round(255*(1-r.a)+r.a*r.g),t.b=Math.round(255*(1-r.a)+r.a*r.b),t):r},rgba2hex:function(r){var t=this.rgba2rgb(r);return this.rgb2Hex(t)},darkenHex:function(r,t){return this.rgb2Hex(this.darkenRgb(this.hex2Rgb(r),t))},darkenRgb:function(r,t){var e={},n={r:0,g:0,b:0};for(var a in n)e[a]=parseInt((n[a]-r[a])*t+r[a],10);return e},lightenHex:function(r,t){return this.rgb2Hex(this.lightenRgb(this.hex2Rgb(r),t))},lightenRgb:function(r,t){var e={},n={r:255,g:255,b:255};for(var a in n)e[a]=parseInt((n[a]-r[a])*t+r[a],10);return e},sanitizeStringWithHyphens:function(r){var t=arguments.length<=1||void 0===arguments[1]?[]:arguments[1],e=new RegExp("[ "+t+"]","g");return r.replace(e,"-")},sanitizeStringWithoutHyphens:function(r){return r.replace(/-/g," ")},getDistanceFromLabColors:function(r,t){return DeltaE.getDeltaE00({L:r[0],A:r[1],B:r[2]},{L:t[0],A:t[1],B:t[2]})},getDistanceFromHexes:function(r,t){var e=a.a.hex(r),n=a.a.hex(t);return this.getDistanceFromLabColors(e.lab(),n.lab())},stopErrorFormMessage:function(r){r&&r.$setValidity("form-error",!0)},showErrorFormMessage:function(r){var t=!(arguments.length<=1||void 0===arguments[1])&&arguments[1];r&&(r.$setValidity("form-error",!1),t&&(r.formErrorMsg=t))},hexValid:function(r){return/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(r)},getColorRangeFromHex:function(r){r=this.formatHex(r);var t={},e=a()(r).darken().hex(),n=a()(r).brighten().hex();return t.dark={hex:e,accessibility:this.getAccessibilityValuesFromHex(e)},t.light={hex:n,accessibility:this.getAccessibilityValuesFromHex(n)},t},generateColorFromHex:function(r){return{hex:r,accessibility:!!r&&this.getAccessibilityValuesFromHex(r),range:!!r&&this.getColorRangeFromHex(r)}},getCustomTextColorInfo:function(r,t,e){var n=this.getCustomTextAlphas(r,t,e);return n.minAlpha=n.minAlpha?Math.round(100*n.minAlpha):null,null===n.minAlpha?null:"min "+n.minAlpha+"% opacity"},getCustomTextAlphas:function(r,t,e){return this.getMinAndRecAlphasFromBgAndTextColors(t,e,r)},getColorAccessibility:function(r,t,e,n){return{hex:r,type:t.replace(/Text on\s*|\s*Color/,""),variations:[{size:Object(o.__)("Large","material-design"),colorHex:r,textColor:n,textColorHex:e,result:i.getCustomTextColorInfo("large",r,e)},{size:Object(o.__)("Normal","material-design"),colorHex:r,textColor:n,textColorHex:e,result:i.getCustomTextColorInfo("large",r,e)}]}},hexToRgb:function(r){return r?r.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i,(function(r,t,e,n){return"#"+t+t+e+e+n+n})).substring(1).match(/.{2}/g).map((function(r){return parseInt(r,16)})):[]}};t.a=i},function(r,t){r.exports=function(r,t,e){return t in r?Object.defineProperty(r,t,{value:e,enumerable:!0,configurable:!0,writable:!0}):r[t]=e,r}},function(r,t,e){"use strict";e.d(t,"a",(function(){return a}));var n=e(1),a={100:Object(n.__)("Thin","material-design"),200:Object(n.__)("Extra Light","material-design"),300:Object(n.__)("Light","material-design"),regular:Object(n.__)("Regular","material-design"),500:Object(n.__)("Medium","material-design"),600:Object(n.__)("Semi Bold","material-design"),700:Object(n.__)("Bold","material-design"),800:Object(n.__)("Extra Bold","material-design"),900:Object(n.__)("Black","material-design"),950:Object(n.__)("Extra Black","material-design"),"100italic":Object(n.__)("Thin Italic","material-design"),"200italic":Object(n.__)("Extra Light Italic","material-design"),"300italic":Object(n.__)("Light Italic","material-design"),italic:Object(n.__)("Italic","material-design"),"500italic":Object(n.__)("Medium Italic","material-design"),"600italic":Object(n.__)("Semi Bold Italic","material-design"),"700italic":Object(n.__)("Bold Italic","material-design"),"800italic":Object(n.__)("Extra Bold Italic","material-design"),"900italic":Object(n.__)("Black Italic","material-design"),"950italic":Object(n.__)("Extra Black Italic","material-design")}},,function(r,t){r.exports=function(r,t){(null==t||t>r.length)&&(t=r.length);for(var e=0,n=new Array(t);e<t;e++)n[e]=r[e];return n}},,function(r,t,e){var n=e(13);r.exports=function(r,t){if(r){if("string"==typeof r)return n(r,t);var e=Object.prototype.toString.call(r).slice(8,-1);return"Object"===e&&r.constructor&&(e=r.constructor.name),"Map"===e||"Set"===e?Array.from(r):"Arguments"===e||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(e)?n(r,t):void 0}}},,,,,,function(r,t,e){var n=e(42),a=e(43),o=e(15),i=e(44);r.exports=function(r){return n(r)||a(r)||o(r)||i()}},function(r,t,e){var n=e(24),a=e(45),o=e(48),i=Math.max,f=Math.min;r.exports=function(r,t,e){var c,u,l,s,h,d,b=0,g=!1,p=!1,v=!0;if("function"!=typeof r)throw new TypeError("Expected a function");function m(t){var e=c,n=u;return c=u=void 0,b=t,s=r.apply(n,e)}function y(r){return b=r,h=setTimeout(x,t),g?m(r):s}function w(r){var e=r-d;return void 0===d||e>=t||e<0||p&&r-b>=l}function x(){var r=a();if(w(r))return k(r);h=setTimeout(x,function(r){var e=t-(r-d);return p?f(e,l-(r-b)):e}(r))}function k(r){return h=void 0,v&&c?m(r):(c=u=void 0,s)}function _(){var r=a(),e=w(r);if(c=arguments,u=this,d=r,e){if(void 0===h)return y(d);if(p)return clearTimeout(h),h=setTimeout(x,t),m(d)}return void 0===h&&(h=setTimeout(x,t)),s}return t=o(t)||0,n(e)&&(g=!!e.leading,l=(p="maxWait"in e)?i(o(e.maxWait)||0,t):l,v="trailing"in e?!!e.trailing:v),_.cancel=function(){void 0!==h&&clearTimeout(h),b=0,c=d=u=h=void 0},_.flush=function(){return void 0===h?s:k(a())},_}},,function(r,t){r.exports=function(r){var t=typeof r;return null!=r&&("object"==t||"function"==t)}},function(r,t,e){var n=e(46),a="object"==typeof self&&self&&self.Object===Object&&self,o=n||a||Function("return this")();r.exports=o},function(r,t,e){var n=e(25).Symbol;r.exports=n},,,,,,,,,,,,,,function(r,t,e){e(41),r.exports=e(54)},function(r,t,e){"use strict";e.r(t);var n=e(21),a=e.n(n),o=e(10),i=e.n(o),f=e(22),c=e.n(f),u=e(9),l=e(11);function s(r,t){var e=Object.keys(r);if(Object.getOwnPropertySymbols){var n=Object.getOwnPropertySymbols(r);t&&(n=n.filter((function(t){return Object.getOwnPropertyDescriptor(r,t).enumerable}))),e.push.apply(e,n)}return e}function h(r){for(var t=1;t<arguments.length;t++){var e=null!=arguments[t]?arguments[t]:{};t%2?s(Object(e),!0).forEach((function(t){i()(r,t,e[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(r,Object.getOwnPropertyDescriptors(e)):s(Object(e)).forEach((function(t){Object.defineProperty(r,t,Object.getOwnPropertyDescriptor(e,t))}))}return r}!function(r){if(window.parent&&window.parent.wp&&window.parent._wpCustomizeSettings){var t=wp.customize,e=window.parent.wp.customize,n=window.parent._wpCustomizeSettings.controls,o={},f={},s={},d={};r((function(){t.preview.bind("active",(function(){t.preview.send("materialDesign",{notificationCount:_wpCustomizeSettings.values.material_design_notify})}))}));!function r(t){t&&Object.keys(t).forEach((function(e){var n=t[e];n&&n.cssVar&&(n.relatedTextSetting||n.relatedSetting)&&(o[e]=n.cssVar),n&&n.cssVars&&"google_fonts"===n.type&&(f[e]=n.cssVars),n&&n.cssVar&&"range_slider"===n.type&&(s[e]=n,n.children&&Array.isArray(n.children)&&r(n.children.reduce((function(r,t){return h(h({},r),{},i()({},t.id,h(h({},t),{},{type:"range_slider",cssVar:t.css_var,initialValue:t.initial_value})))}),{}))),n&&n.cssVar&&"icon_radio"===n.type&&(d[e]=n.cssVar)}))}(n);var b=c()((function(){var t="material-design-customizer-preview-styles",n=r("#"+t),a="";n.length||(r("head").append('<style id="'+t+'"></style>'),n=r("#"+t)),Object.keys(f).forEach((function(r){if(f[r].family)f[r].family.forEach((function(t){a+="".concat(t,": ").concat(e(r).get(),";")}));else{var t,n=e(r).get();if(!n)return;try{t=JSON.parse(n)}catch(r){return}for(var o in t){if("style"===o||void 0===t[o])return;if("size"===o)a+="".concat(f[r][o],": ").concat(t[o],"px !important;");else{var i=/italic$/.test(t[o])?"italic":"normal",c=["regular","italic"].includes(t[o])?400:parseInt(t[o],10);a+="".concat(f[r].style,": ").concat(i," !important;"),a+="".concat(f[r][o],": ").concat(c," !important;")}}}})),Object.keys(o).forEach((function(r){var t=e(r).get(),n=u.a.hexToRgb(t).join(",");a+="".concat(o[r],": ").concat(t,";\n\t\t\t\t").concat(o[r],"-rgb: ").concat(n,";\n\t\t\t")})),Object.keys(s).forEach((function(r){var t=e(r).get(),n=s[r];"number"==typeof n.min&&t<n.min&&(t=n.min),"number"==typeof n.max&&t>n.max&&(t=n.max),a+="".concat(n.cssVar,": ").concat(t,"px;")})),Object.keys(d).forEach((function(r){var t;a+="".concat(d[r],": '").concat("filled"===(t=e(r).get())?"Material Icons":"Material Icons ".concat(t.replace("-"," ").replace(/(^\w{1})|(\s{1}\w{1})/g,(function(r){return r.toUpperCase()}))),"';")})),a=":root {\n\t\t\t".concat(a,"\n\t\t}"),n.html(a)}),300),g=c()((function(){var t=[],n="https://fonts.googleapis.com/css?family=";Object.keys(f).forEach((function(r){if(/family]$/.test(r)){var n=e(r).get();t.push(n.replace(/\s/g,"+")+":"+Object.keys(l.a).join(","))}}));var o=r("#material-google-fonts-cdn-css"),i="".concat(n).concat(a()(new Set(t)).join("|"));o.attr("href")!==i&&o.attr("href","".concat(n).concat(a()(new Set(t)).join("|")))}),300);Object.keys(o).concat(Object.keys(s)).concat(Object.keys(f)).concat(Object.keys(d)).forEach((function(r){e(r,(function(t){t.bind((function(){f.hasOwnProperty(r)&&g(),b()}))}))})),r("head").append('<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">')}}(jQuery)},function(r,t,e){var n=e(13);r.exports=function(r){if(Array.isArray(r))return n(r)}},function(r,t){r.exports=function(r){if("undefined"!=typeof Symbol&&Symbol.iterator in Object(r))return Array.from(r)}},function(r,t){r.exports=function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}},function(r,t,e){var n=e(25);r.exports=function(){return n.Date.now()}},function(r,t,e){(function(t){var e="object"==typeof t&&t&&t.Object===Object&&t;r.exports=e}).call(this,e(47))},function(r,t){var e;e=function(){return this}();try{e=e||new Function("return this")()}catch(r){"object"==typeof window&&(e=window)}r.exports=e},function(r,t,e){var n=e(24),a=e(49),o=/^\s+|\s+$/g,i=/^[-+]0x[0-9a-f]+$/i,f=/^0b[01]+$/i,c=/^0o[0-7]+$/i,u=parseInt;r.exports=function(r){if("number"==typeof r)return r;if(a(r))return NaN;if(n(r)){var t="function"==typeof r.valueOf?r.valueOf():r;r=n(t)?t+"":t}if("string"!=typeof r)return 0===r?r:+r;r=r.replace(o,"");var e=f.test(r);return e||c.test(r)?u(r.slice(2),e?2:8):i.test(r)?NaN:+r}},function(r,t,e){var n=e(50),a=e(53);r.exports=function(r){return"symbol"==typeof r||a(r)&&"[object Symbol]"==n(r)}},function(r,t,e){var n=e(26),a=e(51),o=e(52),i=n?n.toStringTag:void 0;r.exports=function(r){return null==r?void 0===r?"[object Undefined]":"[object Null]":i&&i in Object(r)?a(r):o(r)}},function(r,t,e){var n=e(26),a=Object.prototype,o=a.hasOwnProperty,i=a.toString,f=n?n.toStringTag:void 0;r.exports=function(r){var t=o.call(r,f),e=r[f];try{r[f]=void 0;var n=!0}catch(r){}var a=i.call(r);return n&&(t?r[f]=e:delete r[f]),a}},function(r,t){var e=Object.prototype.toString;r.exports=function(r){return e.call(r)}},function(r,t){r.exports=function(r){return null!=r&&"object"==typeof r}},function(r,t,e){"use strict";e.r(t)}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayLikeToArray.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+
+module.exports = _arrayLikeToArray;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray.js */ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js");
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return arrayLikeToArray(arr);
+}
+
+module.exports = _arrayWithoutHoles;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/defineProperty.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/defineProperty.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+module.exports = _defineProperty;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/iterableToArray.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/iterableToArray.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+}
+
+module.exports = _iterableToArray;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/nonIterableSpread.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+module.exports = _nonIterableSpread;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/toConsumableArray.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/toConsumableArray.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles.js */ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js");
+
+var iterableToArray = __webpack_require__(/*! ./iterableToArray.js */ "./node_modules/@babel/runtime/helpers/iterableToArray.js");
+
+var unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray.js */ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js");
+
+var nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread.js */ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js");
+
+function _toConsumableArray(arr) {
+  return arrayWithoutHoles(arr) || iterableToArray(arr) || unsupportedIterableToArray(arr) || nonIterableSpread();
+}
+
+module.exports = _toConsumableArray;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray.js */ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js");
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
+}
+
+module.exports = _unsupportedIterableToArray;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_Symbol.js":
+/*!****************************************!*\
+  !*** ./node_modules/lodash/_Symbol.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js");
+
+/** Built-in value references. */
+var Symbol = root.Symbol;
+
+module.exports = Symbol;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseGetTag.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_baseGetTag.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Symbol = __webpack_require__(/*! ./_Symbol */ "./node_modules/lodash/_Symbol.js"),
+    getRawTag = __webpack_require__(/*! ./_getRawTag */ "./node_modules/lodash/_getRawTag.js"),
+    objectToString = __webpack_require__(/*! ./_objectToString */ "./node_modules/lodash/_objectToString.js");
+
+/** `Object#toString` result references. */
+var nullTag = '[object Null]',
+    undefinedTag = '[object Undefined]';
+
+/** Built-in value references. */
+var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+
+/**
+ * The base implementation of `getTag` without fallbacks for buggy environments.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the `toStringTag`.
+ */
+function baseGetTag(value) {
+  if (value == null) {
+    return value === undefined ? undefinedTag : nullTag;
+  }
+  return (symToStringTag && symToStringTag in Object(value))
+    ? getRawTag(value)
+    : objectToString(value);
+}
+
+module.exports = baseGetTag;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_freeGlobal.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_freeGlobal.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
+var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+
+module.exports = freeGlobal;
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_getRawTag.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_getRawTag.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Symbol = __webpack_require__(/*! ./_Symbol */ "./node_modules/lodash/_Symbol.js");
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var nativeObjectToString = objectProto.toString;
+
+/** Built-in value references. */
+var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+
+/**
+ * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the raw `toStringTag`.
+ */
+function getRawTag(value) {
+  var isOwn = hasOwnProperty.call(value, symToStringTag),
+      tag = value[symToStringTag];
+
+  try {
+    value[symToStringTag] = undefined;
+    var unmasked = true;
+  } catch (e) {}
+
+  var result = nativeObjectToString.call(value);
+  if (unmasked) {
+    if (isOwn) {
+      value[symToStringTag] = tag;
+    } else {
+      delete value[symToStringTag];
+    }
+  }
+  return result;
+}
+
+module.exports = getRawTag;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_objectToString.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_objectToString.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var nativeObjectToString = objectProto.toString;
+
+/**
+ * Converts `value` to a string using `Object.prototype.toString`.
+ *
+ * @private
+ * @param {*} value The value to convert.
+ * @returns {string} Returns the converted string.
+ */
+function objectToString(value) {
+  return nativeObjectToString.call(value);
+}
+
+module.exports = objectToString;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_root.js":
+/*!**************************************!*\
+  !*** ./node_modules/lodash/_root.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var freeGlobal = __webpack_require__(/*! ./_freeGlobal */ "./node_modules/lodash/_freeGlobal.js");
+
+/** Detect free variable `self`. */
+var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+/** Used as a reference to the global object. */
+var root = freeGlobal || freeSelf || Function('return this')();
+
+module.exports = root;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/debounce.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/debounce.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__(/*! ./isObject */ "./node_modules/lodash/isObject.js"),
+    now = __webpack_require__(/*! ./now */ "./node_modules/lodash/now.js"),
+    toNumber = __webpack_require__(/*! ./toNumber */ "./node_modules/lodash/toNumber.js");
+
+/** Error message constants. */
+var FUNC_ERROR_TEXT = 'Expected a function';
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeMax = Math.max,
+    nativeMin = Math.min;
+
+/**
+ * Creates a debounced function that delays invoking `func` until after `wait`
+ * milliseconds have elapsed since the last time the debounced function was
+ * invoked. The debounced function comes with a `cancel` method to cancel
+ * delayed `func` invocations and a `flush` method to immediately invoke them.
+ * Provide `options` to indicate whether `func` should be invoked on the
+ * leading and/or trailing edge of the `wait` timeout. The `func` is invoked
+ * with the last arguments provided to the debounced function. Subsequent
+ * calls to the debounced function return the result of the last `func`
+ * invocation.
+ *
+ * **Note:** If `leading` and `trailing` options are `true`, `func` is
+ * invoked on the trailing edge of the timeout only if the debounced function
+ * is invoked more than once during the `wait` timeout.
+ *
+ * If `wait` is `0` and `leading` is `false`, `func` invocation is deferred
+ * until to the next tick, similar to `setTimeout` with a timeout of `0`.
+ *
+ * See [David Corbacho's article](https://css-tricks.com/debouncing-throttling-explained-examples/)
+ * for details over the differences between `_.debounce` and `_.throttle`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to debounce.
+ * @param {number} [wait=0] The number of milliseconds to delay.
+ * @param {Object} [options={}] The options object.
+ * @param {boolean} [options.leading=false]
+ *  Specify invoking on the leading edge of the timeout.
+ * @param {number} [options.maxWait]
+ *  The maximum time `func` is allowed to be delayed before it's invoked.
+ * @param {boolean} [options.trailing=true]
+ *  Specify invoking on the trailing edge of the timeout.
+ * @returns {Function} Returns the new debounced function.
+ * @example
+ *
+ * // Avoid costly calculations while the window size is in flux.
+ * jQuery(window).on('resize', _.debounce(calculateLayout, 150));
+ *
+ * // Invoke `sendMail` when clicked, debouncing subsequent calls.
+ * jQuery(element).on('click', _.debounce(sendMail, 300, {
+ *   'leading': true,
+ *   'trailing': false
+ * }));
+ *
+ * // Ensure `batchLog` is invoked once after 1 second of debounced calls.
+ * var debounced = _.debounce(batchLog, 250, { 'maxWait': 1000 });
+ * var source = new EventSource('/stream');
+ * jQuery(source).on('message', debounced);
+ *
+ * // Cancel the trailing debounced invocation.
+ * jQuery(window).on('popstate', debounced.cancel);
+ */
+function debounce(func, wait, options) {
+  var lastArgs,
+      lastThis,
+      maxWait,
+      result,
+      timerId,
+      lastCallTime,
+      lastInvokeTime = 0,
+      leading = false,
+      maxing = false,
+      trailing = true;
+
+  if (typeof func != 'function') {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  wait = toNumber(wait) || 0;
+  if (isObject(options)) {
+    leading = !!options.leading;
+    maxing = 'maxWait' in options;
+    maxWait = maxing ? nativeMax(toNumber(options.maxWait) || 0, wait) : maxWait;
+    trailing = 'trailing' in options ? !!options.trailing : trailing;
+  }
+
+  function invokeFunc(time) {
+    var args = lastArgs,
+        thisArg = lastThis;
+
+    lastArgs = lastThis = undefined;
+    lastInvokeTime = time;
+    result = func.apply(thisArg, args);
+    return result;
+  }
+
+  function leadingEdge(time) {
+    // Reset any `maxWait` timer.
+    lastInvokeTime = time;
+    // Start the timer for the trailing edge.
+    timerId = setTimeout(timerExpired, wait);
+    // Invoke the leading edge.
+    return leading ? invokeFunc(time) : result;
+  }
+
+  function remainingWait(time) {
+    var timeSinceLastCall = time - lastCallTime,
+        timeSinceLastInvoke = time - lastInvokeTime,
+        timeWaiting = wait - timeSinceLastCall;
+
+    return maxing
+      ? nativeMin(timeWaiting, maxWait - timeSinceLastInvoke)
+      : timeWaiting;
+  }
+
+  function shouldInvoke(time) {
+    var timeSinceLastCall = time - lastCallTime,
+        timeSinceLastInvoke = time - lastInvokeTime;
+
+    // Either this is the first call, activity has stopped and we're at the
+    // trailing edge, the system time has gone backwards and we're treating
+    // it as the trailing edge, or we've hit the `maxWait` limit.
+    return (lastCallTime === undefined || (timeSinceLastCall >= wait) ||
+      (timeSinceLastCall < 0) || (maxing && timeSinceLastInvoke >= maxWait));
+  }
+
+  function timerExpired() {
+    var time = now();
+    if (shouldInvoke(time)) {
+      return trailingEdge(time);
+    }
+    // Restart the timer.
+    timerId = setTimeout(timerExpired, remainingWait(time));
+  }
+
+  function trailingEdge(time) {
+    timerId = undefined;
+
+    // Only invoke if we have `lastArgs` which means `func` has been
+    // debounced at least once.
+    if (trailing && lastArgs) {
+      return invokeFunc(time);
+    }
+    lastArgs = lastThis = undefined;
+    return result;
+  }
+
+  function cancel() {
+    if (timerId !== undefined) {
+      clearTimeout(timerId);
+    }
+    lastInvokeTime = 0;
+    lastArgs = lastCallTime = lastThis = timerId = undefined;
+  }
+
+  function flush() {
+    return timerId === undefined ? result : trailingEdge(now());
+  }
+
+  function debounced() {
+    var time = now(),
+        isInvoking = shouldInvoke(time);
+
+    lastArgs = arguments;
+    lastThis = this;
+    lastCallTime = time;
+
+    if (isInvoking) {
+      if (timerId === undefined) {
+        return leadingEdge(lastCallTime);
+      }
+      if (maxing) {
+        // Handle invocations in a tight loop.
+        clearTimeout(timerId);
+        timerId = setTimeout(timerExpired, wait);
+        return invokeFunc(lastCallTime);
+      }
+    }
+    if (timerId === undefined) {
+      timerId = setTimeout(timerExpired, wait);
+    }
+    return result;
+  }
+  debounced.cancel = cancel;
+  debounced.flush = flush;
+  return debounced;
+}
+
+module.exports = debounce;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isObject.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/isObject.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return value != null && (type == 'object' || type == 'function');
+}
+
+module.exports = isObject;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isObjectLike.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/isObjectLike.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return value != null && typeof value == 'object';
+}
+
+module.exports = isObjectLike;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isSymbol.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/isSymbol.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseGetTag = __webpack_require__(/*! ./_baseGetTag */ "./node_modules/lodash/_baseGetTag.js"),
+    isObjectLike = __webpack_require__(/*! ./isObjectLike */ "./node_modules/lodash/isObjectLike.js");
+
+/** `Object#toString` result references. */
+var symbolTag = '[object Symbol]';
+
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+    (isObjectLike(value) && baseGetTag(value) == symbolTag);
+}
+
+module.exports = isSymbol;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/now.js":
+/*!************************************!*\
+  !*** ./node_modules/lodash/now.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js");
+
+/**
+ * Gets the timestamp of the number of milliseconds that have elapsed since
+ * the Unix epoch (1 January 1970 00:00:00 UTC).
+ *
+ * @static
+ * @memberOf _
+ * @since 2.4.0
+ * @category Date
+ * @returns {number} Returns the timestamp.
+ * @example
+ *
+ * _.defer(function(stamp) {
+ *   console.log(_.now() - stamp);
+ * }, _.now());
+ * // => Logs the number of milliseconds it took for the deferred invocation.
+ */
+var now = function() {
+  return root.Date.now();
+};
+
+module.exports = now;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/toNumber.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/toNumber.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__(/*! ./isObject */ "./node_modules/lodash/isObject.js"),
+    isSymbol = __webpack_require__(/*! ./isSymbol */ "./node_modules/lodash/isSymbol.js");
+
+/** Used as references for various `Number` constants. */
+var NAN = 0 / 0;
+
+/** Used to match leading and trailing whitespace. */
+var reTrim = /^\s+|\s+$/g;
+
+/** Used to detect bad signed hexadecimal string values. */
+var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+
+/** Used to detect binary string values. */
+var reIsBinary = /^0b[01]+$/i;
+
+/** Used to detect octal string values. */
+var reIsOctal = /^0o[0-7]+$/i;
+
+/** Built-in method references without a dependency on `root`. */
+var freeParseInt = parseInt;
+
+/**
+ * Converts `value` to a number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to process.
+ * @returns {number} Returns the number.
+ * @example
+ *
+ * _.toNumber(3.2);
+ * // => 3.2
+ *
+ * _.toNumber(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toNumber(Infinity);
+ * // => Infinity
+ *
+ * _.toNumber('3.2');
+ * // => 3.2
+ */
+function toNumber(value) {
+  if (typeof value == 'number') {
+    return value;
+  }
+  if (isSymbol(value)) {
+    return NAN;
+  }
+  if (isObject(value)) {
+    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
+    value = isObject(other) ? (other + '') : other;
+  }
+  if (typeof value != 'string') {
+    return value === 0 ? value : +value;
+  }
+  value = value.replace(reTrim, '');
+  var isBinary = reIsBinary.test(value);
+  return (isBinary || reIsOctal.test(value))
+    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
+    : (reIsBadHex.test(value) ? NAN : +value);
+}
+
+module.exports = toNumber;
+
+
+/***/ }),
+
+/***/ "./node_modules/tinycolor2/tinycolor.js":
+/*!**********************************************!*\
+  !*** ./node_modules/tinycolor2/tinycolor.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_RESULT__;// TinyColor v1.4.2
+// https://github.com/bgrins/TinyColor
+// Brian Grinstead, MIT License
+
+(function(Math) {
+
+var trimLeft = /^\s+/,
+    trimRight = /\s+$/,
+    tinyCounter = 0,
+    mathRound = Math.round,
+    mathMin = Math.min,
+    mathMax = Math.max,
+    mathRandom = Math.random;
+
+function tinycolor (color, opts) {
+
+    color = (color) ? color : '';
+    opts = opts || { };
+
+    // If input is already a tinycolor, return itself
+    if (color instanceof tinycolor) {
+       return color;
+    }
+    // If we are called as a function, call using new instead
+    if (!(this instanceof tinycolor)) {
+        return new tinycolor(color, opts);
+    }
+
+    var rgb = inputToRGB(color);
+    this._originalInput = color,
+    this._r = rgb.r,
+    this._g = rgb.g,
+    this._b = rgb.b,
+    this._a = rgb.a,
+    this._roundA = mathRound(100*this._a) / 100,
+    this._format = opts.format || rgb.format;
+    this._gradientType = opts.gradientType;
+
+    // Don't let the range of [0,255] come back in [0,1].
+    // Potentially lose a little bit of precision here, but will fix issues where
+    // .5 gets interpreted as half of the total, instead of half of 1
+    // If it was supposed to be 128, this was already taken care of by `inputToRgb`
+    if (this._r < 1) { this._r = mathRound(this._r); }
+    if (this._g < 1) { this._g = mathRound(this._g); }
+    if (this._b < 1) { this._b = mathRound(this._b); }
+
+    this._ok = rgb.ok;
+    this._tc_id = tinyCounter++;
+}
+
+tinycolor.prototype = {
+    isDark: function() {
+        return this.getBrightness() < 128;
+    },
+    isLight: function() {
+        return !this.isDark();
+    },
+    isValid: function() {
+        return this._ok;
+    },
+    getOriginalInput: function() {
+      return this._originalInput;
+    },
+    getFormat: function() {
+        return this._format;
+    },
+    getAlpha: function() {
+        return this._a;
+    },
+    getBrightness: function() {
+        //http://www.w3.org/TR/AERT#color-contrast
+        var rgb = this.toRgb();
+        return (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;
+    },
+    getLuminance: function() {
+        //http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
+        var rgb = this.toRgb();
+        var RsRGB, GsRGB, BsRGB, R, G, B;
+        RsRGB = rgb.r/255;
+        GsRGB = rgb.g/255;
+        BsRGB = rgb.b/255;
+
+        if (RsRGB <= 0.03928) {R = RsRGB / 12.92;} else {R = Math.pow(((RsRGB + 0.055) / 1.055), 2.4);}
+        if (GsRGB <= 0.03928) {G = GsRGB / 12.92;} else {G = Math.pow(((GsRGB + 0.055) / 1.055), 2.4);}
+        if (BsRGB <= 0.03928) {B = BsRGB / 12.92;} else {B = Math.pow(((BsRGB + 0.055) / 1.055), 2.4);}
+        return (0.2126 * R) + (0.7152 * G) + (0.0722 * B);
+    },
+    setAlpha: function(value) {
+        this._a = boundAlpha(value);
+        this._roundA = mathRound(100*this._a) / 100;
+        return this;
+    },
+    toHsv: function() {
+        var hsv = rgbToHsv(this._r, this._g, this._b);
+        return { h: hsv.h * 360, s: hsv.s, v: hsv.v, a: this._a };
+    },
+    toHsvString: function() {
+        var hsv = rgbToHsv(this._r, this._g, this._b);
+        var h = mathRound(hsv.h * 360), s = mathRound(hsv.s * 100), v = mathRound(hsv.v * 100);
+        return (this._a == 1) ?
+          "hsv("  + h + ", " + s + "%, " + v + "%)" :
+          "hsva(" + h + ", " + s + "%, " + v + "%, "+ this._roundA + ")";
+    },
+    toHsl: function() {
+        var hsl = rgbToHsl(this._r, this._g, this._b);
+        return { h: hsl.h * 360, s: hsl.s, l: hsl.l, a: this._a };
+    },
+    toHslString: function() {
+        var hsl = rgbToHsl(this._r, this._g, this._b);
+        var h = mathRound(hsl.h * 360), s = mathRound(hsl.s * 100), l = mathRound(hsl.l * 100);
+        return (this._a == 1) ?
+          "hsl("  + h + ", " + s + "%, " + l + "%)" :
+          "hsla(" + h + ", " + s + "%, " + l + "%, "+ this._roundA + ")";
+    },
+    toHex: function(allow3Char) {
+        return rgbToHex(this._r, this._g, this._b, allow3Char);
+    },
+    toHexString: function(allow3Char) {
+        return '#' + this.toHex(allow3Char);
+    },
+    toHex8: function(allow4Char) {
+        return rgbaToHex(this._r, this._g, this._b, this._a, allow4Char);
+    },
+    toHex8String: function(allow4Char) {
+        return '#' + this.toHex8(allow4Char);
+    },
+    toRgb: function() {
+        return { r: mathRound(this._r), g: mathRound(this._g), b: mathRound(this._b), a: this._a };
+    },
+    toRgbString: function() {
+        return (this._a == 1) ?
+          "rgb("  + mathRound(this._r) + ", " + mathRound(this._g) + ", " + mathRound(this._b) + ")" :
+          "rgba(" + mathRound(this._r) + ", " + mathRound(this._g) + ", " + mathRound(this._b) + ", " + this._roundA + ")";
+    },
+    toPercentageRgb: function() {
+        return { r: mathRound(bound01(this._r, 255) * 100) + "%", g: mathRound(bound01(this._g, 255) * 100) + "%", b: mathRound(bound01(this._b, 255) * 100) + "%", a: this._a };
+    },
+    toPercentageRgbString: function() {
+        return (this._a == 1) ?
+          "rgb("  + mathRound(bound01(this._r, 255) * 100) + "%, " + mathRound(bound01(this._g, 255) * 100) + "%, " + mathRound(bound01(this._b, 255) * 100) + "%)" :
+          "rgba(" + mathRound(bound01(this._r, 255) * 100) + "%, " + mathRound(bound01(this._g, 255) * 100) + "%, " + mathRound(bound01(this._b, 255) * 100) + "%, " + this._roundA + ")";
+    },
+    toName: function() {
+        if (this._a === 0) {
+            return "transparent";
+        }
+
+        if (this._a < 1) {
+            return false;
+        }
+
+        return hexNames[rgbToHex(this._r, this._g, this._b, true)] || false;
+    },
+    toFilter: function(secondColor) {
+        var hex8String = '#' + rgbaToArgbHex(this._r, this._g, this._b, this._a);
+        var secondHex8String = hex8String;
+        var gradientType = this._gradientType ? "GradientType = 1, " : "";
+
+        if (secondColor) {
+            var s = tinycolor(secondColor);
+            secondHex8String = '#' + rgbaToArgbHex(s._r, s._g, s._b, s._a);
+        }
+
+        return "progid:DXImageTransform.Microsoft.gradient("+gradientType+"startColorstr="+hex8String+",endColorstr="+secondHex8String+")";
+    },
+    toString: function(format) {
+        var formatSet = !!format;
+        format = format || this._format;
+
+        var formattedString = false;
+        var hasAlpha = this._a < 1 && this._a >= 0;
+        var needsAlphaFormat = !formatSet && hasAlpha && (format === "hex" || format === "hex6" || format === "hex3" || format === "hex4" || format === "hex8" || format === "name");
+
+        if (needsAlphaFormat) {
+            // Special case for "transparent", all other non-alpha formats
+            // will return rgba when there is transparency.
+            if (format === "name" && this._a === 0) {
+                return this.toName();
+            }
+            return this.toRgbString();
+        }
+        if (format === "rgb") {
+            formattedString = this.toRgbString();
+        }
+        if (format === "prgb") {
+            formattedString = this.toPercentageRgbString();
+        }
+        if (format === "hex" || format === "hex6") {
+            formattedString = this.toHexString();
+        }
+        if (format === "hex3") {
+            formattedString = this.toHexString(true);
+        }
+        if (format === "hex4") {
+            formattedString = this.toHex8String(true);
+        }
+        if (format === "hex8") {
+            formattedString = this.toHex8String();
+        }
+        if (format === "name") {
+            formattedString = this.toName();
+        }
+        if (format === "hsl") {
+            formattedString = this.toHslString();
+        }
+        if (format === "hsv") {
+            formattedString = this.toHsvString();
+        }
+
+        return formattedString || this.toHexString();
+    },
+    clone: function() {
+        return tinycolor(this.toString());
+    },
+
+    _applyModification: function(fn, args) {
+        var color = fn.apply(null, [this].concat([].slice.call(args)));
+        this._r = color._r;
+        this._g = color._g;
+        this._b = color._b;
+        this.setAlpha(color._a);
+        return this;
+    },
+    lighten: function() {
+        return this._applyModification(lighten, arguments);
+    },
+    brighten: function() {
+        return this._applyModification(brighten, arguments);
+    },
+    darken: function() {
+        return this._applyModification(darken, arguments);
+    },
+    desaturate: function() {
+        return this._applyModification(desaturate, arguments);
+    },
+    saturate: function() {
+        return this._applyModification(saturate, arguments);
+    },
+    greyscale: function() {
+        return this._applyModification(greyscale, arguments);
+    },
+    spin: function() {
+        return this._applyModification(spin, arguments);
+    },
+
+    _applyCombination: function(fn, args) {
+        return fn.apply(null, [this].concat([].slice.call(args)));
+    },
+    analogous: function() {
+        return this._applyCombination(analogous, arguments);
+    },
+    complement: function() {
+        return this._applyCombination(complement, arguments);
+    },
+    monochromatic: function() {
+        return this._applyCombination(monochromatic, arguments);
+    },
+    splitcomplement: function() {
+        return this._applyCombination(splitcomplement, arguments);
+    },
+    triad: function() {
+        return this._applyCombination(triad, arguments);
+    },
+    tetrad: function() {
+        return this._applyCombination(tetrad, arguments);
+    }
+};
+
+// If input is an object, force 1 into "1.0" to handle ratios properly
+// String input requires "1.0" as input, so 1 will be treated as 1
+tinycolor.fromRatio = function(color, opts) {
+    if (typeof color == "object") {
+        var newColor = {};
+        for (var i in color) {
+            if (color.hasOwnProperty(i)) {
+                if (i === "a") {
+                    newColor[i] = color[i];
+                }
+                else {
+                    newColor[i] = convertToPercentage(color[i]);
+                }
+            }
+        }
+        color = newColor;
+    }
+
+    return tinycolor(color, opts);
+};
+
+// Given a string or object, convert that input to RGB
+// Possible string inputs:
+//
+//     "red"
+//     "#f00" or "f00"
+//     "#ff0000" or "ff0000"
+//     "#ff000000" or "ff000000"
+//     "rgb 255 0 0" or "rgb (255, 0, 0)"
+//     "rgb 1.0 0 0" or "rgb (1, 0, 0)"
+//     "rgba (255, 0, 0, 1)" or "rgba 255, 0, 0, 1"
+//     "rgba (1.0, 0, 0, 1)" or "rgba 1.0, 0, 0, 1"
+//     "hsl(0, 100%, 50%)" or "hsl 0 100% 50%"
+//     "hsla(0, 100%, 50%, 1)" or "hsla 0 100% 50%, 1"
+//     "hsv(0, 100%, 100%)" or "hsv 0 100% 100%"
+//
+function inputToRGB(color) {
+
+    var rgb = { r: 0, g: 0, b: 0 };
+    var a = 1;
+    var s = null;
+    var v = null;
+    var l = null;
+    var ok = false;
+    var format = false;
+
+    if (typeof color == "string") {
+        color = stringInputToObject(color);
+    }
+
+    if (typeof color == "object") {
+        if (isValidCSSUnit(color.r) && isValidCSSUnit(color.g) && isValidCSSUnit(color.b)) {
+            rgb = rgbToRgb(color.r, color.g, color.b);
+            ok = true;
+            format = String(color.r).substr(-1) === "%" ? "prgb" : "rgb";
+        }
+        else if (isValidCSSUnit(color.h) && isValidCSSUnit(color.s) && isValidCSSUnit(color.v)) {
+            s = convertToPercentage(color.s);
+            v = convertToPercentage(color.v);
+            rgb = hsvToRgb(color.h, s, v);
+            ok = true;
+            format = "hsv";
+        }
+        else if (isValidCSSUnit(color.h) && isValidCSSUnit(color.s) && isValidCSSUnit(color.l)) {
+            s = convertToPercentage(color.s);
+            l = convertToPercentage(color.l);
+            rgb = hslToRgb(color.h, s, l);
+            ok = true;
+            format = "hsl";
+        }
+
+        if (color.hasOwnProperty("a")) {
+            a = color.a;
+        }
+    }
+
+    a = boundAlpha(a);
+
+    return {
+        ok: ok,
+        format: color.format || format,
+        r: mathMin(255, mathMax(rgb.r, 0)),
+        g: mathMin(255, mathMax(rgb.g, 0)),
+        b: mathMin(255, mathMax(rgb.b, 0)),
+        a: a
+    };
+}
+
+
+// Conversion Functions
+// --------------------
+
+// `rgbToHsl`, `rgbToHsv`, `hslToRgb`, `hsvToRgb` modified from:
+// <http://mjijackson.com/2008/02/rgb-to-hsl-and-rgb-to-hsv-color-model-conversion-algorithms-in-javascript>
+
+// `rgbToRgb`
+// Handle bounds / percentage checking to conform to CSS color spec
+// <http://www.w3.org/TR/css3-color/>
+// *Assumes:* r, g, b in [0, 255] or [0, 1]
+// *Returns:* { r, g, b } in [0, 255]
+function rgbToRgb(r, g, b){
+    return {
+        r: bound01(r, 255) * 255,
+        g: bound01(g, 255) * 255,
+        b: bound01(b, 255) * 255
+    };
+}
+
+// `rgbToHsl`
+// Converts an RGB color value to HSL.
+// *Assumes:* r, g, and b are contained in [0, 255] or [0, 1]
+// *Returns:* { h, s, l } in [0,1]
+function rgbToHsl(r, g, b) {
+
+    r = bound01(r, 255);
+    g = bound01(g, 255);
+    b = bound01(b, 255);
+
+    var max = mathMax(r, g, b), min = mathMin(r, g, b);
+    var h, s, l = (max + min) / 2;
+
+    if(max == min) {
+        h = s = 0; // achromatic
+    }
+    else {
+        var d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch(max) {
+            case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+            case g: h = (b - r) / d + 2; break;
+            case b: h = (r - g) / d + 4; break;
+        }
+
+        h /= 6;
+    }
+
+    return { h: h, s: s, l: l };
+}
+
+// `hslToRgb`
+// Converts an HSL color value to RGB.
+// *Assumes:* h is contained in [0, 1] or [0, 360] and s and l are contained [0, 1] or [0, 100]
+// *Returns:* { r, g, b } in the set [0, 255]
+function hslToRgb(h, s, l) {
+    var r, g, b;
+
+    h = bound01(h, 360);
+    s = bound01(s, 100);
+    l = bound01(l, 100);
+
+    function hue2rgb(p, q, t) {
+        if(t < 0) t += 1;
+        if(t > 1) t -= 1;
+        if(t < 1/6) return p + (q - p) * 6 * t;
+        if(t < 1/2) return q;
+        if(t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+        return p;
+    }
+
+    if(s === 0) {
+        r = g = b = l; // achromatic
+    }
+    else {
+        var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        var p = 2 * l - q;
+        r = hue2rgb(p, q, h + 1/3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1/3);
+    }
+
+    return { r: r * 255, g: g * 255, b: b * 255 };
+}
+
+// `rgbToHsv`
+// Converts an RGB color value to HSV
+// *Assumes:* r, g, and b are contained in the set [0, 255] or [0, 1]
+// *Returns:* { h, s, v } in [0,1]
+function rgbToHsv(r, g, b) {
+
+    r = bound01(r, 255);
+    g = bound01(g, 255);
+    b = bound01(b, 255);
+
+    var max = mathMax(r, g, b), min = mathMin(r, g, b);
+    var h, s, v = max;
+
+    var d = max - min;
+    s = max === 0 ? 0 : d / max;
+
+    if(max == min) {
+        h = 0; // achromatic
+    }
+    else {
+        switch(max) {
+            case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+            case g: h = (b - r) / d + 2; break;
+            case b: h = (r - g) / d + 4; break;
+        }
+        h /= 6;
+    }
+    return { h: h, s: s, v: v };
+}
+
+// `hsvToRgb`
+// Converts an HSV color value to RGB.
+// *Assumes:* h is contained in [0, 1] or [0, 360] and s and v are contained in [0, 1] or [0, 100]
+// *Returns:* { r, g, b } in the set [0, 255]
+ function hsvToRgb(h, s, v) {
+
+    h = bound01(h, 360) * 6;
+    s = bound01(s, 100);
+    v = bound01(v, 100);
+
+    var i = Math.floor(h),
+        f = h - i,
+        p = v * (1 - s),
+        q = v * (1 - f * s),
+        t = v * (1 - (1 - f) * s),
+        mod = i % 6,
+        r = [v, q, p, p, t, v][mod],
+        g = [t, v, v, q, p, p][mod],
+        b = [p, p, t, v, v, q][mod];
+
+    return { r: r * 255, g: g * 255, b: b * 255 };
+}
+
+// `rgbToHex`
+// Converts an RGB color to hex
+// Assumes r, g, and b are contained in the set [0, 255]
+// Returns a 3 or 6 character hex
+function rgbToHex(r, g, b, allow3Char) {
+
+    var hex = [
+        pad2(mathRound(r).toString(16)),
+        pad2(mathRound(g).toString(16)),
+        pad2(mathRound(b).toString(16))
+    ];
+
+    // Return a 3 character hex if possible
+    if (allow3Char && hex[0].charAt(0) == hex[0].charAt(1) && hex[1].charAt(0) == hex[1].charAt(1) && hex[2].charAt(0) == hex[2].charAt(1)) {
+        return hex[0].charAt(0) + hex[1].charAt(0) + hex[2].charAt(0);
+    }
+
+    return hex.join("");
+}
+
+// `rgbaToHex`
+// Converts an RGBA color plus alpha transparency to hex
+// Assumes r, g, b are contained in the set [0, 255] and
+// a in [0, 1]. Returns a 4 or 8 character rgba hex
+function rgbaToHex(r, g, b, a, allow4Char) {
+
+    var hex = [
+        pad2(mathRound(r).toString(16)),
+        pad2(mathRound(g).toString(16)),
+        pad2(mathRound(b).toString(16)),
+        pad2(convertDecimalToHex(a))
+    ];
+
+    // Return a 4 character hex if possible
+    if (allow4Char && hex[0].charAt(0) == hex[0].charAt(1) && hex[1].charAt(0) == hex[1].charAt(1) && hex[2].charAt(0) == hex[2].charAt(1) && hex[3].charAt(0) == hex[3].charAt(1)) {
+        return hex[0].charAt(0) + hex[1].charAt(0) + hex[2].charAt(0) + hex[3].charAt(0);
+    }
+
+    return hex.join("");
+}
+
+// `rgbaToArgbHex`
+// Converts an RGBA color to an ARGB Hex8 string
+// Rarely used, but required for "toFilter()"
+function rgbaToArgbHex(r, g, b, a) {
+
+    var hex = [
+        pad2(convertDecimalToHex(a)),
+        pad2(mathRound(r).toString(16)),
+        pad2(mathRound(g).toString(16)),
+        pad2(mathRound(b).toString(16))
+    ];
+
+    return hex.join("");
+}
+
+// `equals`
+// Can be called with any tinycolor input
+tinycolor.equals = function (color1, color2) {
+    if (!color1 || !color2) { return false; }
+    return tinycolor(color1).toRgbString() == tinycolor(color2).toRgbString();
+};
+
+tinycolor.random = function() {
+    return tinycolor.fromRatio({
+        r: mathRandom(),
+        g: mathRandom(),
+        b: mathRandom()
+    });
+};
+
+
+// Modification Functions
+// ----------------------
+// Thanks to less.js for some of the basics here
+// <https://github.com/cloudhead/less.js/blob/master/lib/less/functions.js>
+
+function desaturate(color, amount) {
+    amount = (amount === 0) ? 0 : (amount || 10);
+    var hsl = tinycolor(color).toHsl();
+    hsl.s -= amount / 100;
+    hsl.s = clamp01(hsl.s);
+    return tinycolor(hsl);
+}
+
+function saturate(color, amount) {
+    amount = (amount === 0) ? 0 : (amount || 10);
+    var hsl = tinycolor(color).toHsl();
+    hsl.s += amount / 100;
+    hsl.s = clamp01(hsl.s);
+    return tinycolor(hsl);
+}
+
+function greyscale(color) {
+    return tinycolor(color).desaturate(100);
+}
+
+function lighten (color, amount) {
+    amount = (amount === 0) ? 0 : (amount || 10);
+    var hsl = tinycolor(color).toHsl();
+    hsl.l += amount / 100;
+    hsl.l = clamp01(hsl.l);
+    return tinycolor(hsl);
+}
+
+function brighten(color, amount) {
+    amount = (amount === 0) ? 0 : (amount || 10);
+    var rgb = tinycolor(color).toRgb();
+    rgb.r = mathMax(0, mathMin(255, rgb.r - mathRound(255 * - (amount / 100))));
+    rgb.g = mathMax(0, mathMin(255, rgb.g - mathRound(255 * - (amount / 100))));
+    rgb.b = mathMax(0, mathMin(255, rgb.b - mathRound(255 * - (amount / 100))));
+    return tinycolor(rgb);
+}
+
+function darken (color, amount) {
+    amount = (amount === 0) ? 0 : (amount || 10);
+    var hsl = tinycolor(color).toHsl();
+    hsl.l -= amount / 100;
+    hsl.l = clamp01(hsl.l);
+    return tinycolor(hsl);
+}
+
+// Spin takes a positive or negative amount within [-360, 360] indicating the change of hue.
+// Values outside of this range will be wrapped into this range.
+function spin(color, amount) {
+    var hsl = tinycolor(color).toHsl();
+    var hue = (hsl.h + amount) % 360;
+    hsl.h = hue < 0 ? 360 + hue : hue;
+    return tinycolor(hsl);
+}
+
+// Combination Functions
+// ---------------------
+// Thanks to jQuery xColor for some of the ideas behind these
+// <https://github.com/infusion/jQuery-xcolor/blob/master/jquery.xcolor.js>
+
+function complement(color) {
+    var hsl = tinycolor(color).toHsl();
+    hsl.h = (hsl.h + 180) % 360;
+    return tinycolor(hsl);
+}
+
+function triad(color) {
+    var hsl = tinycolor(color).toHsl();
+    var h = hsl.h;
+    return [
+        tinycolor(color),
+        tinycolor({ h: (h + 120) % 360, s: hsl.s, l: hsl.l }),
+        tinycolor({ h: (h + 240) % 360, s: hsl.s, l: hsl.l })
+    ];
+}
+
+function tetrad(color) {
+    var hsl = tinycolor(color).toHsl();
+    var h = hsl.h;
+    return [
+        tinycolor(color),
+        tinycolor({ h: (h + 90) % 360, s: hsl.s, l: hsl.l }),
+        tinycolor({ h: (h + 180) % 360, s: hsl.s, l: hsl.l }),
+        tinycolor({ h: (h + 270) % 360, s: hsl.s, l: hsl.l })
+    ];
+}
+
+function splitcomplement(color) {
+    var hsl = tinycolor(color).toHsl();
+    var h = hsl.h;
+    return [
+        tinycolor(color),
+        tinycolor({ h: (h + 72) % 360, s: hsl.s, l: hsl.l}),
+        tinycolor({ h: (h + 216) % 360, s: hsl.s, l: hsl.l})
+    ];
+}
+
+function analogous(color, results, slices) {
+    results = results || 6;
+    slices = slices || 30;
+
+    var hsl = tinycolor(color).toHsl();
+    var part = 360 / slices;
+    var ret = [tinycolor(color)];
+
+    for (hsl.h = ((hsl.h - (part * results >> 1)) + 720) % 360; --results; ) {
+        hsl.h = (hsl.h + part) % 360;
+        ret.push(tinycolor(hsl));
+    }
+    return ret;
+}
+
+function monochromatic(color, results) {
+    results = results || 6;
+    var hsv = tinycolor(color).toHsv();
+    var h = hsv.h, s = hsv.s, v = hsv.v;
+    var ret = [];
+    var modification = 1 / results;
+
+    while (results--) {
+        ret.push(tinycolor({ h: h, s: s, v: v}));
+        v = (v + modification) % 1;
+    }
+
+    return ret;
+}
+
+// Utility Functions
+// ---------------------
+
+tinycolor.mix = function(color1, color2, amount) {
+    amount = (amount === 0) ? 0 : (amount || 50);
+
+    var rgb1 = tinycolor(color1).toRgb();
+    var rgb2 = tinycolor(color2).toRgb();
+
+    var p = amount / 100;
+
+    var rgba = {
+        r: ((rgb2.r - rgb1.r) * p) + rgb1.r,
+        g: ((rgb2.g - rgb1.g) * p) + rgb1.g,
+        b: ((rgb2.b - rgb1.b) * p) + rgb1.b,
+        a: ((rgb2.a - rgb1.a) * p) + rgb1.a
+    };
+
+    return tinycolor(rgba);
+};
+
+
+// Readability Functions
+// ---------------------
+// <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#contrast-ratiodef (WCAG Version 2)
+
+// `contrast`
+// Analyze the 2 colors and returns the color contrast defined by (WCAG Version 2)
+tinycolor.readability = function(color1, color2) {
+    var c1 = tinycolor(color1);
+    var c2 = tinycolor(color2);
+    return (Math.max(c1.getLuminance(),c2.getLuminance())+0.05) / (Math.min(c1.getLuminance(),c2.getLuminance())+0.05);
+};
+
+// `isReadable`
+// Ensure that foreground and background color combinations meet WCAG2 guidelines.
+// The third argument is an optional Object.
+//      the 'level' property states 'AA' or 'AAA' - if missing or invalid, it defaults to 'AA';
+//      the 'size' property states 'large' or 'small' - if missing or invalid, it defaults to 'small'.
+// If the entire object is absent, isReadable defaults to {level:"AA",size:"small"}.
+
+// *Example*
+//    tinycolor.isReadable("#000", "#111") => false
+//    tinycolor.isReadable("#000", "#111",{level:"AA",size:"large"}) => false
+tinycolor.isReadable = function(color1, color2, wcag2) {
+    var readability = tinycolor.readability(color1, color2);
+    var wcag2Parms, out;
+
+    out = false;
+
+    wcag2Parms = validateWCAG2Parms(wcag2);
+    switch (wcag2Parms.level + wcag2Parms.size) {
+        case "AAsmall":
+        case "AAAlarge":
+            out = readability >= 4.5;
+            break;
+        case "AAlarge":
+            out = readability >= 3;
+            break;
+        case "AAAsmall":
+            out = readability >= 7;
+            break;
+    }
+    return out;
+
+};
+
+// `mostReadable`
+// Given a base color and a list of possible foreground or background
+// colors for that base, returns the most readable color.
+// Optionally returns Black or White if the most readable color is unreadable.
+// *Example*
+//    tinycolor.mostReadable(tinycolor.mostReadable("#123", ["#124", "#125"],{includeFallbackColors:false}).toHexString(); // "#112255"
+//    tinycolor.mostReadable(tinycolor.mostReadable("#123", ["#124", "#125"],{includeFallbackColors:true}).toHexString();  // "#ffffff"
+//    tinycolor.mostReadable("#a8015a", ["#faf3f3"],{includeFallbackColors:true,level:"AAA",size:"large"}).toHexString(); // "#faf3f3"
+//    tinycolor.mostReadable("#a8015a", ["#faf3f3"],{includeFallbackColors:true,level:"AAA",size:"small"}).toHexString(); // "#ffffff"
+tinycolor.mostReadable = function(baseColor, colorList, args) {
+    var bestColor = null;
+    var bestScore = 0;
+    var readability;
+    var includeFallbackColors, level, size ;
+    args = args || {};
+    includeFallbackColors = args.includeFallbackColors ;
+    level = args.level;
+    size = args.size;
+
+    for (var i= 0; i < colorList.length ; i++) {
+        readability = tinycolor.readability(baseColor, colorList[i]);
+        if (readability > bestScore) {
+            bestScore = readability;
+            bestColor = tinycolor(colorList[i]);
+        }
+    }
+
+    if (tinycolor.isReadable(baseColor, bestColor, {"level":level,"size":size}) || !includeFallbackColors) {
+        return bestColor;
+    }
+    else {
+        args.includeFallbackColors=false;
+        return tinycolor.mostReadable(baseColor,["#fff", "#000"],args);
+    }
+};
+
+
+// Big List of Colors
+// ------------------
+// <http://www.w3.org/TR/css3-color/#svg-color>
+var names = tinycolor.names = {
+    aliceblue: "f0f8ff",
+    antiquewhite: "faebd7",
+    aqua: "0ff",
+    aquamarine: "7fffd4",
+    azure: "f0ffff",
+    beige: "f5f5dc",
+    bisque: "ffe4c4",
+    black: "000",
+    blanchedalmond: "ffebcd",
+    blue: "00f",
+    blueviolet: "8a2be2",
+    brown: "a52a2a",
+    burlywood: "deb887",
+    burntsienna: "ea7e5d",
+    cadetblue: "5f9ea0",
+    chartreuse: "7fff00",
+    chocolate: "d2691e",
+    coral: "ff7f50",
+    cornflowerblue: "6495ed",
+    cornsilk: "fff8dc",
+    crimson: "dc143c",
+    cyan: "0ff",
+    darkblue: "00008b",
+    darkcyan: "008b8b",
+    darkgoldenrod: "b8860b",
+    darkgray: "a9a9a9",
+    darkgreen: "006400",
+    darkgrey: "a9a9a9",
+    darkkhaki: "bdb76b",
+    darkmagenta: "8b008b",
+    darkolivegreen: "556b2f",
+    darkorange: "ff8c00",
+    darkorchid: "9932cc",
+    darkred: "8b0000",
+    darksalmon: "e9967a",
+    darkseagreen: "8fbc8f",
+    darkslateblue: "483d8b",
+    darkslategray: "2f4f4f",
+    darkslategrey: "2f4f4f",
+    darkturquoise: "00ced1",
+    darkviolet: "9400d3",
+    deeppink: "ff1493",
+    deepskyblue: "00bfff",
+    dimgray: "696969",
+    dimgrey: "696969",
+    dodgerblue: "1e90ff",
+    firebrick: "b22222",
+    floralwhite: "fffaf0",
+    forestgreen: "228b22",
+    fuchsia: "f0f",
+    gainsboro: "dcdcdc",
+    ghostwhite: "f8f8ff",
+    gold: "ffd700",
+    goldenrod: "daa520",
+    gray: "808080",
+    green: "008000",
+    greenyellow: "adff2f",
+    grey: "808080",
+    honeydew: "f0fff0",
+    hotpink: "ff69b4",
+    indianred: "cd5c5c",
+    indigo: "4b0082",
+    ivory: "fffff0",
+    khaki: "f0e68c",
+    lavender: "e6e6fa",
+    lavenderblush: "fff0f5",
+    lawngreen: "7cfc00",
+    lemonchiffon: "fffacd",
+    lightblue: "add8e6",
+    lightcoral: "f08080",
+    lightcyan: "e0ffff",
+    lightgoldenrodyellow: "fafad2",
+    lightgray: "d3d3d3",
+    lightgreen: "90ee90",
+    lightgrey: "d3d3d3",
+    lightpink: "ffb6c1",
+    lightsalmon: "ffa07a",
+    lightseagreen: "20b2aa",
+    lightskyblue: "87cefa",
+    lightslategray: "789",
+    lightslategrey: "789",
+    lightsteelblue: "b0c4de",
+    lightyellow: "ffffe0",
+    lime: "0f0",
+    limegreen: "32cd32",
+    linen: "faf0e6",
+    magenta: "f0f",
+    maroon: "800000",
+    mediumaquamarine: "66cdaa",
+    mediumblue: "0000cd",
+    mediumorchid: "ba55d3",
+    mediumpurple: "9370db",
+    mediumseagreen: "3cb371",
+    mediumslateblue: "7b68ee",
+    mediumspringgreen: "00fa9a",
+    mediumturquoise: "48d1cc",
+    mediumvioletred: "c71585",
+    midnightblue: "191970",
+    mintcream: "f5fffa",
+    mistyrose: "ffe4e1",
+    moccasin: "ffe4b5",
+    navajowhite: "ffdead",
+    navy: "000080",
+    oldlace: "fdf5e6",
+    olive: "808000",
+    olivedrab: "6b8e23",
+    orange: "ffa500",
+    orangered: "ff4500",
+    orchid: "da70d6",
+    palegoldenrod: "eee8aa",
+    palegreen: "98fb98",
+    paleturquoise: "afeeee",
+    palevioletred: "db7093",
+    papayawhip: "ffefd5",
+    peachpuff: "ffdab9",
+    peru: "cd853f",
+    pink: "ffc0cb",
+    plum: "dda0dd",
+    powderblue: "b0e0e6",
+    purple: "800080",
+    rebeccapurple: "663399",
+    red: "f00",
+    rosybrown: "bc8f8f",
+    royalblue: "4169e1",
+    saddlebrown: "8b4513",
+    salmon: "fa8072",
+    sandybrown: "f4a460",
+    seagreen: "2e8b57",
+    seashell: "fff5ee",
+    sienna: "a0522d",
+    silver: "c0c0c0",
+    skyblue: "87ceeb",
+    slateblue: "6a5acd",
+    slategray: "708090",
+    slategrey: "708090",
+    snow: "fffafa",
+    springgreen: "00ff7f",
+    steelblue: "4682b4",
+    tan: "d2b48c",
+    teal: "008080",
+    thistle: "d8bfd8",
+    tomato: "ff6347",
+    turquoise: "40e0d0",
+    violet: "ee82ee",
+    wheat: "f5deb3",
+    white: "fff",
+    whitesmoke: "f5f5f5",
+    yellow: "ff0",
+    yellowgreen: "9acd32"
+};
+
+// Make it easy to access colors via `hexNames[hex]`
+var hexNames = tinycolor.hexNames = flip(names);
+
+
+// Utilities
+// ---------
+
+// `{ 'name1': 'val1' }` becomes `{ 'val1': 'name1' }`
+function flip(o) {
+    var flipped = { };
+    for (var i in o) {
+        if (o.hasOwnProperty(i)) {
+            flipped[o[i]] = i;
+        }
+    }
+    return flipped;
+}
+
+// Return a valid alpha value [0,1] with all invalid values being set to 1
+function boundAlpha(a) {
+    a = parseFloat(a);
+
+    if (isNaN(a) || a < 0 || a > 1) {
+        a = 1;
+    }
+
+    return a;
+}
+
+// Take input from [0, n] and return it as [0, 1]
+function bound01(n, max) {
+    if (isOnePointZero(n)) { n = "100%"; }
+
+    var processPercent = isPercentage(n);
+    n = mathMin(max, mathMax(0, parseFloat(n)));
+
+    // Automatically convert percentage into number
+    if (processPercent) {
+        n = parseInt(n * max, 10) / 100;
+    }
+
+    // Handle floating point rounding errors
+    if ((Math.abs(n - max) < 0.000001)) {
+        return 1;
+    }
+
+    // Convert into [0, 1] range if it isn't already
+    return (n % max) / parseFloat(max);
+}
+
+// Force a number between 0 and 1
+function clamp01(val) {
+    return mathMin(1, mathMax(0, val));
+}
+
+// Parse a base-16 hex value into a base-10 integer
+function parseIntFromHex(val) {
+    return parseInt(val, 16);
+}
+
+// Need to handle 1.0 as 100%, since once it is a number, there is no difference between it and 1
+// <http://stackoverflow.com/questions/7422072/javascript-how-to-detect-number-as-a-decimal-including-1-0>
+function isOnePointZero(n) {
+    return typeof n == "string" && n.indexOf('.') != -1 && parseFloat(n) === 1;
+}
+
+// Check to see if string passed in is a percentage
+function isPercentage(n) {
+    return typeof n === "string" && n.indexOf('%') != -1;
+}
+
+// Force a hex value to have 2 characters
+function pad2(c) {
+    return c.length == 1 ? '0' + c : '' + c;
+}
+
+// Replace a decimal with it's percentage value
+function convertToPercentage(n) {
+    if (n <= 1) {
+        n = (n * 100) + "%";
+    }
+
+    return n;
+}
+
+// Converts a decimal to a hex value
+function convertDecimalToHex(d) {
+    return Math.round(parseFloat(d) * 255).toString(16);
+}
+// Converts a hex value to a decimal
+function convertHexToDecimal(h) {
+    return (parseIntFromHex(h) / 255);
+}
+
+var matchers = (function() {
+
+    // <http://www.w3.org/TR/css3-values/#integers>
+    var CSS_INTEGER = "[-\\+]?\\d+%?";
+
+    // <http://www.w3.org/TR/css3-values/#number-value>
+    var CSS_NUMBER = "[-\\+]?\\d*\\.\\d+%?";
+
+    // Allow positive/negative integer/number.  Don't capture the either/or, just the entire outcome.
+    var CSS_UNIT = "(?:" + CSS_NUMBER + ")|(?:" + CSS_INTEGER + ")";
+
+    // Actual matching.
+    // Parentheses and commas are optional, but not required.
+    // Whitespace can take the place of commas or opening paren
+    var PERMISSIVE_MATCH3 = "[\\s|\\(]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")\\s*\\)?";
+    var PERMISSIVE_MATCH4 = "[\\s|\\(]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")[,|\\s]+(" + CSS_UNIT + ")\\s*\\)?";
+
+    return {
+        CSS_UNIT: new RegExp(CSS_UNIT),
+        rgb: new RegExp("rgb" + PERMISSIVE_MATCH3),
+        rgba: new RegExp("rgba" + PERMISSIVE_MATCH4),
+        hsl: new RegExp("hsl" + PERMISSIVE_MATCH3),
+        hsla: new RegExp("hsla" + PERMISSIVE_MATCH4),
+        hsv: new RegExp("hsv" + PERMISSIVE_MATCH3),
+        hsva: new RegExp("hsva" + PERMISSIVE_MATCH4),
+        hex3: /^#?([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/,
+        hex6: /^#?([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})$/,
+        hex4: /^#?([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/,
+        hex8: /^#?([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})$/
+    };
+})();
+
+// `isValidCSSUnit`
+// Take in a single string / number and check to see if it looks like a CSS unit
+// (see `matchers` above for definition).
+function isValidCSSUnit(color) {
+    return !!matchers.CSS_UNIT.exec(color);
+}
+
+// `stringInputToObject`
+// Permissive string parsing.  Take in a number of formats, and output an object
+// based on detected format.  Returns `{ r, g, b }` or `{ h, s, l }` or `{ h, s, v}`
+function stringInputToObject(color) {
+
+    color = color.replace(trimLeft,'').replace(trimRight, '').toLowerCase();
+    var named = false;
+    if (names[color]) {
+        color = names[color];
+        named = true;
+    }
+    else if (color == 'transparent') {
+        return { r: 0, g: 0, b: 0, a: 0, format: "name" };
+    }
+
+    // Try to match string input using regular expressions.
+    // Keep most of the number bounding out of this function - don't worry about [0,1] or [0,100] or [0,360]
+    // Just return an object and let the conversion functions handle that.
+    // This way the result will be the same whether the tinycolor is initialized with string or object.
+    var match;
+    if ((match = matchers.rgb.exec(color))) {
+        return { r: match[1], g: match[2], b: match[3] };
+    }
+    if ((match = matchers.rgba.exec(color))) {
+        return { r: match[1], g: match[2], b: match[3], a: match[4] };
+    }
+    if ((match = matchers.hsl.exec(color))) {
+        return { h: match[1], s: match[2], l: match[3] };
+    }
+    if ((match = matchers.hsla.exec(color))) {
+        return { h: match[1], s: match[2], l: match[3], a: match[4] };
+    }
+    if ((match = matchers.hsv.exec(color))) {
+        return { h: match[1], s: match[2], v: match[3] };
+    }
+    if ((match = matchers.hsva.exec(color))) {
+        return { h: match[1], s: match[2], v: match[3], a: match[4] };
+    }
+    if ((match = matchers.hex8.exec(color))) {
+        return {
+            r: parseIntFromHex(match[1]),
+            g: parseIntFromHex(match[2]),
+            b: parseIntFromHex(match[3]),
+            a: convertHexToDecimal(match[4]),
+            format: named ? "name" : "hex8"
+        };
+    }
+    if ((match = matchers.hex6.exec(color))) {
+        return {
+            r: parseIntFromHex(match[1]),
+            g: parseIntFromHex(match[2]),
+            b: parseIntFromHex(match[3]),
+            format: named ? "name" : "hex"
+        };
+    }
+    if ((match = matchers.hex4.exec(color))) {
+        return {
+            r: parseIntFromHex(match[1] + '' + match[1]),
+            g: parseIntFromHex(match[2] + '' + match[2]),
+            b: parseIntFromHex(match[3] + '' + match[3]),
+            a: convertHexToDecimal(match[4] + '' + match[4]),
+            format: named ? "name" : "hex8"
+        };
+    }
+    if ((match = matchers.hex3.exec(color))) {
+        return {
+            r: parseIntFromHex(match[1] + '' + match[1]),
+            g: parseIntFromHex(match[2] + '' + match[2]),
+            b: parseIntFromHex(match[3] + '' + match[3]),
+            format: named ? "name" : "hex"
+        };
+    }
+
+    return false;
+}
+
+function validateWCAG2Parms(parms) {
+    // return valid WCAG2 parms for isReadable.
+    // If input parms are invalid, return {"level":"AA", "size":"small"}
+    var level, size;
+    parms = parms || {"level":"AA", "size":"small"};
+    level = (parms.level || "AA").toUpperCase();
+    size = (parms.size || "small").toLowerCase();
+    if (level !== "AA" && level !== "AAA") {
+        level = "AA";
+    }
+    if (size !== "small" && size !== "large") {
+        size = "small";
+    }
+    return {"level":level, "size":size};
+}
+
+// Node: Export function
+if ( true && module.exports) {
+    module.exports = tinycolor;
+}
+// AMD/requirejs: Define the module
+else if (true) {
+    !(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {return tinycolor;}).call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+}
+// Browser: Expose to window
+else {}
+
+})(Math);
+
+
+/***/ }),
+
+/***/ "./node_modules/webpack/buildin/global.js":
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+
+/***/ "./plugin/assets/css/src/customize-preview.css":
+/*!*****************************************************!*\
+  !*** ./plugin/assets/css/src/customize-preview.css ***!
+  \*****************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./plugin/assets/src/common/color-utils.js":
+/*!*************************************************!*\
+  !*** ./plugin/assets/src/common/color-utils.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var tinycolor2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tinycolor2 */ "./node_modules/tinycolor2/tinycolor.js");
+/* harmony import */ var tinycolor2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tinycolor2__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/**
+ * Copyright 2020 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* istanbul ignore file */
+
+/* eslint-disable */
+
+/**
+ * Utils for color and accessibility.
+ *
+ * Some of the code in this file is copied over from https://material.io/resources/color
+ * The rest are wrappers around https://github.com/bgrins/TinyColor
+ */
+
+/**
+ * External dependencies
+ */
+
+/**
+ * WordPress dependencies
+ */
+
+
+var colorUtils = {
+  getColorAccessibility: function getColorAccessibility(color, name, textColor, textColorLabel) {
+    var accessibility = {
+      hex: color,
+      type: name.replace(/Text on\s*|\s*Color/, ''),
+      variations: [{
+        size: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Large', 'material-design'),
+        colorHex: color,
+        textColor: textColorLabel,
+        textColorHex: textColor,
+        result: colorUtils.getCustomTextColorInfo('large', color, textColor)
+      }, {
+        size: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Normal', 'material-design'),
+        colorHex: color,
+        textColor: textColorLabel,
+        textColorHex: textColor,
+        result: colorUtils.getCustomTextColorInfo('large', color, textColor)
+      }]
+    };
+    return accessibility;
+  },
+  getCustomTextColorInfo: function getCustomTextColorInfo(size, color, textColor) {
+    var t = this.getCustomTextAlphas(size, color, textColor);
+    return t.minAlpha = t.minAlpha ? Math.round(100 * t.minAlpha) : null, null === t.minAlpha ? null : 'min ' + t.minAlpha + '% opacity';
+  },
+  getCustomTextAlphas: function getCustomTextAlphas(size, color, textColor) {
+    return this.getMinAndRecAlphasFromBgAndTextColors(color, textColor, size);
+  },
+  getMinAndRecAlphasFromBgAndTextColors: function getMinAndRecAlphasFromBgAndTextColors(color, textColor) {
+    var r = arguments.length <= 2 || void 0 === arguments[2] ? 'large' : arguments[2],
+        o = 'large' === r ? 3 : 4.5,
+        i = this.minAcceptableAlpha(color, textColor, o);
+    return {
+      minAlpha: i,
+      recAlpha: i ? Math.max(i, 0.87) : null
+    };
+  },
+  minAcceptableAlpha: function minAcceptableAlpha(color, textColor, r) {
+    var o = this.hex2Rgb(color),
+        i = this.hex2Rgb(textColor),
+        n = 0,
+        c = 1,
+        a = this.blendForegroundContrast(o, i, n);
+    if (a >= r) return null;
+    var l = this.blendForegroundContrast(o, i, c);
+    if (r > l) return null;
+
+    for (var s = 0, m = 10, d = 0.01; m >= s && c - n > d;) {
+      var h = (n + c) / 2,
+          p = this.blendForegroundContrast(o, i, h);
+      r > p ? n = h : c = h, ++s;
+    }
+
+    return s > m ? null : c;
+  },
+  blendForegroundContrast: function blendForegroundContrast(foregroundColor, backgroundColor, ratio) {
+    if (1 > ratio) {
+      var rgba = this.overlayOn(foregroundColor, backgroundColor, ratio);
+      return this.opaqueContrast(rgba, foregroundColor);
+    }
+
+    return this.opaqueContrast(foregroundColor, backgroundColor);
+  },
+  overlayOn: function overlayOn(foregroundColor, backgroundColor, ratio) {
+    var rgba = {};
+    return ratio >= 1 ? foregroundColor : (rgba.r = backgroundColor.r * ratio + foregroundColor.r * (1 - ratio), rgba.g = backgroundColor.g * ratio + foregroundColor.g * (1 - ratio), rgba.b = backgroundColor.b * ratio + foregroundColor.b * (1 - ratio), rgba.a = ratio + 1 * (1 - ratio), rgba);
+  },
+  opaqueContrast: function opaqueContrast(rgb1, rgb2) {
+    var l2 = tinycolor2__WEBPACK_IMPORTED_MODULE_0___default()(rgb2).getLuminance() + 0.05,
+        l1 = tinycolor2__WEBPACK_IMPORTED_MODULE_0___default()(rgb1).getLuminance() + 0.05,
+        n = l2 / l1;
+    return l1 > l2 && (n = 1 / n), n;
+  },
+  hex2Rgb: function hex2Rgb(color) {
+    if (!color) return null;
+    var t = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+    color = color.replace(t, function (e, t, r, o) {
+      return t + t + r + r + o + o;
+    });
+    var r = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color);
+    return r ? {
+      r: parseInt(r[1], 16),
+      g: parseInt(r[2], 16),
+      b: parseInt(r[3], 16)
+    } : null;
+  },
+  hexToRgbValues: function hexToRgbValues(hex) {
+    var rgb = tinycolor2__WEBPACK_IMPORTED_MODULE_0___default()(hex).toRgb();
+    return [rgb.r, rgb.r, rgb.b];
+  },
+  hexToRgbString: function hexToRgbString(hex) {
+    return tinycolor2__WEBPACK_IMPORTED_MODULE_0___default()(hex).toRgbString();
+  },
+  mix: function mix(color1, color2) {
+    var amount = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 50;
+    return tinycolor2__WEBPACK_IMPORTED_MODULE_0___default.a.mix(color1, color2, amount = 50).toHexString();
+  },
+  getColorRangeFromHex: function getColorRangeFromHex(hex) {
+    var range = {},
+        dark = tinycolor2__WEBPACK_IMPORTED_MODULE_0___default()(hex).darken(10).toHexString(),
+        light = tinycolor2__WEBPACK_IMPORTED_MODULE_0___default()(hex).brighten(10).toHexString();
+    range.dark = {
+      hex: dark
+    };
+    range.light = {
+      hex: light
+    };
+    return range;
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = (colorUtils);
+
+/***/ }),
+
+/***/ "./plugin/assets/src/customizer/components/google-fonts-control/styles.js":
+/*!********************************************************************************!*\
+  !*** ./plugin/assets/src/customizer/components/google-fonts-control/styles.js ***!
+  \********************************************************************************/
+/*! exports provided: STYLES */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "STYLES", function() { return STYLES; });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/**
+ * Copyright 2020 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * WordPress dependencies
+ */
+
+var STYLES = {
+  '100': Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Thin', 'material-design'),
+  '200': Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Extra Light', 'material-design'),
+  '300': Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Light', 'material-design'),
+  regular: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Regular', 'material-design'),
+  '500': Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Medium', 'material-design'),
+  '600': Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Semi Bold', 'material-design'),
+  '700': Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Bold', 'material-design'),
+  '800': Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Extra Bold', 'material-design'),
+  '900': Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Black', 'material-design'),
+  '950': Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Extra Black', 'material-design'),
+  // Italics
+  '100italic': Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Thin Italic', 'material-design'),
+  '200italic': Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Extra Light Italic', 'material-design'),
+  '300italic': Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Light Italic', 'material-design'),
+  italic: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Italic', 'material-design'),
+  '500italic': Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Medium Italic', 'material-design'),
+  '600italic': Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Semi Bold Italic', 'material-design'),
+  '700italic': Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Bold Italic', 'material-design'),
+  '800italic': Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Extra Bold Italic', 'material-design'),
+  '900italic': Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Black Italic', 'material-design'),
+  '950italic': Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('Extra Black Italic', 'material-design')
+};
+
+/***/ }),
+
+/***/ "./plugin/assets/src/customizer/customize-preview.js":
+/*!***********************************************************!*\
+  !*** ./plugin/assets/src/customizer/customize-preview.js ***!
+  \***********************************************************/
+/*! exports provided: COLOR_MODES */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "COLOR_MODES", function() { return COLOR_MODES; });
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash/debounce */ "./node_modules/lodash/debounce.js");
+/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_debounce__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _common_color_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common/color-utils */ "./plugin/assets/src/common/color-utils.js");
+/* harmony import */ var _customizer_components_google_fonts_control_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../customizer/components/google-fonts-control/styles */ "./plugin/assets/src/customizer/components/google-fonts-control/styles.js");
+
+
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+/**
+ * Copyright 2020 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* global jQuery, _wpCustomizeSettings */
+
+/* istanbul ignore file */
+
+/**
+ * Customizer enhancements for a better user experience.
+ *
+ * Contains handlers to make Customizer preview reload changes asynchronously.
+ *
+ * @since 1.0.0
+ */
+
+/**
+ * External dependencies
+ */
+
+/**
+ * Internal dependencies
+ */
+
+
+
+
+var getIconFontName = function getIconFontName(iconStyle) {
+  return iconStyle === 'filled' ? 'Material Icons' : "Material Icons ".concat(iconStyle.replace('-', ' ').replace(/(^\w{1})|(\s{1}\w{1})/g, function (match) {
+    return match.toUpperCase();
+  }));
+};
+
+var HAS_DARK_MODE_CLASS = 'top-app-bar--has-dark-mode';
+var COLOR_MODES = {
+  default: 'default',
+  dark: 'dark'
+};
+
+(function ($) {
+  // Bail out if this isn't loaded in an iframe.
+  if (!window.parent || !window.parent.wp || !window.parent._wpCustomizeSettings) {
+    return;
+  }
+
+  var api = wp.customize;
+  var parentApi = window.parent.wp.customize;
+  var parentControls = window.parent._wpCustomizeSettings.controls;
+  var colorControls = {};
+  var typographyControls = {};
+  var cornerStyleControls = {};
+  var iconControls = {};
+  var settingsControls = {};
+  var defaultModeControls = {};
+  var darkModeControls = {};
+  $(function () {
+    api.preview.bind('active', function () {
+      api.preview.send('materialDesign', {
+        notificationCount: _wpCustomizeSettings.values.material_design_notify
+      });
+      api.preview.bind('materialDesignPaletteUpdate', function (message) {
+        updateColorMode(message);
+      });
+    });
+  });
+
+  var generateCSSVarMappings = function generateCSSVarMappings(controls) {
+    if (!controls) {
+      return;
+    }
+
+    Object.keys(controls).forEach(function (control) {
+      var args = controls[control];
+
+      if (args && !!args.cssVar && (!!args.relatedTextSetting || !!args.relatedSetting)) {
+        if (COLOR_MODES.dark === args.colorModeType) {
+          darkModeControls[control] = args.cssVar;
+        } else {
+          // Save a refertence to default colors.
+          defaultModeControls[control] = args.cssVar;
+          colorControls[control] = args.cssVar;
+        }
+      }
+
+      if (args && args.cssVars && args.type === 'google_fonts') {
+        typographyControls[control] = args.cssVars;
+      }
+
+      if (args && !!args.cssVar && args.type === 'range_slider') {
+        cornerStyleControls[control] = args;
+
+        if (args.children && Array.isArray(args.children)) {
+          generateCSSVarMappings(args.children.reduce(function (acc, childControl) {
+            return _objectSpread(_objectSpread({}, acc), {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()({}, childControl.id, _objectSpread(_objectSpread({}, childControl), {}, {
+              type: 'range_slider',
+              cssVar: childControl.css_var,
+              initialValue: childControl.initial_value
+            })));
+          }, {}));
+        }
+      }
+
+      if (args && !!args.cssVar && args.type === 'icon_radio') {
+        iconControls[control] = args.cssVar;
+      }
+
+      if (args && !!args.cssVar && args.type === 'style_settings') {
+        settingsControls[control] = args.cssVar;
+      }
+    });
+  };
+
+  generateCSSVarMappings(parentControls);
+  /**
+   * Add styles to elements in the preview pane.
+   *
+   * @since 1.0.0
+   *
+   * @return {void}
+   */
+
+  var generatePreviewStyles = lodash_debounce__WEBPACK_IMPORTED_MODULE_2___default()(function () {
+    var stylesheetID = 'material-design-customizer-preview-styles';
+    var stylesheet = $('#' + stylesheetID),
+        styles = '',
+        darkStyles = '',
+        lightStyles = '',
+        colorRgb; // If the stylesheet doesn't exist, create it and append it to <head>.
+
+    if (!stylesheet.length) {
+      $('head').append('<style id="' + stylesheetID + '"></style>');
+      stylesheet = $('#' + stylesheetID);
+    }
+
+    Object.keys(typographyControls).forEach(function (control) {
+      if (typographyControls[control].family) {
+        typographyControls[control].family.forEach(function (varName) {
+          styles += "".concat(varName, ": ").concat(parentApi(control).get(), ";");
+        });
+      } else {
+        var ruleValue = parentApi(control).get();
+        var rules;
+
+        if (!ruleValue) {
+          return;
+        } // Bail if json is invalid.
+
+
+        try {
+          rules = JSON.parse(ruleValue);
+        } catch (_unused) {
+          return;
+        }
+
+        for (var rule in rules) {
+          if ('style' === rule || 'undefined' === typeof rules[rule]) {
+            return;
+          }
+
+          if ('size' === rule) {
+            styles += "".concat(typographyControls[control][rule], ": ").concat(rules[rule], "px !important;");
+          } else {
+            var fontStyle = /italic$/.test(rules[rule]) ? 'italic' : 'normal';
+            var weight = ['regular', 'italic'].includes(rules[rule]) ? 400 : parseInt(rules[rule], 10);
+            styles += "".concat(typographyControls[control].style, ": ").concat(fontStyle, " !important;");
+            styles += "".concat(typographyControls[control][rule], ": ").concat(weight, " !important;");
+          }
+        }
+      }
+    }); // Generate the styles.
+
+    Object.keys(colorControls).forEach(function (control) {
+      var color = parentApi(control).get();
+      colorRgb = _common_color_utils__WEBPACK_IMPORTED_MODULE_3__["default"].hexToRgbValues(color).join(',');
+
+      if (!color) {
+        return;
+      }
+
+      styles += "".concat(colorControls[control], ": ").concat(color, ";\n\t\t\t\t").concat(colorControls[control], "-rgb: ").concat(colorRgb, ";\n\t\t\t");
+    }); // Generate the styles of forced dark mode.
+
+    Object.keys(darkModeControls).forEach(function (control) {
+      var color = parentApi(control).get();
+      colorRgb = _common_color_utils__WEBPACK_IMPORTED_MODULE_3__["default"].hexToRgbValues(color).join(',');
+
+      if (!color) {
+        return;
+      }
+
+      darkStyles += "".concat(darkModeControls[control], ": ").concat(color, ";\n\t\t\t\t").concat(darkModeControls[control], "-rgb: ").concat(colorRgb, ";\n\t\t\t");
+    }); // Generate the styles of forced light mode.
+
+    Object.keys(defaultModeControls).forEach(function (control) {
+      var color = parentApi(control).get();
+      colorRgb = _common_color_utils__WEBPACK_IMPORTED_MODULE_3__["default"].hexToRgbValues(color).join(',');
+
+      if (!color) {
+        return;
+      }
+
+      lightStyles += "".concat(defaultModeControls[control], ": ").concat(color, ";\n\t\t\t\t").concat(defaultModeControls[control], "-rgb: ").concat(colorRgb, ";\n\t\t\t");
+    });
+    Object.keys(cornerStyleControls).forEach(function (control) {
+      var settingValue = parentApi(control).get();
+      var args = cornerStyleControls[control];
+
+      if ('number' === typeof args.min && settingValue < args.min) {
+        settingValue = args.min;
+      }
+
+      if ('number' === typeof args.max && settingValue > args.max) {
+        settingValue = args.max;
+      }
+
+      styles += "".concat(args.cssVar, ": ").concat(settingValue, "px;");
+    });
+    Object.keys(iconControls).forEach(function (control) {
+      styles += "".concat(iconControls[control], ": '").concat(getIconFontName(parentApi(control).get()), "';");
+    });
+    Object.keys(settingsControls).forEach(function (control) {
+      var settings = parentApi(control).get();
+      toggleDarkModeSwitch(settings);
+    });
+    styles = ":root {\n\t\t\t".concat(styles, "\n\t\t}\n\n\t\tbody[data-color-scheme=\"dark\"] {\n\t\t\t").concat(darkStyles, "\n\t\t}\n\n\t\tbody[data-color-scheme=\"light\"] {\n\t\t\t").concat(lightStyles, "\n\t\t}\n\t\t"); // Add styles.
+
+    stylesheet.html(styles);
+  }, 300);
+  /**
+   * Update Google fonts CDN URL based on selected font families.
+   *
+   * @since 1.0.0
+   *
+   * @return {void}
+   */
+
+  var updateGoogleFontsURL = lodash_debounce__WEBPACK_IMPORTED_MODULE_2___default()(function () {
+    var fonts = [],
+        baseURL = 'https://fonts.googleapis.com/css?family=';
+    Object.keys(typographyControls).forEach(function (control) {
+      if (!/family]$/.test(control)) {
+        return;
+      }
+
+      var selectedFont = parentApi(control).get();
+      fonts.push(selectedFont.replace(/\s/g, '+') + ':' + Object.keys(_customizer_components_google_fonts_control_styles__WEBPACK_IMPORTED_MODULE_4__["STYLES"]).join(','));
+    });
+    var $fontStyle = $('#material-google-fonts-cdn-css');
+    var fontURL = "".concat(baseURL).concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(new Set(fonts)).join('|'));
+
+    if ($fontStyle.attr('href') !== fontURL) {
+      $fontStyle.attr('href', "".concat(baseURL).concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(new Set(fonts)).join('|')));
+    }
+  }, 300);
+  /**
+   * Toggle dark mode button based on user choice.
+   *
+   * @param {string} value Current settings value
+   *
+   * @return {void}
+   */
+
+  var toggleDarkModeSwitch = lodash_debounce__WEBPACK_IMPORTED_MODULE_2___default()(function (value) {
+    var darkModeData = 'string' === typeof value ? JSON.parse(value) : value;
+    var currentStyle = parentApi(window.parent.materialDesign.styleControl).get();
+
+    if (!currentStyle) {
+      return;
+    }
+
+    var topAppBar = document.querySelector('.mdc-top-app-bar');
+
+    if (!topAppBar) {
+      return;
+    }
+
+    if (darkModeData[currentStyle].switcher) {
+      topAppBar.classList.add(HAS_DARK_MODE_CLASS);
+    } else {
+      topAppBar.classList.remove(HAS_DARK_MODE_CLASS);
+    }
+  }, 300);
+  var updateColorMode = lodash_debounce__WEBPACK_IMPORTED_MODULE_2___default()(function (mode) {
+    if (COLOR_MODES.dark === mode) {
+      colorControls = darkModeControls;
+    } else {
+      colorControls = defaultModeControls;
+    }
+
+    document.body.removeAttribute('data-color-scheme');
+    generatePreviewStyles();
+  }, 300);
+  /**
+   * Generate preview styles for any control value change.
+   */
+
+  Object.keys(colorControls).concat(Object.keys(cornerStyleControls)).concat(Object.keys(typographyControls)).concat(Object.keys(iconControls)).concat(Object.keys(settingsControls)).concat(Object.keys(darkModeControls)).forEach(function (control) {
+    parentApi(control, function (value) {
+      value.bind(function () {
+        if (typographyControls.hasOwnProperty(control)) {
+          updateGoogleFontsURL();
+        }
+
+        if (settingsControls.hasOwnProperty(control)) {
+          toggleDarkModeSwitch(value.get());
+        }
+
+        generatePreviewStyles();
+      });
+    });
+  }); // Load all material icon styles in preview.
+
+  $('head').append('<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">');
+})(jQuery);
+
+/***/ }),
+
+/***/ 1:
+/*!***************************************************************************************************************!*\
+  !*** multi ./plugin/assets/src/customizer/customize-preview.js ./plugin/assets/css/src/customize-preview.css ***!
+  \***************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ./plugin/assets/src/customizer/customize-preview.js */"./plugin/assets/src/customizer/customize-preview.js");
+module.exports = __webpack_require__(/*! ./plugin/assets/css/src/customize-preview.css */"./plugin/assets/css/src/customize-preview.css");
+
+
+/***/ }),
+
+/***/ "@wordpress/i18n":
+/*!******************************!*\
+  !*** external ["wp","i18n"] ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = window["wp"]["i18n"]; }());
+
+/***/ })
+
+/******/ });
+//# sourceMappingURL=customize-preview.js.map
