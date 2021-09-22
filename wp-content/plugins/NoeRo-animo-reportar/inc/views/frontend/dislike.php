@@ -52,7 +52,7 @@
 	Ata onde entendo eu, a variable $dislike_count segue sumandose. Polo que se pode poñer o contador de que no 10 reporte ao administrador-->
 
 
-   <span class="cld-dislike-count-wrap cld-count-wrap"><?php echo $dislike_count; ?></span>
+  <!-- <span class="cld-dislike-count-wrap cld-count-wrap"><?php echo $dislike_count; ?></span>-->
 		<!--Neste caso tense que ver tanto a palabra ánimo como o contador-->
 		<?php echo "Reportar"; ?>
 		</a>

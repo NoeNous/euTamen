@@ -55,7 +55,7 @@ $filled_label   = '<span class="mdc-floating-label" id="%s">%s</span>
 				<span class="mdc-line-ripple"></span>';
 
 $args = [
-	'title_reply'        => __( 'Comparte connosco a túa experiencia', 'material-design-google' ),
+	'title_reply'        => __( 'Leave a comment', 'material-design-google' ),
 	'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title mdc-typography--headline4">',
 	'title_reply_after'  => '</h2>',
 	'fields'             => [
@@ -116,7 +116,7 @@ $args = [
 		sprintf(
 			'outlined' === $style ? $outlined_label : $filled_label,
 			'comment-label',
-			esc_html__( 'Escribe aquí', 'material-design-google' )
+			esc_html__( 'Comment', 'material-design-google' )
 		)
 	),
 	'submit_button'      => '<button id="%2$s" class="mdc-button mdc-button--raised mdc-ripple-upgraded %3$s" type="submit"><span class="mdc-button__ripple"></span><span class="mdc-button__label">%4$s</span></button>',
@@ -164,7 +164,7 @@ if ( has_action( 'set_comment_cookies', 'wp_set_comment_cookies' ) && get_option
 		$count = get_comments_number();
 		?>
 		<h2 class="comments-title mdc-typography--headline4">
-			<?php esc_html_e( 'Experiencias compartidas', 'material-design-google' ); ?>
+			<?php esc_html_e( 'Join the conversation', 'material-design-google' ); ?>
 		</h2><!-- .comments-title -->
 		<div class="comments-title-count">
 			<span class="material-icons">comment</span>

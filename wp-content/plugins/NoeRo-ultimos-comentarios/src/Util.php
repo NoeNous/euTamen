@@ -24,7 +24,7 @@ class Util {
 		];
 	}
 
-	public static function get_comment_format( $date = false, $comment = true, $post_link = true, $avatar = false ) {
+	public static function get_comment_format( $date = false, $comment = true, $post_link = true, $avatar = false, $botonlike = true, $botondislike = true) {
 		$format = '';
 
 		if ( $avatar ) {
@@ -42,7 +42,13 @@ class Util {
 		if ( $date ) {
 			$format .= ' {date}';
 		}
-
+		if ( $botonlike ) {
+			$format .= '{botonlike}';
+	   } 
+		if ( $botondislike ) {
+			$format .= '{botondislike}';
+		}
+		
 		return apply_filters( 'better_recent_comments_comment_format', $format );
 	}
 
@@ -144,17 +150,24 @@ class Util {
 					$date = sprintf( $link_fmt, $comment_url, $date );
 				} elseif ( 'comment' === $link_from ) {
 					$comment_text = sprintf( $link_fmt, $comment_url, $comment_text );
+				} elseif ( 'botonlike' == $link_from) {
+					$botonlike = sprintf( $link_fmt, $comment_url, $botonlike );
+				} elseif ( 'botondislike' == $link_from ) {
+					$botondislike = sprintf( $link_fmt, $comment_url, $botondislike );
 				}
 
 				$comment_content = apply_filters( 'better_recent_comments_comment_content',
 					str_replace(
-						[ '{avatar}', '{author}', '{comment}', '{date}', '{post}' ],
+						[ '{avatar}', '{author}', '{comment}', '{date}', '{post}', '{botonlike}', '{botondislike}' ],
 						[
 							'<span class="comment-avatar">' . $avatar . '</span>',
 							'<span class="comment-author-link">' . $author . '</span>',
 							'<span class="comment-excerpt">' . $comment_text . '</span>',
 							'<span class="comment-date">' . $date . '</span>',
-							'<span class="comment-post" style="display:block;">' . $post . '</span>'
+							'<div class="cld-like-dislike-wrap"><span class="comment-post" style="display:block;">' . $post . '</span>',
+							'<button class ="cld-like-wrap" type="button"><img src="http://eutamen.gal/wp-content/uploads/2021/08/animo-wite2.png" /> <span class="cld-like-count-wrap cld-count-wrap">' . $botonlike .'
+    </span>  Ánimo!</button>',
+							'<button class ="cld-dislike-wrap" type="button"><img id ="ruido" src="http://eutamen.gal/wp-content/uploads/2021/07/ruido.png" /><img id ="ruido1" src="http://eutamen.gal/wp-content/uploads/2021/08/ruido1.png" />  Reportar</button></div>'
 						],
 						$format
 					), $comment );

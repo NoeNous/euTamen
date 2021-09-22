@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Material Design Google package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-06-10 05:24:33+0000\n"
+"PO-Revision-Date: 2021-09-22 05:02:15+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,6 +18,10 @@ msgstr "El tema oficial de Material Design para WordPress: del equipo que está 
 #. Theme Name of the theme
 msgid "Material Design Google"
 msgstr "Material Design Google"
+
+#: template-parts/menu-header.php:62
+msgid "Toggle Dark Mode"
+msgstr "Cambiar al modo oscuro"
 
 #. translators: %s: search query.
 #: search.php:40
@@ -46,7 +50,7 @@ msgid "Back to Top"
 msgstr "Volver arriba"
 
 #. translators: 1: comment count.
-#: template-parts/content.php:107
+#: template-parts/content.php:108
 msgctxt "comments title"
 msgid "One Comment"
 msgid_plural "%s Comments"
@@ -54,12 +58,12 @@ msgstr[0] "Un comentario"
 msgstr[1] "%s comentarios"
 
 #. translators: 1: author name.
-#: template-parts/content.php:84
+#: template-parts/content.php:85
 msgid "Author: %s"
 msgstr "Autor: %s"
 
 #. translators: Post title
-#: template-parts/content.php:51
+#: template-parts/content.php:52
 msgid "Sticky post: %s"
 msgstr "Entrada fija: %s"
 
@@ -75,6 +79,7 @@ msgstr "Salir del formulario de búsqueda"
 msgid "Search the site"
 msgstr "Buscar en el sitio"
 
+#. translators: available page description.
 #. translators: available page description.
 #: template-parts/posts-navigation.php:92
 #: template-parts/posts-navigation.php:105
@@ -226,6 +231,7 @@ msgid "Categories"
 msgstr "Categorías"
 
 #. translators: %s: Name of current post. Only visible to screen readers
+#. translators: %s: Name of current post. Only visible to screen readers
 #: inc/template-tags.php:195 template-parts/single-page.php:57
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr "Editar <span class=\"screen-reader-text\">%s</span>"
@@ -245,91 +251,91 @@ msgstr "Etiqueta: %s"
 msgid "Category: %s"
 msgstr "Categoría: %s"
 
-#: inc/customizer/colors.php:165
+#: inc/customizer/colors.php:192 inc/customizer/colors.php:254
 msgid "On Footer Color (text and icons)"
 msgstr "Color en el pie de página (texto e iconos)"
 
-#: inc/customizer/colors.php:161
+#: inc/customizer/colors.php:187 inc/customizer/colors.php:248
 msgid "On Footer"
 msgstr "En el pie de página"
 
-#: inc/customizer/colors.php:159
+#: inc/customizer/colors.php:185 inc/customizer/colors.php:246
 msgid "Footer Color"
 msgstr "Color del pie de página"
 
-#: inc/customizer/colors.php:153
+#: inc/customizer/colors.php:178 inc/customizer/colors.php:238
 msgid "On Top app bar Color (text and icons)"
 msgstr "Color en la barra superior de la aplicación (texto e iconos)"
 
-#: inc/customizer/colors.php:149
+#: inc/customizer/colors.php:173 inc/customizer/colors.php:232
 msgid "On Top app bar"
 msgstr "En la barra superior de la aplicación"
 
-#: inc/customizer/colors.php:147
+#: inc/customizer/colors.php:171 inc/customizer/colors.php:230
 msgid "Top app bar Color"
 msgstr "Color de la barra superior de la aplicación"
 
-#: inc/customizer/colors.php:143
+#: inc/customizer/colors.php:166 inc/customizer/colors.php:224
 msgid "On Background"
 msgstr "En el fondo"
 
-#: inc/customizer/colors.php:141
+#: inc/customizer/colors.php:164 inc/customizer/colors.php:222
 msgid "On Background Color (text and icons)"
 msgstr "Color en el fondo (texto e iconos)"
 
-#: inc/customizer/colors.php:137
+#: inc/customizer/colors.php:158 inc/customizer/colors.php:216
 msgid "Background"
 msgstr "Fondo"
 
-#: inc/customizer/colors.php:135
+#: inc/customizer/colors.php:156 inc/customizer/colors.php:214
 msgid "Background Color"
 msgstr "Color del fondo"
 
-#: inc/customizer/colors.php:123
+#: inc/customizer/colors.php:144
 msgid "On Surface"
 msgstr "En la superficie"
 
-#: inc/customizer/colors.php:121
+#: inc/customizer/colors.php:142
 msgid "On Surface Color (text and icons)"
 msgstr "Color en la superficie (texto e iconos)"
 
-#: inc/customizer/colors.php:117
+#: inc/customizer/colors.php:138
 msgid "Surface"
 msgstr "Superficie"
 
-#: inc/customizer/colors.php:115
+#: inc/customizer/colors.php:136
 msgid "Surface Color"
 msgstr "Color de la superficie"
 
-#: inc/customizer/colors.php:111
+#: inc/customizer/colors.php:132
 msgid "On Secondary"
 msgstr "En el secundario"
 
-#: inc/customizer/colors.php:109
+#: inc/customizer/colors.php:130
 msgid "On Secondary Color (text and icons)"
 msgstr "Color en el secundario (texto e iconos)"
 
-#: inc/customizer/colors.php:105
+#: inc/customizer/colors.php:126
 msgid "On Primary"
 msgstr "En el principal"
 
-#: inc/customizer/colors.php:103
+#: inc/customizer/colors.php:124
 msgid "On Primary Color (text and icons)"
 msgstr "Color en el principal (texto e iconos)"
 
-#: inc/customizer/colors.php:98
+#: inc/customizer/colors.php:119
 msgid "Secondary"
 msgstr "Secundario"
 
-#: inc/customizer/colors.php:96
+#: inc/customizer/colors.php:117
 msgid "Secondary Color"
 msgstr "Color secundario"
 
-#: inc/customizer/colors.php:92
+#: inc/customizer/colors.php:113
 msgid "Primary"
 msgstr "Principal"
 
-#: inc/customizer/colors.php:90
+#: inc/customizer/colors.php:111
 msgid "Primary Color"
 msgstr "Color principal"
 
@@ -409,7 +415,8 @@ msgstr "Ocultar el botón de volver arriba"
 msgid "Footer text"
 msgstr "Texto del pie de página"
 
-#: inc/customizer/colors.php:167 inc/customizer/header-footer.php:97
+#: inc/customizer/colors.php:194 inc/customizer/colors.php:256
+#: inc/customizer/header-footer.php:97
 msgid "Footer"
 msgstr "Pie de página"
 
@@ -445,7 +452,8 @@ msgstr "Ocultar el título del sitio en la barra superior de aplicaciones"
 msgid "Show search in top app bar"
 msgstr "Mostrar el buscador en la barra superior de la aplicación"
 
-#: inc/customizer/colors.php:155 inc/customizer/header-footer.php:64
+#: inc/customizer/colors.php:180 inc/customizer/colors.php:240
+#: inc/customizer/header-footer.php:64
 msgid "Top app bar"
 msgstr "Barra superior de aplicaciones"
 
@@ -453,11 +461,11 @@ msgstr "Barra superior de aplicaciones"
 msgid "Top app bar & Footer"
 msgstr "Barra superior del aplicaciones y pie de página"
 
-#: inc/customizer/class-more-options.php:61
+#: inc/customizer/class-more-options.php:68
 msgid "Less Options"
 msgstr "Menos opciones"
 
-#: inc/customizer/class-more-options.php:60
+#: inc/customizer/class-more-options.php:67
 msgid "More Options"
 msgstr "Más opciones"
 
@@ -540,11 +548,13 @@ msgid "All installations and activations have been completed."
 msgstr "Todas las instalaciones y activaciones han sido completadas."
 
 #. translators: 1: plugin name.
+#. translators: 1: plugin name.
 #: inc/class-tgm-plugin-activation.php:3513
 #: inc/class-tgm-plugin-activation.php:3521
 msgid "Hide Details"
 msgstr "Ocultar los detalles"
 
+#. translators: 1: plugin name.
 #. translators: 1: plugin name.
 #: inc/class-tgm-plugin-activation.php:3513
 #: inc/class-tgm-plugin-activation.php:3521
@@ -918,7 +928,7 @@ msgstr "Instalar los plugins"
 msgid "Install Required Plugins"
 msgstr "Instalar los plugins necesarios"
 
-#: searchform.php:38 template-parts/menu-header.php:51
+#: searchform.php:38 template-parts/menu-header.php:56
 #: template-parts/search-archive.php:36 template-parts/search-archive.php:44
 #: template-parts/search-header.php:35 template-parts/search-header.php:42
 msgid "Search"

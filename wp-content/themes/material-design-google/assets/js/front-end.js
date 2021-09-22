@@ -104,6 +104,7 @@ function _arrayLikeToArray(arr, len) {
 }
 
 module.exports = _arrayLikeToArray;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
@@ -114,13 +115,14 @@ module.exports = _arrayLikeToArray;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray */ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js");
+var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray.js */ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js");
 
 function _arrayWithoutHoles(arr) {
   if (Array.isArray(arr)) return arrayLikeToArray(arr);
 }
 
 module.exports = _arrayWithoutHoles;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
@@ -138,6 +140,7 @@ function _classCallCheck(instance, Constructor) {
 }
 
 module.exports = _classCallCheck;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
@@ -165,6 +168,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 }
 
 module.exports = _createClass;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
@@ -176,10 +180,11 @@ module.exports = _createClass;
 /***/ (function(module, exports) {
 
 function _iterableToArray(iter) {
-  if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
+  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
 }
 
 module.exports = _iterableToArray;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
@@ -195,6 +200,7 @@ function _nonIterableSpread() {
 }
 
 module.exports = _nonIterableSpread;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
@@ -205,19 +211,20 @@ module.exports = _nonIterableSpread;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles */ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js");
+var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles.js */ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js");
 
-var iterableToArray = __webpack_require__(/*! ./iterableToArray */ "./node_modules/@babel/runtime/helpers/iterableToArray.js");
+var iterableToArray = __webpack_require__(/*! ./iterableToArray.js */ "./node_modules/@babel/runtime/helpers/iterableToArray.js");
 
-var unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray */ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js");
+var unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray.js */ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js");
 
-var nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread */ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js");
+var nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread.js */ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js");
 
 function _toConsumableArray(arr) {
   return arrayWithoutHoles(arr) || iterableToArray(arr) || unsupportedIterableToArray(arr) || nonIterableSpread();
 }
 
 module.exports = _toConsumableArray;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
@@ -228,7 +235,7 @@ module.exports = _toConsumableArray;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray */ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js");
+var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray.js */ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js");
 
 function _unsupportedIterableToArray(o, minLen) {
   if (!o) return;
@@ -240,6 +247,7 @@ function _unsupportedIterableToArray(o, minLen) {
 }
 
 module.exports = _unsupportedIterableToArray;
+module.exports["default"] = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
@@ -9766,6 +9774,112 @@ var commentsInit = function commentsInit() {
 
 /***/ }),
 
+/***/ "./theme/assets/src/front-end/components/dark-mode-switch.js":
+/*!*******************************************************************!*\
+  !*** ./theme/assets/src/front-end/components/dark-mode-switch.js ***!
+  \*******************************************************************/
+/*! exports provided: ICONS, initDarkModeSwitch */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ICONS", function() { return ICONS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initDarkModeSwitch", function() { return initDarkModeSwitch; });
+/**
+ * Copyright 2020 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+var body = document.body;
+var ICONS = {
+  DARK_MODE: 'dark_mode',
+  LIGHT_MODE: 'light_mode'
+};
+var localStorageDarkMode = window.localStorage.getItem('materialDesignDarkMode');
+var switcher;
+var switcherIcon;
+var darkModeEnabled = false;
+
+var maybeToggleDarkMode = function maybeToggleDarkMode(event) {
+  event.preventDefault();
+  var target = event.target;
+
+  if (!target) {
+    return;
+  }
+
+  if (darkModeEnabled) {
+    body.setAttribute('data-color-scheme', 'dark');
+    switcherIcon.textContent = ICONS.LIGHT_MODE;
+  } else {
+    body.setAttribute('data-color-scheme', 'light');
+    switcherIcon.textContent = ICONS.DARK_MODE;
+  }
+};
+
+var testMediaQuery = function testMediaQuery(event) {
+  if (event.matches) {
+    darkModeEnabled = true;
+    switcherIcon.textContent = ICONS.LIGHT_MODE;
+  } else {
+    darkModeEnabled = false;
+    switcherIcon.textContent = ICONS.DARK_MODE;
+  }
+};
+
+var initDarkModeSwitch = function initDarkModeSwitch() {
+  if (!body) {
+    return;
+  }
+
+  switcher = document.querySelector('.dark-mode__button');
+
+  if (!switcher) {
+    return;
+  }
+
+  switcherIcon = switcher.querySelector('.dark-mode__icon');
+  var mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  mediaQuery.addEventListener('change', testMediaQuery);
+  switcher.addEventListener('click', function (event) {
+    darkModeEnabled = !darkModeEnabled;
+    maybeToggleDarkMode(event); // @TODO: Make them expire?
+
+    window.localStorage.setItem('materialDesignDarkMode', JSON.stringify(darkModeEnabled));
+  }); // Bail if set by localStorage.
+
+  if (localStorageDarkMode) {
+    darkModeEnabled = JSON.parse(localStorageDarkMode);
+    maybeToggleDarkMode({
+      preventDefault: function preventDefault() {},
+      target: true
+    });
+    return;
+  }
+
+  testMediaQuery(mediaQuery);
+
+  if (window.materialDesign.darkModeStatus && 'active' === window.materialDesign.darkModeStatus) {
+    darkModeEnabled = true;
+    maybeToggleDarkMode({
+      preventDefault: function preventDefault() {},
+      target: true
+    });
+  }
+};
+
+/***/ }),
+
 /***/ "./theme/assets/src/front-end/components/drawer.js":
 /*!*********************************************************!*\
   !*** ./theme/assets/src/front-end/components/drawer.js ***!
@@ -9942,6 +10056,74 @@ var floatingLabelInit = function floatingLabelInit() {
   } finally {
     _iterator.f();
   }
+};
+
+/***/ }),
+
+/***/ "./theme/assets/src/front-end/components/masonry.js":
+/*!**********************************************************!*\
+  !*** ./theme/assets/src/front-end/components/masonry.js ***!
+  \**********************************************************/
+/*! exports provided: masonryInit */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "masonryInit", function() { return masonryInit; });
+/**
+ * Copyright 2020 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+var gridElement = null;
+var masonryInit = function masonryInit() {
+  gridElement = document.querySelector('.masonry-grid-theme');
+
+  if (!gridElement) {
+    return;
+  }
+
+  var mediaQuery = window.matchMedia('(min-width: 840px)');
+  mediaQuery.addEventListener('change', handleResize);
+  handleResize(mediaQuery);
+};
+
+var handleResize = function handleResize(mediaQuery) {
+  if (mediaQuery.matches) {
+    resizeAllGridItems();
+  }
+};
+
+var resizeAllGridItems = function resizeAllGridItems() {
+  var cells = gridElement.querySelectorAll('.post-card__container');
+
+  if (!cells) {
+    return;
+  }
+
+  cells.forEach(resizeGridItem);
+};
+
+var resizeGridItem = function resizeGridItem(cell) {
+  if (!cell) {
+    return;
+  }
+
+  var rowHeight = parseInt(window.getComputedStyle(gridElement).getPropertyValue('grid-auto-rows'), 10);
+  var rowGap = parseInt(window.getComputedStyle(gridElement).getPropertyValue('grid-row-gap'), 10);
+  var contentHeight = cell.querySelector('.post-card').getBoundingClientRect().height;
+  var rowSpan = Math.ceil((contentHeight + rowGap) / (rowHeight + rowGap));
+  cell.style.gridRowEnd = 'span ' + rowSpan;
 };
 
 /***/ }),
@@ -10779,10 +10961,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_tab_bar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/tab-bar */ "./theme/assets/src/front-end/components/tab-bar.js");
 /* harmony import */ var _components_embeds__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/embeds */ "./theme/assets/src/front-end/components/embeds.js");
 /* harmony import */ var _components_widgets__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/widgets */ "./theme/assets/src/front-end/components/widgets.js");
-/* harmony import */ var _components_navigation__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/navigation */ "./theme/assets/src/front-end/components/navigation.js");
-/* harmony import */ var _components_navigation__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_components_navigation__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _components_skip_link_focus_fix__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/skip-link-focus-fix */ "./theme/assets/src/front-end/components/skip-link-focus-fix.js");
-/* harmony import */ var _components_skip_link_focus_fix__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_components_skip_link_focus_fix__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _components_masonry__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/masonry */ "./theme/assets/src/front-end/components/masonry.js");
+/* harmony import */ var _components_dark_mode_switch__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/dark-mode-switch */ "./theme/assets/src/front-end/components/dark-mode-switch.js");
+/* harmony import */ var _components_navigation__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/navigation */ "./theme/assets/src/front-end/components/navigation.js");
+/* harmony import */ var _components_navigation__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_components_navigation__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _components_skip_link_focus_fix__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/skip-link-focus-fix */ "./theme/assets/src/front-end/components/skip-link-focus-fix.js");
+/* harmony import */ var _components_skip_link_focus_fix__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_components_skip_link_focus_fix__WEBPACK_IMPORTED_MODULE_13__);
 /**
  * Copyright 2020 Google LLC
  *
@@ -10798,6 +10982,8 @@ __webpack_require__.r(__webpack_exports__);
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+
 
 
 
@@ -10826,6 +11012,8 @@ document.addEventListener('DOMContentLoaded', function () {
   Object(_components_comments__WEBPACK_IMPORTED_MODULE_5__["commentsInit"])();
   Object(_components_embeds__WEBPACK_IMPORTED_MODULE_8__["embedsInit"])();
   Object(_components_widgets__WEBPACK_IMPORTED_MODULE_9__["widgetsInit"])();
+  Object(_components_masonry__WEBPACK_IMPORTED_MODULE_10__["masonryInit"])();
+  Object(_components_dark_mode_switch__WEBPACK_IMPORTED_MODULE_11__["initDarkModeSwitch"])();
 });
 
 /***/ }),
