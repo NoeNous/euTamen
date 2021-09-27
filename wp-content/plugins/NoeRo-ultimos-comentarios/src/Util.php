@@ -11,7 +11,7 @@ namespace Barn2\Plugin\Better_Recent_Comments;
  * @copyright Barn2 Media Ltd
  */
 class Util {
-
+	public $countAnimo=0;
 	public static function default_shortcode_args() {
 		return [
 			'number'      => 150,
@@ -156,6 +156,13 @@ class Util {
 					$botondislike = sprintf( $link_fmt, $comment_url, $botondislike );
 				}
 
+				/*$botonlike=0;
+				if($_POST) {
+					$botonlike=$_POST["like"]++;
+				} else {
+					$botonlike=$botonlike;
+				}*/
+				
 				$comment_content = apply_filters( 'better_recent_comments_comment_content',
 					str_replace(
 						[ '{avatar}', '{author}', '{comment}', '{date}', '{post}', '{botonlike}', '{botondislike}' ],
@@ -165,9 +172,17 @@ class Util {
 							'<span class="comment-excerpt">' . $comment_text . '</span>',
 							'<span class="comment-date">' . $date . '</span>',
 							'<div class="cld-like-dislike-wrap"><span class="comment-post" style="display:block;">' . $post . '</span>',
-							'<button class ="cld-like-wrap" type="button"><img src="http://eutamen.gal/wp-content/uploads/2021/08/animo-wite2.png" /> <span class="cld-like-count-wrap cld-count-wrap">' . $botonlike .'
-    </span>  Ánimo!</button>',
-							'<button class ="cld-dislike-wrap" type="button"><img id ="ruido" src="http://eutamen.gal/wp-content/uploads/2021/07/ruido.png" /><img id ="ruido1" src="http://eutamen.gal/wp-content/uploads/2021/08/ruido1.png" />  Reportar</button></div>'
+							'<form method="post" action="' . $_SERVER["PHP_SELF"] . '">
+								<button class ="cld-like-wrap" type="button" name="like" id="like">
+									<img src="http://eutamen.gal/wp-content/uploads/2021/08/animo-wite2.png" />
+									<span class="cld-like-count-wrap cld-count-wrap">' . $botonlike .'</span>
+										Ánimo!
+								</button>',
+							'<button class ="cld-dislike-wrap" type="button">
+								<img id ="ruido" src="http://eutamen.gal/wp-content/uploads/2021/07/ruido.png" />
+								<img id ="ruido1" src="http://eutamen.gal/wp-content/uploads/2021/08/ruido1.png" />
+								  Reportar
+							</button></form></div>'
 						],
 						$format
 					), $comment );
