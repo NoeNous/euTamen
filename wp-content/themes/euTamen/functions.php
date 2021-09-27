@@ -49,3 +49,9 @@ add_action( 'wp_enqueue_scripts', 'euTamen_enqueue_child_styles' );
 }
 add_action('cld_after_ajax_process','reportar_email');*/
 
+/*Para o contador dos nosos botóns na páxina principal*/
+function contadorSumarAnimos($contador){
+	$contador++;
+	return $contador;
+}
+
